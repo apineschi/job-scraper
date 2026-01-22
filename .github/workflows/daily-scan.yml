@@ -25,6 +25,33 @@ jobs:
       - name: Run Scraper
         run: python jobscraper.py
 
+- name: Run Scraper
+        id: scraper
+        run: |
+          # We run the script and save the output to a file
+          python jobscraper.py > output.txt
+          cat output.txt
+          # Check if "FOUND" is in the output
+          if grep -q "--- FOUND" output.txt; then
+            echo "MATCH_FOUND=true" >> $GITHUB_ENV
+          fi
+
+      - name: Send Email Notification
+        if: env.MATCH_FOUND == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "New Museum Job Match Found!"
+          to: ${{ secrets.EMAIL_TO }}
+          from: "Museum Job Bot"
+          body: |
+            The scraper found new matches:
+            ${{ env.SCRAPER_OUTPUT }}
+            Check the logs here: https://github.com/${{ github.repository }}/actions
+
       - name: Save seen jobs
         run: |
           git config --global user.name 'Job-Bot'
