@@ -1,16 +1,59 @@
-- name: Send Test Email
+name: Test Email Output
+
+on:
+  workflow_dispatch: # Allows you to click the "Run workflow" button manually
+
+jobs:
+  test_send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright beautifulsoup4
+          playwright install chromium
+
+      - name: Run Scraper and Capture Screenshots
+        run: |
+          # Run the script and save the text output to test_results.txt
+          python jobscraper.py > test_results.txt
+          
+          # Load the text results into the GitHub environment variable
+          echo "TEST_BODY<<EOF" >> $GITHUB_ENV
+          cat test_results.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Send Test Email with Attachments
+        # We use "always()" so you get the email even if the scraper crashes
+        if: always() 
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Bot Debug: Screenshot Included"
+          subject: "Bot Debug: Screenshot & Log Report"
           to: ${{ secrets.EMAIL_TO }}
           from: "Museum Bot Debugger"
           body: |
-            Check the attached screenshot to see what the bot is seeing!
-            
-            ---
+            Hello Anastasia, 
+
+            The test run has finished. If the scraper timed out, please check the 
+            attached screenshots (debug_screen.png or debug_error.png) to see 
+            what the robot was looking at.
+
+            --- SCRAPER LOGS ---
             ${{ env.TEST_BODY }}
-          attachments: debug_screen.png,debug_error.png
+            --- END OF LOGS ---
+          
+          # This line attaches the images created by your Python script
+          attachments: |
+            debug_screen.png
+            debug_error.png
