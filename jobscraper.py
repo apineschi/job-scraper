@@ -4,12 +4,12 @@ from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
-# Fixed the URL: Added the missing underscore in 'job_list'
 TARGET_URL = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/job_list.aspx"
 SALARY_THRESHOLD = 35000
 SEEN_JOBS_FILE = "seen_jobs.txt"
 
 def check_salary(text):
+    """Extracts numbers from text and checks against threshold."""
     nums = re.findall(r'(\d{1,3}(?:,\d{3})*)', text)
     if not nums: return False, 0
     actual_nums = [int(n.replace(',', '')) for n in nums]
@@ -33,17 +33,19 @@ def main():
         log_output.append("Connecting to British Museum portal...")
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
         page = context.new_page()
 
         try:
-            # Navigate to the correct URL
-            page.goto(TARGET_URL, wait_until="domcontentloaded", timeout=60000)
-            page.wait_for_timeout(3000) 
+            # 1. Load the page and wait for the network to be quiet
+            page.goto(TARGET_URL, wait_until="networkidle", timeout=60000)
             
-            # This should now find the table immediately
-            page.wait_for_selector(".vacancy-row", timeout=20000)
+            # 2. Give it an extra 5 seconds to render the table at the bottom
+            page.wait_for_timeout(5000)
+            
+            # 3. Specifically wait for the job rows to be visible
+            page.wait_for_selector(".vacancy-row", timeout=30000)
             
             soup = BeautifulSoup(page.content(), "html.parser")
             rows = soup.select(".vacancy-row")
@@ -58,7 +60,7 @@ def main():
                     salary_text = salary_tag.get_text(strip=True)
                     due_date = due_tag.get_text(strip=True) if due_tag else "N/A"
                     
-                    # Updated link prefix to ensure it works from your email
+                    # Ensure the link works correctly
                     link = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/" + title_tag['href']
 
                     log_output.append(f"Scanning: {title}...")
@@ -78,11 +80,10 @@ def main():
 
         except Exception as e:
             log_output.append(f"CRITICAL ERROR: {str(e)}")
-            page.screenshot(path="debug_error.png")
         
         browser.close()
 
-    # Final Output Formatting
+    # --- FINAL OUTPUT PRINTING ---
     if match_output:
         print("\n".join(match_output))
         print(f"--- TOTAL NEW MATCHES: {found_count} ---")
