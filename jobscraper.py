@@ -4,7 +4,7 @@ from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
-TARGET_URL = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/joblist.aspx"
+TARGET_URL = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/job_list.aspx"
 SALARY_THRESHOLD = 35000
 SEEN_JOBS_FILE = "seen_jobs.txt"
 
@@ -60,7 +60,7 @@ def main():
                     title = title_tag.get_text(strip=True)
                     salary_text = salary_tag.get_text(strip=True)
                     due_date = due_tag.get_text(strip=True) if due_tag else "N/A"
-                    link = "https://bmrecruit.ciphr-irecruit.com/" + title_tag['href']
+                    link = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR" + title_tag['href']
 
                     log_output.append(f"Scanning: {title}...")
                     is_high_pay, max_val = check_salary(salary_text)
