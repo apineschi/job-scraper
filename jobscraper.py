@@ -1,16 +1,15 @@
 import os
 import re
+import time
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
-# Using the confirmed working URL with the underscore
 TARGET_URL = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/job_list.aspx"
 SALARY_THRESHOLD = 35000
 SEEN_JOBS_FILE = "seen_jobs.txt"
 
 def check_salary(text):
-    """Extracts numbers from text like '£35,000 - £40,000' and checks against threshold."""
     nums = re.findall(r'(\d{1,3}(?:,\d{3})*)', text)
     if not nums:
         return False, 0
@@ -19,7 +18,6 @@ def check_salary(text):
     return max_salary >= SALARY_THRESHOLD, max_salary
 
 def main():
-    # Load seen jobs
     if os.path.exists(SEEN_JOBS_FILE):
         with open(SEEN_JOBS_FILE, "r") as f:
             seen_jobs = set(f.read().splitlines())
@@ -31,13 +29,19 @@ def main():
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
+        # We add a user_agent here just to be safe, as it's standard for simple scrapers
+        context = browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+        page = context.new_page()
         
         print(f"Navigating to {TARGET_URL}...")
-        page.goto(TARGET_URL)
+        page.goto(TARGET_URL, wait_until="domcontentloaded")
         
-        # Original wait logic
-        page.wait_for_selector(".vacancy-row")
+        # --- THE FIX ---
+        # Wait 5 seconds for the JavaScript to load the job table
+        time.sleep(5) 
+        
+        # Now try to find the rows
+        page.wait_for_selector(".vacancy-row", timeout=15000)
         
         soup = BeautifulSoup(page.content(), "html.parser")
         rows = soup.select(".vacancy-row")
@@ -62,7 +66,6 @@ def main():
                     new_seen_list.append(link)
                     found_any_new = True
                 else:
-                    # Original simple logging
                     print(f"Skipping: {title} ({salary_text})")
 
         browser.close()
@@ -70,7 +73,6 @@ def main():
     if not found_any_new:
         print("No new matches found today.")
 
-    # Save seen jobs
     with open(SEEN_JOBS_FILE, "w") as f:
         f.write("\n".join(new_seen_list))
 
