@@ -1,7 +1,7 @@
 name: Test Email Output
 
 on:
-  workflow_dispatch: # Allows you to click the "Run workflow" button manually
+  workflow_dispatch:
 
 jobs:
   test_send:
@@ -20,40 +20,27 @@ jobs:
           pip install playwright beautifulsoup4
           playwright install chromium
 
-      - name: Run Scraper and Capture Screenshots
+      - name: Run Scraper
         run: |
-          # Run the script and save the text output to test_results.txt
+          # We run the script and capture EVERYTHING it prints
           python jobscraper.py > test_results.txt
           
-          # Load the text results into the GitHub environment variable
+          # Load the results into the environment
           echo "TEST_BODY<<EOF" >> $GITHUB_ENV
           cat test_results.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Send Test Email with Attachments
-        # We use "always()" so you get the email even if the scraper crashes
-        if: always() 
+      - name: Send Test Email
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Bot Debug: Screenshot & Log Report"
+          subject: "Job Scraper Test Results"
           to: ${{ secrets.EMAIL_TO }}
-          from: "Museum Bot Debugger"
+          from: "Museum Job Bot"
           body: |
-            Hello Anastasia, 
+            Here are the results from the scraper:
 
-            The test run has finished. If the scraper timed out, please check the 
-            attached screenshots (debug_screen.png or debug_error.png) to see 
-            what the robot was looking at.
-
-            --- SCRAPER LOGS ---
             ${{ env.TEST_BODY }}
-            --- END OF LOGS ---
-          
-          # This line attaches the images created by your Python script
-          attachments: |
-            debug_screen.png
-            debug_error.png
