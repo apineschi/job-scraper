@@ -29,44 +29,45 @@ def main():
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        # We add a user_agent here just to be safe, as it's standard for simple scrapers
         context = browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
         page = context.new_page()
         
         print(f"Navigating to {TARGET_URL}...")
-        page.goto(TARGET_URL, wait_until="domcontentloaded")
+        page.goto(TARGET_URL, wait_until="networkidle")
         
-        # --- THE FIX ---
-        # Wait 5 seconds for the JavaScript to load the job table
+        # Give the JavaScript 5 seconds to finish rendering the list
         time.sleep(5) 
         
-        # Now try to find the rows
-        page.wait_for_selector(".vacancy-row", timeout=15000)
+        # Grab all the content and let BeautifulSoup find the patterns
+        html_content = page.content()
+        soup = BeautifulSoup(html_content, "html.parser")
         
-        soup = BeautifulSoup(page.content(), "html.parser")
-        rows = soup.select(".vacancy-row")
+        # Looking for 'jobdetail' based on your correct observation
+        links = soup.find_all('a', href=re.compile(r'jobdetail'))
+        
+        for link_tag in links:
+            # Finding the closest text container to grab the salary
+            container = link_tag.find_parent('tr') or link_tag.find_parent('div')
+            if not container:
+                continue
 
-        for row in rows:
-            title_tag = row.select_one(".vacancy-title a")
-            salary_tag = row.select_one(".salary")
+            title = link_tag.get_text(strip=True)
+            container_text = container.get_text(separator=' ')
             
-            if title_tag and salary_tag:
-                title = title_tag.get_text(strip=True)
-                salary_text = salary_tag.get_text(strip=True)
-                link = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/" + title_tag['href']
+            # Clean up the link (avoiding double slashes)
+            href = link_tag['href'].lstrip('/')
+            full_link = f"https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/{href}"
 
-                is_high_pay, max_val = check_salary(salary_text)
+            is_high_pay, max_val = check_salary(container_text)
 
-                if is_high_pay and link not in seen_jobs:
-                    print(f"MATCH FOUND: {title}")
-                    print(f"Salary: {salary_text}")
-                    print(f"Link: {link}")
-                    print("-" * 20)
-                    
-                    new_seen_list.append(link)
-                    found_any_new = True
-                else:
-                    print(f"Skipping: {title} ({salary_text})")
+            if is_high_pay and full_link not in seen_jobs:
+                print(f"MATCH FOUND: {title}")
+                print(f"Salary Info: {container_text[:120]}...") 
+                print(f"Link: {full_link}")
+                print("-" * 20)
+                
+                new_seen_list.append(full_link)
+                found_any_new = True
 
         browser.close()
 
