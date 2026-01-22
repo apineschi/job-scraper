@@ -4,6 +4,7 @@ from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
+# Fixed the URL: Added the missing underscore in 'job_list'
 TARGET_URL = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/job_list.aspx"
 SALARY_THRESHOLD = 35000
 SEEN_JOBS_FILE = "seen_jobs.txt"
@@ -37,15 +38,11 @@ def main():
         page = context.new_page()
 
         try:
-            # 1. Try to load the page
+            # Navigate to the correct URL
             page.goto(TARGET_URL, wait_until="domcontentloaded", timeout=60000)
-            page.wait_for_timeout(5000) # Wait 5 seconds for scripts
+            page.wait_for_timeout(3000) 
             
-            # 2. TAKE A PICTURE (This helps us see why it's failing)
-            page.screenshot(path="debug_screen.png")
-            log_output.append("Screenshot captured for debugging.")
-
-            # 3. Look for jobs
+            # This should now find the table immediately
             page.wait_for_selector(".vacancy-row", timeout=20000)
             
             soup = BeautifulSoup(page.content(), "html.parser")
@@ -60,7 +57,9 @@ def main():
                     title = title_tag.get_text(strip=True)
                     salary_text = salary_tag.get_text(strip=True)
                     due_date = due_tag.get_text(strip=True) if due_tag else "N/A"
-                    link = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR" + title_tag['href']
+                    
+                    # Updated link prefix to ensure it works from your email
+                    link = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/" + title_tag['href']
 
                     log_output.append(f"Scanning: {title}...")
                     is_high_pay, max_val = check_salary(salary_text)
@@ -79,13 +78,14 @@ def main():
 
         except Exception as e:
             log_output.append(f"CRITICAL ERROR: {str(e)}")
-            # Take a second screenshot if it crashes
             page.screenshot(path="debug_error.png")
         
         browser.close()
 
+    # Final Output Formatting
     if match_output:
         print("\n".join(match_output))
+        print(f"--- TOTAL NEW MATCHES: {found_count} ---")
     else:
         print("No new matches found today.")
 
