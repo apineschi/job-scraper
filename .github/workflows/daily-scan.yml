@@ -1,13 +1,18 @@
 name: Daily Museum Job Scan
 
 on:
-  workflow_dispatch: # Manual trigger
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
 
 jobs:
-  debug_email:
+  scrape_and_notify:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -21,20 +26,39 @@ jobs:
           playwright install chromium
 
       - name: Run Scraper
-        run: python jobscraper.py > results.txt
+        id: scraper
+        run: |
+          python jobscraper.py > results.txt
+          # This line prepares the results to be read by the email step
+          echo "SCRAPER_BODY<<EOF" >> $GITHUB_ENV
+          cat results.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          
+          if grep -q "--- FOUND" results.txt; then
+            echo "MATCH_FOUND=true" >> $GITHUB_ENV
+          fi
 
-      - name: Force Email
+      - name: Send Email Notification
+        if: env.MATCH_FOUND == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "DEBUG: Museum Job Test"
+          subject: "Museum Job Alert: New Match Found!"
           to: ${{ secrets.EMAIL_TO }}
-          from: "Job Bot"
+          from: "Museum Job Bot"
           body: |
-            If you are reading this, the connection worked!
+            The scraper found new matches! 
             
-            Scraper Results:
-            $(cat results.txt)
+            ${{ env.SCRAPER_BODY }}
+
+      - name: Save seen jobs
+        if: always()
+        run: |
+          git config --global user.name 'Job-Bot'
+          git config --global user.email 'bot@github.com'
+          git add seen_jobs.txt
+          git commit -m "Update seen jobs list" || echo "No new jobs to commit"
+          git push
