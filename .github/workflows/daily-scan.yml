@@ -1,0 +1,34 @@
+name: Daily Museum Job Scan
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Runs at 9:00 AM UTC every day
+  workflow_dispatch:      # This line makes the "Run workflow" button appear
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright beautifulsoup4
+          playwright install chromium
+
+      - name: Run Scraper
+        run: python jobscraper.py
+
+      - name: Save seen jobs
+        run: |
+          git config --global user.name 'Job-Bot'
+          git config --global user.email 'bot@github.com'
+          git add seen_jobs.txt
+          git commit -m "Update seen jobs list" || echo "No new jobs to commit"
+          git push
