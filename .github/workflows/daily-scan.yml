@@ -3,11 +3,16 @@ name: Daily Museum Job Scan
 on:
   schedule:
     - cron: '0 9 * * *'  # Runs at 9:00 AM UTC every day
-  workflow_dispatch:      # This line makes the "Run workflow" button appear
+  workflow_dispatch:      # Allows you to click the manual "Run workflow" button
 
 jobs:
-  scrape:
+  scrape_and_notify:
     runs-on: ubuntu-latest
+    
+    # Permission needed to save the seen_jobs.txt back to the repo
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,16 +28,14 @@ jobs:
           playwright install chromium
 
       - name: Run Scraper
-        run: python jobscraper.py
-
-- name: Run Scraper
         id: scraper
         run: |
-          # We run the script and save the output to a file
-          python jobscraper.py > output.txt
-          cat output.txt
-          # Check if "FOUND" is in the output
-          if grep -q "--- FOUND" output.txt; then
+          # Run script and save output to a file for the email body
+          python jobscraper.py > results.txt
+          cat results.txt
+          
+          # Check if the output contains the word "MATCHES"
+          if grep -q "--- FOUND" results.txt; then
             echo "MATCH_FOUND=true" >> $GITHUB_ENV
           fi
 
@@ -40,22 +43,28 @@ jobs:
         if: env.MATCH_FOUND == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
+          # Settings for Gmail. Change server_address to smtp-mail.outlook.com for Outlook.
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "New Museum Job Match Found!"
+          subject: "Museum Job Alert: New Match Found!"
           to: ${{ secrets.EMAIL_TO }}
           from: "Museum Job Bot"
           body: |
-            The scraper found new matches:
-            ${{ env.SCRAPER_OUTPUT }}
-            Check the logs here: https://github.com/${{ github.repository }}/actions
+            The scraper found a job meeting your criteria!
+            
+            Results:
+            $(cat results.txt)
+            
+            View full details here: https://github.com/${{ github.repository }}/actions
 
-      - name: Save seen jobs
+      - name: Save seen jobs to repository
+        # We only save if the script ran successfully
+        if: always()
         run: |
           git config --global user.name 'Job-Bot'
           git config --global user.email 'bot@github.com'
           git add seen_jobs.txt
-          git commit -m "Update seen jobs list" || echo "No new jobs to commit"
+          git commit -m "Update seen jobs list" || echo "No new jobs to record"
           git push
