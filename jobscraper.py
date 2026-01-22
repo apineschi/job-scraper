@@ -28,19 +28,17 @@ def scan_job_details(page, url):
     page.wait_for_timeout(2000) 
     
     soup = BeautifulSoup(page.content(), 'html.parser')
-    # Get text using newline as separator to keep lines distinct
     page_text = soup.get_text("\n", strip=True)
     
     salary = "Not listed"
     closing_date = "Not found"
 
-    # 1. Capture Full Salary Range
-    # Looks for "Salary" and grabs everything until the end of that line
+    # Capture Full Salary Range
     sal_match = re.search(r'Salary[:\s]*(.*)', page_text, re.IGNORECASE)
     if sal_match:
         salary = sal_match.group(1).strip()
 
-    # 2. Capture Application Deadline Line
+    # Capture Application Deadline Line
     deadline_match = re.search(r'Application deadline[:\s]*(.*)', page_text, re.IGNORECASE)
     if deadline_match:
         closing_date = deadline_match.group(1).strip()
@@ -61,6 +59,7 @@ def run_scraper():
         page.goto("https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/job_list.aspx")
         
         try:
+            # Ensuring the search button is clicked to refresh the list
             page.get_by_role("button", name="Search").click()
             page.wait_for_timeout(3000)
         except:
@@ -72,7 +71,13 @@ def run_scraper():
             href = link['href']
             title = link.get_text(strip=True)
             if "jobdetail" in href.lower() and title and title.lower() != "view":
-                full_url = href if href.startswith("http") else f"https://bmrecruit.ciphr-irecruit.com/{href.lstrip('/')}"
+                # Clean up the link structure to avoid double slashes
+                if href.startswith("http"):
+                    full_url = href
+                else:
+                    clean_path = href.lstrip('/')
+                    full_url = f"https://bmrecruit.ciphr-irecruit.com/{clean_path}"
+                
                 if full_url not in seen_jobs:
                     unique_links[full_url] = title
 
@@ -82,7 +87,7 @@ def run_scraper():
             salary_val = extract_salary_number(salary_str)
 
             if salary_val >= SALARY_THRESHOLD:
-                print(f" ✅ MATCH: {salary_str} | DUE: {due_date}")
+                print(f" ✅ MATCH: {salary_str}")
                 new_filtered_jobs.append({
                     "title": title, 
                     "salary": salary_str, 
@@ -92,14 +97,21 @@ def run_scraper():
             else:
                 print(f" ❌ SKIPPED: {salary_str}")
             
+            # Save to database so we don't scan it again tomorrow
             save_new_job(url)
 
         browser.close()
 
+    # --- EMAIL FORMATTING ---
     if new_filtered_jobs:
-        print(f"\n--- FOUND {len(new_filtered_jobs)} MATCHES ---")
+        print(f"\n--- FOUND {len(new_filtered_jobs)} NEW MATCHES ---")
         for job in new_filtered_jobs:
-            print(f"TITLE: {job['title']}\nSALARY: {job['salary']}\nDUE: {job['due']}\nLINK: {job['url']}\n" + "-"*30)
+            print(f"INSTITUTION: British Museum")
+            print(f"TITLE: {job['title']}")
+            print(f"SALARY: {job['salary']}")
+            print(f"DUE: {job['due']}")
+            print(f"LINK: {job['url']}")
+            print("-" * 30)
     else:
         print("\nScan finished. No new high-salary jobs found.")
 
