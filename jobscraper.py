@@ -4,104 +4,98 @@ from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
-DB_FILE = "seen_jobs.txt"
+TARGET_URL = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/joblist.aspx"
 SALARY_THRESHOLD = 35000
+SEEN_JOBS_FILE = "seen_jobs.txt"
 
-def load_seen_jobs():
-    if not os.path.exists(DB_FILE): return set()
-    with open(DB_FILE, "r") as f: return set(line.strip() for line in f)
-
-def save_new_job(job_link):
-    with open(DB_FILE, "a") as f: f.write(job_link + "\n")
-
-def extract_salary_number(salary_text):
-    """Extracts the first large number found to use for the threshold check."""
-    numbers = re.findall(r'\d+', salary_text.replace(',', ''))
-    for n in numbers:
-        val = int(n)
-        if val > 1000: return val
-    return 0
-
-def scan_job_details(page, url):
-    """Scans for full Salary range and Application deadline line."""
-    page.goto(url, wait_until="networkidle")
-    page.wait_for_timeout(2000) 
+def check_salary(text):
+    """Extracts the highest number from salary text and checks if it's >= threshold."""
+    nums = re.findall(r'£?(\d{2,3}),(\d{3})', text)
+    if not nums:
+        return False, 0
     
-    soup = BeautifulSoup(page.content(), 'html.parser')
-    # Get text using newline as separator to keep lines distinct
-    page_text = soup.get_text("\n", strip=True)
+    actual_nums = [int(n[0] + n[1]) for n in nums]
+    max_salary = max(actual_nums)
+    return max_salary >= SALARY_THRESHOLD, max_salary
+
+def main():
+    # Lists to hold our output sections
+    match_output = []
+    log_output = []
     
-    salary = "Not listed"
-    closing_date = "Not found"
+    # Load seen jobs
+    if os.path.exists(SEEN_JOBS_FILE):
+        with open(SEEN_JOBS_FILE, "r") as f:
+            seen_jobs = set(f.read().splitlines())
+    else:
+        seen_jobs = set()
 
-    # 1. Capture Full Salary Range
-    # Looks for "Salary" and grabs everything until the end of that line
-    sal_match = re.search(r'Salary[:\s]*(.*)', page_text, re.IGNORECASE)
-    if sal_match:
-        salary = sal_match.group(1).strip()
-
-    # 2. Capture Application Deadline Line
-    deadline_match = re.search(r'Application deadline[:\s]*(.*)', page_text, re.IGNORECASE)
-    if deadline_match:
-        closing_date = deadline_match.group(1).strip()
-
-    return salary, closing_date
-
-def run_scraper():
-    seen_jobs = load_seen_jobs()
-    new_filtered_jobs = []
+    new_seen_list = list(seen_jobs)
 
     with sync_playwright() as p:
-        print("Opening British Museum portal...")
+        log_output.append("Opening British Museum portal...")
         browser = p.chromium.launch(headless=True)
-        ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-        context = browser.new_context(user_agent=ua)
-        page = context.new_page()
+        page = browser.new_context().new_page()
+        page.goto(TARGET_URL)
         
-        page.goto("https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/job_list.aspx")
-        
-        try:
-            page.get_by_role("button", name="Search").click()
-            page.wait_for_timeout(3000)
-        except:
-            pass
+        # Wait for the table to load
+        page.wait_for_selector(".vacancy-row")
+        soup = BeautifulSoup(page.content(), "html.parser")
+        rows = soup.select(".vacancy-row")
 
-        soup = BeautifulSoup(page.content(), 'html.parser')
-        unique_links = {}
-        for link in soup.find_all('a', href=True):
-            href = link['href']
-            title = link.get_text(strip=True)
-            if "jobdetail" in href.lower() and title and title.lower() != "view":
-                full_url = href if href.startswith("http") else f"https://bmrecruit.ciphr-irecruit.com/{href.lstrip('/')}"
-                if full_url not in seen_jobs:
-                    unique_links[full_url] = title
+        found_count = 0
 
-        for url, title in unique_links.items():
-            print(f"Scanning: {title}...")
-            salary_str, due_date = scan_job_details(page, url)
-            salary_val = extract_salary_number(salary_str)
-
-            if salary_val >= SALARY_THRESHOLD:
-                print(f" ✅ MATCH: {salary_str} | DUE: {due_date}")
-                new_filtered_jobs.append({
-                    "title": title, 
-                    "salary": salary_str, 
-                    "due": due_date, 
-                    "url": url
-                })
-            else:
-                print(f" ❌ SKIPPED: {salary_str}")
+        for row in rows:
+            title_tag = row.select_one(".vacancy-title a")
+            salary_tag = row.select_one(".salary")
+            due_tag = row.select_one(".closing-date")
             
-            save_new_job(url)
+            if title_tag and salary_tag:
+                title = title_tag.get_text(strip=True)
+                salary_text = salary_tag.get_text(strip=True)
+                due_date = due_tag.get_text(strip=True) if due_tag else "N/A"
+                link = "https://bmrecruit.ciphr-irecruit.com/" + title_tag['href']
+
+                log_output.append(f"Scanning: {title}...")
+
+                is_high_pay, max_val = check_salary(salary_text)
+
+                if is_high_pay and link not in seen_jobs:
+                    found_count += 1
+                    log_output.append(f"  MATCH: {salary_text} | DUE: {due_date}")
+                    
+                    # Create the formatted match block
+                    match_output.append(f"--- FOUND MATCH {found_count} ---")
+                    match_output.append(f"INSTITUTION: British Museum")
+                    match_output.append(f"TITLE: {title}")
+                    match_output.append(f"SALARY: {salary_text}")
+                    match_output.append(f"DUE: {due_date}")
+                    match_output.append(f"LINK: {link}")
+                    match_output.append("") # Empty line for spacing
+                    
+                    new_seen_list.append(link)
+                else:
+                    log_output.append(f"  SKIPPED: {salary_text}")
 
         browser.close()
 
-    if new_filtered_jobs:
-        print(f"\n--- FOUND {len(new_filtered_jobs)} MATCHES ---")
-        for job in new_filtered_jobs:
-            print(f"TITLE: {job['title']}\nSALARY: {job['salary']}\nDUE: {job['due']}\nLINK: {job['url']}\n" + "-"*30)
+    # --- FINAL OUTPUT PRINTING ---
+    # Everything printed here is caught by the GitHub Action for the email body
+
+    if match_output:
+        print("\n".join(match_output))
+        print(f"--- TOTAL MATCHES: {found_count} ---")
     else:
-        print("\nScan finished. No new high-salary jobs found.")
+        print("No new high-paying jobs found today.")
+
+    print("\n" + "="*30)
+    print("DETAILED SCAN LOGS:")
+    print("="*30)
+    print("\n".join(log_output))
+
+    # Save updated seen jobs
+    with open(SEEN_JOBS_FILE, "w") as f:
+        f.write("\n".join(new_seen_list))
 
 if __name__ == "__main__":
-    run_scraper()
+    main()
