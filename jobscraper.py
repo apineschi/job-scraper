@@ -32,20 +32,26 @@ def main():
 
     new_seen_list = list(seen_jobs)
 
-    # 2. Start the Browser
+    # 2. Start the Browser with Stealth Settings
     with sync_playwright() as p:
         log_output.append("Connecting to British Museum portal...")
         browser = p.chromium.launch(headless=True)
         
-        # Add a real User-Agent to avoid being blocked/timing out
+        # We add a desktop window size and a real User-Agent
         context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            viewport={'width': 1920, 'height': 1080}
         )
         page = context.new_page()
 
         try:
-            # Go to site and wait for the content to load
-            page.goto(TARGET_URL, wait_until="domcontentloaded", timeout=60000)
+            # wait_until="networkidle" waits for all background data to finish loading
+            page.goto(TARGET_URL, wait_until="networkidle", timeout=60000)
+            
+            # A 3-second 'human' pause to let the job table render
+            page.wait_for_timeout(3000)
+            
+            # Now we look for the job rows
             page.wait_for_selector(".vacancy-row", timeout=20000)
             
             soup = BeautifulSoup(page.content(), "html.parser")
@@ -67,7 +73,7 @@ def main():
 
                     if is_high_pay and link not in seen_jobs:
                         found_count += 1
-                        # Create the Match Block for the top of the email
+                        # Format the Match Block
                         match_output.append(f"--- FOUND MATCH {found_count} ---")
                         match_output.append(f"INSTITUTION: British Museum")
                         match_output.append(f"TITLE: {title}")
@@ -85,18 +91,16 @@ def main():
         
         browser.close()
 
-    # --- FINAL OUTPUT PRINTING (This becomes your Email Body) ---
+    # --- FINAL OUTPUT PRINTING ---
     
-    # Section A: The Matches
+    # Matches first
     if match_output:
         print("\n".join(match_output))
         print(f"--- TOTAL NEW MATCHES: {found_count} ---")
-        # Important: This flag triggers the 'Daily' email logic
-        print("MATCH_FOUND_SIGNAL=true") 
     else:
         print("No new matches found today.")
 
-    # Section B: The Technical Logs
+    # Logs second
     print("\n" + "="*35)
     print("DETAILED SCAN LOGS (FOR REFERENCE)")
     print("="*35)
