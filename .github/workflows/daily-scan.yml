@@ -39,7 +39,7 @@ jobs:
           fi
 
       - name: Send Email Notification
-        if: always()
+        if: env.MATCH_FOUND == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
