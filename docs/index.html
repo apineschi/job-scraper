@@ -173,7 +173,7 @@
 
         const card = document.createElement('div');
         card.className = 'card ' + s.status;
-        card.style.background = hexToRgba(style.color, 0.16);
+        card.style.background = hexToRgba(style.color, 0.5);
         card.innerHTML = `
           <div class="card-title"><span class="dot ${s.status}"></span>${style.emoji || ''} ${nameHtml}</div>
           <div class="meta">
@@ -218,7 +218,7 @@
 
         const el = document.createElement('div');
         el.className = 'job';
-        el.style.background = hexToRgba(style.color, 0.16);
+        el.style.background = hexToRgba(style.color, 0.5);
         el.innerHTML = `
           <div class="job-top">
             <a href="${j.url}" target="_blank" rel="noopener">${style.emoji || ''} ${j.title}</a>
