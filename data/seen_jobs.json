@@ -1727,5 +1727,18 @@
     "closing_date": "Mon, 28 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
     "matched": true
+  },
+  "https://jobsearch.tate.org.uk/jobs/job/Operations-Manager/866": {
+    "institution": "Tate",
+    "title": "Operations Manager",
+    "url": "https://jobsearch.tate.org.uk/jobs/job/Operations-Manager/866",
+    "salary_text": "From £48,000 per annum plus 10% performance-based bonus and great benefits!",
+    "salary_annual_est": 48000,
+    "location_text": "Tate Modern, United Kingdom",
+    "is_london": true,
+    "employment_type": "full_time",
+    "closing_date": "3 September, 2026",
+    "first_seen": "2026-08-26T13:30:19+00:00",
+    "matched": true
   }
 }
