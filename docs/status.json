@@ -4,8 +4,8 @@
     "institution": "British Museum",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T14:09:55+00:00",
-    "last_success": "2026-08-26T14:09:55+00:00",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
     "jobs_found": 9
   },
   {
@@ -13,26 +13,26 @@
     "institution": "Tate",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T14:09:55+00:00",
-    "last_success": "2026-08-26T14:09:55+00:00",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
     "jobs_found": 10
   },
   {
     "source": "kcl",
     "institution": "King's College London",
-    "status": "ok",
-    "error": null,
-    "checked_at": "2026-08-26T14:09:55+00:00",
-    "last_success": "2026-08-26T14:09:55+00:00",
-    "jobs_found": 27
+    "status": "error",
+    "error": "King's College London: no job links found — site structure may have changed or access is blocked",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:04:53+00:00",
+    "jobs_found": 0
   },
   {
     "source": "vam",
     "institution": "Victoria and Albert Museum",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T14:09:55+00:00",
-    "last_success": "2026-08-26T14:09:55+00:00",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
     "jobs_found": 12
   },
   {
@@ -40,8 +40,8 @@
     "institution": "Barbican Centre",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T14:09:55+00:00",
-    "last_success": "2026-08-26T14:09:55+00:00",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
     "jobs_found": 1
   },
   {
@@ -49,8 +49,8 @@
     "institution": "ArtsJobs UK",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T14:09:55+00:00",
-    "last_success": "2026-08-26T14:09:55+00:00",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
     "jobs_found": 60
   },
   {
@@ -58,8 +58,8 @@
     "institution": "Southbank Centre",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T14:09:55+00:00",
-    "last_success": "2026-08-26T14:09:55+00:00",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
     "jobs_found": 3
   },
   {
@@ -67,8 +67,71 @@
     "institution": "National Gallery",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T14:09:55+00:00",
-    "last_success": "2026-08-26T14:09:55+00:00",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
     "jobs_found": 8
+  },
+  {
+    "source": "nhm",
+    "institution": "Natural History Museum",
+    "status": "ok",
+    "error": null,
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
+    "jobs_found": 9
+  },
+  {
+    "source": "royal_academy",
+    "institution": "Royal Academy of Arts",
+    "status": "ok",
+    "error": null,
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
+    "jobs_found": 4
+  },
+  {
+    "source": "cambridge",
+    "institution": "University of Cambridge",
+    "status": "ok",
+    "error": null,
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
+    "jobs_found": 179
+  },
+  {
+    "source": "waltham_forest",
+    "institution": "London Borough of Waltham Forest",
+    "status": "error",
+    "error": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/\nCall log:\n  - navigating to \"https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/\", waiting until \"networkidle\"\n",
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": null,
+    "jobs_found": 0
+  },
+  {
+    "source": "national_trust",
+    "institution": "National Trust",
+    "status": "ok",
+    "error": null,
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
+    "jobs_found": 16
+  },
+  {
+    "source": "william_morris_gallery",
+    "institution": "William Morris Gallery",
+    "status": "ok",
+    "error": null,
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
+    "jobs_found": 0
+  },
+  {
+    "source": "national_museums",
+    "institution": "National Museums",
+    "status": "ok",
+    "error": null,
+    "checked_at": "2026-08-26T17:10:16+00:00",
+    "last_success": "2026-08-26T17:10:16+00:00",
+    "jobs_found": 20
   }
 ]

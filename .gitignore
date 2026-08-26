@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+email_digest.html
+results.txt
+test_results.txt

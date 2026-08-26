@@ -55,6 +55,55 @@
       "emoji_tag": "art",
       "emoji": "🎨",
       "url": "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/ETREC179GF.open?WVID=7102672HeH"
+    },
+    "Natural History Museum": {
+      "institution": "Natural History Museum",
+      "color": "#e3f0d8",
+      "emoji_tag": "t-rex",
+      "emoji": "🦖",
+      "url": "https://jobs.nhm.ac.uk/Home/Job"
+    },
+    "Royal Academy of Arts": {
+      "institution": "Royal Academy of Arts",
+      "color": "#f5e6f0",
+      "emoji_tag": "paintbrush",
+      "emoji": "🖌️",
+      "url": "https://royalacademyarts.current-vacancies.com/Careers/RA-vacancy-search-page-3191"
+    },
+    "University of Cambridge": {
+      "institution": "University of Cambridge",
+      "color": "#e6f2f5",
+      "emoji_tag": "books",
+      "emoji": "📚",
+      "url": "https://www.cam.ac.uk/jobs/search?search_api_views_fulltext="
+    },
+    "London Borough of Waltham Forest": {
+      "institution": "London Borough of Waltham Forest",
+      "color": "#eef0d8",
+      "emoji_tag": "office",
+      "emoji": "🏢",
+      "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/"
+    },
+    "National Trust": {
+      "institution": "National Trust",
+      "color": "#d8f0e6",
+      "emoji_tag": "deciduous_tree",
+      "emoji": "🌳",
+      "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancies"
+    },
+    "William Morris Gallery": {
+      "institution": "William Morris Gallery",
+      "color": "#f0dce8",
+      "emoji_tag": "leaves",
+      "emoji": "🍃",
+      "url": "https://www.wmgallery.org.uk/about-us/jobs-and-opportunities/"
+    },
+    "National Museums": {
+      "institution": "National Museums",
+      "color": "#e8e0f5",
+      "emoji_tag": "clipboard",
+      "emoji": "📋",
+      "url": "https://www.nationalmuseums.org.uk/jobs/"
     }
   },
   "sources": {
@@ -113,6 +162,55 @@
       "emoji_tag": "art",
       "emoji": "🎨",
       "url": "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/ETREC179GF.open?WVID=7102672HeH"
+    },
+    "nhm": {
+      "institution": "Natural History Museum",
+      "color": "#e3f0d8",
+      "emoji_tag": "t-rex",
+      "emoji": "🦖",
+      "url": "https://jobs.nhm.ac.uk/Home/Job"
+    },
+    "royal_academy": {
+      "institution": "Royal Academy of Arts",
+      "color": "#f5e6f0",
+      "emoji_tag": "paintbrush",
+      "emoji": "🖌️",
+      "url": "https://royalacademyarts.current-vacancies.com/Careers/RA-vacancy-search-page-3191"
+    },
+    "cambridge": {
+      "institution": "University of Cambridge",
+      "color": "#e6f2f5",
+      "emoji_tag": "books",
+      "emoji": "📚",
+      "url": "https://www.cam.ac.uk/jobs/search?search_api_views_fulltext="
+    },
+    "waltham_forest": {
+      "institution": "London Borough of Waltham Forest",
+      "color": "#eef0d8",
+      "emoji_tag": "office",
+      "emoji": "🏢",
+      "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/"
+    },
+    "national_trust": {
+      "institution": "National Trust",
+      "color": "#d8f0e6",
+      "emoji_tag": "deciduous_tree",
+      "emoji": "🌳",
+      "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancies"
+    },
+    "william_morris_gallery": {
+      "institution": "William Morris Gallery",
+      "color": "#f0dce8",
+      "emoji_tag": "leaves",
+      "emoji": "🍃",
+      "url": "https://www.wmgallery.org.uk/about-us/jobs-and-opportunities/"
+    },
+    "national_museums": {
+      "institution": "National Museums",
+      "color": "#e8e0f5",
+      "emoji_tag": "clipboard",
+      "emoji": "📋",
+      "url": "https://www.nationalmuseums.org.uk/jobs/"
     }
   },
   "default": {

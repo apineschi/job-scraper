@@ -21,7 +21,8 @@ LONDON_KEYWORDS = [
 ]
 NON_LONDON_KEYWORDS = [
     "liverpool", "st ives", "st. ives", "manchester", "leeds", "birmingham",
-    "cardiff", "edinburgh", "glasgow", "bristol", "york",
+    "cardiff", "edinburgh", "glasgow", "bristol", "york", "cambridge", "tring",
+    "warminster", "bath", "swindon", "oxford", "newcastle", "belfast",
 ]
 
 
@@ -112,7 +113,13 @@ def parse_salary(text: str) -> int:
     return 0
 
 
-def classify_london(institution: str, location_text: str) -> Optional[bool]:
+def classify_london(institution: str, location_text: str, default: Optional[bool] = True) -> Optional[bool]:
+    """`default` is what to assume when neither keyword list matches. True is safe
+    for single-site London institutions (the original 8 sources) but wrong for
+    nationwide or non-London institutions (Cambridge, National Trust's many sites
+    across the country) — those scrapers should pass default=False or default=None
+    (genuinely unknown, varies per job) instead of relying on this fallback.
+    """
     text = f"{institution} {location_text or ''}".lower()
     for kw in NON_LONDON_KEYWORDS:
         if kw in text:
@@ -120,8 +127,7 @@ def classify_london(institution: str, location_text: str) -> Optional[bool]:
     for kw in LONDON_KEYWORDS:
         if kw in text:
             return True
-    # Every institution scraped in this project is London-based unless proven otherwise.
-    return True
+    return default
 
 
 def classify_employment_type(text: str) -> str:

@@ -51,12 +51,16 @@ def run_scrapers(previous_status: dict) -> tuple[list, list]:
     for module in SOURCES:
         source_name = module.__name__.rsplit(".", 1)[-1]
         prev = previous_status.get(source_name, {})
+        # branding.py has a static display name for every registered source —
+        # more reliable than deriving it from jobs[0], which is unavailable
+        # whenever a source finds zero jobs (a legitimate outcome, not a failure).
+        display_name = SOURCE_BRANDING.get(source_name, {}).get("institution", source_name)
         try:
             jobs = module.fetch_jobs()
             all_jobs.extend(jobs)
             status_entries.append({
                 "source": source_name,
-                "institution": jobs[0].institution if jobs else source_name,
+                "institution": display_name,
                 "status": "ok",
                 "error": None,
                 "checked_at": checked_at,
@@ -71,7 +75,7 @@ def run_scrapers(previous_status: dict) -> tuple[list, list]:
             traceback.print_exc()
             status_entries.append({
                 "source": source_name,
-                "institution": prev.get("institution", source_name),
+                "institution": display_name,
                 "status": "error",
                 "error": str(e),
                 "checked_at": checked_at,
@@ -80,6 +84,28 @@ def run_scrapers(previous_status: dict) -> tuple[list, list]:
             })
 
     return all_jobs, status_entries
+
+
+# Aggregator boards surface postings already sourced directly from other
+# institutions in this project — dedupe them against the direct sources.
+AGGREGATOR_SOURCES = {"National Museums"}
+
+
+def dedupe_aggregators(all_jobs: list) -> list:
+    """Drop an aggregator's listing when its title exactly matches (case-insensitive)
+    a job already found from a different, non-aggregator institution this run —
+    keeps the direct source's listing instead of double-notifying for the same
+    underlying vacancy (e.g. National Museums re-listing a National Gallery role).
+    """
+    direct_titles = {
+        job.title.strip().lower()
+        for job in all_jobs
+        if job.institution not in AGGREGATOR_SOURCES
+    }
+    return [
+        job for job in all_jobs
+        if not (job.institution in AGGREGATOR_SOURCES and job.title.strip().lower() in direct_titles)
+    ]
 
 
 def main():
@@ -98,6 +124,7 @@ def main():
         record["closing_date_iso"] = closing.isoformat() if closing else None
 
     all_jobs, status_entries = run_scrapers(previous_status)
+    all_jobs = dedupe_aggregators(all_jobs)
 
     new_matches = []
     for job in all_jobs:
