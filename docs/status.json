@@ -1,20 +1,20 @@
 [
   {
     "source": "british_museum",
-    "institution": "british_museum",
-    "status": "error",
-    "error": "British Museum: no job links found — site structure may have changed or access is blocked",
-    "checked_at": "2026-08-26T13:26:50+00:00",
-    "last_success": null,
-    "jobs_found": 0
+    "institution": "British Museum",
+    "status": "ok",
+    "error": null,
+    "checked_at": "2026-08-26T13:48:27+00:00",
+    "last_success": "2026-08-26T13:48:27+00:00",
+    "jobs_found": 9
   },
   {
     "source": "tate",
     "institution": "Tate",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T13:26:50+00:00",
-    "last_success": "2026-08-26T13:26:50+00:00",
+    "checked_at": "2026-08-26T13:48:27+00:00",
+    "last_success": "2026-08-26T13:48:27+00:00",
     "jobs_found": 10
   },
   {
@@ -22,17 +22,17 @@
     "institution": "King's College London",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T13:26:50+00:00",
-    "last_success": "2026-08-26T13:26:50+00:00",
-    "jobs_found": 27
+    "checked_at": "2026-08-26T13:48:27+00:00",
+    "last_success": "2026-08-26T13:48:27+00:00",
+    "jobs_found": 30
   },
   {
     "source": "vam",
     "institution": "Victoria and Albert Museum",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T13:26:50+00:00",
-    "last_success": "2026-08-26T13:26:50+00:00",
+    "checked_at": "2026-08-26T13:48:27+00:00",
+    "last_success": "2026-08-26T13:48:27+00:00",
     "jobs_found": 12
   },
   {
@@ -40,8 +40,8 @@
     "institution": "Barbican Centre",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T13:26:50+00:00",
-    "last_success": "2026-08-26T13:26:50+00:00",
+    "checked_at": "2026-08-26T13:48:27+00:00",
+    "last_success": "2026-08-26T13:48:27+00:00",
     "jobs_found": 1
   },
   {
@@ -49,8 +49,8 @@
     "institution": "ArtsJobs UK",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T13:26:50+00:00",
-    "last_success": "2026-08-26T13:26:50+00:00",
+    "checked_at": "2026-08-26T13:48:27+00:00",
+    "last_success": "2026-08-26T13:48:27+00:00",
     "jobs_found": 60
   },
   {
@@ -58,8 +58,8 @@
     "institution": "Southbank Centre",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T13:26:50+00:00",
-    "last_success": "2026-08-26T13:26:50+00:00",
+    "checked_at": "2026-08-26T13:48:27+00:00",
+    "last_success": "2026-08-26T13:48:27+00:00",
     "jobs_found": 3
   },
   {
@@ -67,8 +67,8 @@
     "institution": "National Gallery",
     "status": "ok",
     "error": null,
-    "checked_at": "2026-08-26T13:26:50+00:00",
-    "last_success": "2026-08-26T13:26:50+00:00",
+    "checked_at": "2026-08-26T13:48:27+00:00",
+    "last_success": "2026-08-26T13:48:27+00:00",
     "jobs_found": 8
   }
 ]
