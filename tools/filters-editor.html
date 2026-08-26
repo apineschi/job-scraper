@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Scraper Filters (local editor)</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #1a1d24;
+    --border: #2a2e37;
+    --text: #e8e9ec;
+    --muted: #9198a5;
+    --accent: #3ecf6e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 0.25rem; }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.5; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.3rem; margin-top: 0.9rem; }
+  label:first-child { margin-top: 0; }
+  input[type="text"], input[type="number"], select, textarea {
+    width: 100%;
+    background: #11141a;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    padding: 0.5rem 0.6rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+  }
+  textarea { font-family: ui-monospace, Consolas, monospace; font-size: 0.82rem; resize: vertical; }
+  .hint { color: var(--muted); font-size: 0.78rem; margin-top: 0.25rem; }
+  .row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  button {
+    background: var(--accent);
+    color: #0f1115;
+    border: none;
+    border-radius: 6px;
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  button:hover { opacity: 0.9; }
+  #status { font-size: 0.82rem; color: var(--accent); margin-top: 0.6rem; min-height: 1.2em; }
+  .steps { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
+  .steps b { color: var(--text); }
+</style>
+</head>
+<body>
+  <h1>Job Scraper Filters</h1>
+  <div class="subtitle">
+    Runs entirely in this browser tab — nothing is uploaded anywhere. Open your current
+    <code>config.yaml</code> below, adjust the filters, then save the result over the
+    existing file and commit/push it like any other change.
+  </div>
+
+  <div class="card">
+    <label>Load your current config.yaml (optional — starts pre-filled with sensible defaults)</label>
+    <input type="file" id="fileInput" accept=".yaml,.yml">
+    <div class="hint">Pick the <code>config.yaml</code> from your job-scraper folder to load its current values.</div>
+  </div>
+
+  <div class="card">
+    <label>Minimum salary (£/year)</label>
+    <input type="number" id="salaryMin" value="35000" step="1000" min="0">
+
+    <label>Employment type</label>
+    <select id="employmentType">
+      <option value="any">Any</option>
+      <option value="full_time">Full-time only</option>
+      <option value="part_time">Part-time only</option>
+    </select>
+
+    <label>Location</label>
+    <select id="location">
+      <option value="any">Any</option>
+      <option value="london">London only</option>
+      <option value="outside_london">Outside London only</option>
+    </select>
+
+    <label>Include keywords (job must contain at least one, if any set)</label>
+    <input type="text" id="includeKeywords" placeholder="e.g. curator, archivist">
+    <div class="hint">Comma-separated. Leave blank to not filter on this.</div>
+
+    <label>Exclude keywords (job is dropped if it contains any)</label>
+    <input type="text" id="excludeKeywords" placeholder="e.g. intern, volunteer">
+    <div class="hint">Comma-separated. Leave blank to not filter on this.</div>
+  </div>
+
+  <div class="card">
+    <label>Resulting config.yaml</label>
+    <textarea id="yamlOutput" rows="9" readonly></textarea>
+    <div class="row" style="margin-top:0.8rem;">
+      <button id="downloadBtn">Download config.yaml</button>
+      <button class="secondary" id="copyBtn">Copy to clipboard</button>
+    </div>
+    <div id="status"></div>
+  </div>
+
+  <div class="card steps">
+    <b>To apply:</b> save/replace <code>config.yaml</code> in your job-scraper folder with the
+    downloaded or copied content above, then commit and push (e.g. via GitHub Desktop) as usual.
+    The next scan run will use the new filters.
+  </div>
+
+<script>
+  const els = {
+    fileInput: document.getElementById('fileInput'),
+    salaryMin: document.getElementById('salaryMin'),
+    employmentType: document.getElementById('employmentType'),
+    location: document.getElementById('location'),
+    includeKeywords: document.getElementById('includeKeywords'),
+    excludeKeywords: document.getElementById('excludeKeywords'),
+    yamlOutput: document.getElementById('yamlOutput'),
+    downloadBtn: document.getElementById('downloadBtn'),
+    copyBtn: document.getElementById('copyBtn'),
+    status: document.getElementById('status'),
+  };
+
+  function parseKeywordList(raw) {
+    return raw.split(',').map(s => s.trim()).filter(Boolean);
+  }
+
+  function buildYaml() {
+    const salary = parseInt(els.salaryMin.value, 10) || 0;
+    const employmentType = els.employmentType.value;
+    const location = els.location.value;
+    const include = parseKeywordList(els.includeKeywords.value);
+    const exclude = parseKeywordList(els.excludeKeywords.value);
+
+    const incStr = include.length ? `[${include.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
+    const excStr = exclude.length ? `[${exclude.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
+
+    return `# Job alert filters. Edit these values and push to change what you get notified about.
+filters:
+  salary_min: ${salary}
+  employment_type: ${employmentType}        # full_time | part_time | any
+  location: ${location}                 # london | outside_london | any
+  include_keywords: ${incStr}          # job must contain at least one of these (in title/institution) if non-empty
+  exclude_keywords: ${excStr}          # job is dropped if it contains any of these
+`;
+  }
+
+  function refresh() {
+    els.yamlOutput.value = buildYaml();
+  }
+
+  function parseExistingYaml(text) {
+    const salaryMatch = text.match(/salary_min:\s*(\d+)/);
+    const empMatch = text.match(/employment_type:\s*(\w+)/);
+    const locMatch = text.match(/location:\s*(\w+)/);
+    const incMatch = text.match(/include_keywords:\s*\[(.*?)\]/);
+    const excMatch = text.match(/exclude_keywords:\s*\[(.*?)\]/);
+
+    function parseFlowList(raw) {
+      if (!raw || !raw.trim()) return [];
+      return raw.split(',').map(s => s.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
+    }
+
+    if (salaryMatch) els.salaryMin.value = salaryMatch[1];
+    if (empMatch) els.employmentType.value = empMatch[1];
+    if (locMatch) els.location.value = locMatch[1];
+    els.includeKeywords.value = parseFlowList(incMatch ? incMatch[1] : '').join(', ');
+    els.excludeKeywords.value = parseFlowList(excMatch ? excMatch[1] : '').join(', ');
+    refresh();
+    els.status.textContent = 'Loaded current config.yaml values.';
+  }
+
+  els.fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => parseExistingYaml(reader.result);
+    reader.readAsText(file);
+  });
+
+  [els.salaryMin, els.employmentType, els.location, els.includeKeywords, els.excludeKeywords]
+    .forEach(el => el.addEventListener('input', refresh));
+
+  els.downloadBtn.addEventListener('click', () => {
+    const blob = new Blob([els.yamlOutput.value], { type: 'text/yaml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'config.yaml';
+    a.click();
+    URL.revokeObjectURL(url);
+    els.status.textContent = 'Downloaded — move it into your job-scraper folder, replacing the existing config.yaml.';
+  });
+
+  els.copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(els.yamlOutput.value);
+      els.status.textContent = 'Copied to clipboard.';
+    } catch (e) {
+      els.status.textContent = 'Could not access clipboard — select the text above and copy manually.';
+    }
+  });
+
+  refresh();
+</script>
+</body>
+</html>
