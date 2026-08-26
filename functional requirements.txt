@@ -1,0 +1,4 @@
+-an app that can look through a database of job boards and institution vacancy pages to alert the user to new jobs which fit certain requirements
+-user can set requirements for salary minimums, fulltime/part time, london or outside of london, exclude or include specific keywords
+-should send immediate push notifications to the phone and/or email when new jobs get posted
+-should have a status interface to show when connections to specific boards are not working (ie it can't pull from the british museum website)
