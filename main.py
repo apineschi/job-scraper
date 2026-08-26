@@ -6,7 +6,7 @@ from datetime import date, datetime, timezone
 
 import yaml
 
-from notify.branding import DEFAULT_STYLE, INSTITUTION_STYLE
+from notify.branding import DEFAULT_STYLE, INSTITUTION_STYLE, SOURCE_BRANDING
 from notify.email import format_digest, format_digest_html
 from notify.ntfy import send_push
 from scrapers import SOURCES
@@ -114,7 +114,11 @@ def main():
 
     save_json(SEEN_JOBS_PATH, seen_jobs)
     save_json(STATUS_PATH, status_entries)
-    save_json(BRANDING_PATH, {"institutions": INSTITUTION_STYLE, "default": DEFAULT_STYLE})
+    save_json(BRANDING_PATH, {
+        "institutions": INSTITUTION_STYLE,
+        "sources": SOURCE_BRANDING,
+        "default": DEFAULT_STYLE,
+    })
 
     # Jobs past their closing date drop off the *displayed* list (docs/jobs.json)
     # but stay in data/seen_jobs.json forever — that file is the research archive,
