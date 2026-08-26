@@ -606,9 +606,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "part_time",
-    "closing_date": "Not found",
+    "closing_date": "31 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   {
     "institution": "Victoria and Albert Museum",
@@ -619,9 +620,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-30"
   },
   {
     "institution": "Victoria and Albert Museum",
@@ -632,9 +634,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "both",
-    "closing_date": "Not found",
+    "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-30"
   },
   {
     "institution": "Victoria and Albert Museum",
@@ -645,9 +648,10 @@
     "location_text": "Queen Elizabeth Olympic Park, Stratford, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-02"
   },
   {
     "institution": "Victoria and Albert Museum",
@@ -658,9 +662,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-02"
   },
   {
     "institution": "Victoria and Albert Museum",
@@ -671,9 +676,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "20 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-20"
   },
   {
     "institution": "Victoria and Albert Museum",
@@ -684,9 +690,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-02"
   },
   {
     "institution": "Victoria and Albert Museum",
@@ -697,9 +704,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-02"
   },
   {
     "institution": "Barbican Centre",

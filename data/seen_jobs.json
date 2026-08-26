@@ -463,9 +463,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "part_time",
-    "closing_date": "Not found",
+    "closing_date": "31 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4286757?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Collections+Care+and+Access+Coordinator&l=": {
     "institution": "Victoria and Albert Museum",
@@ -476,9 +477,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-30"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4283751?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Accounts+Payable+Officer+-+Maternity+Cover&l=": {
     "institution": "Victoria and Albert Museum",
@@ -489,9 +491,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "part_time",
-    "closing_date": "Not found",
+    "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-30"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4280599?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Research+Fellowship+in+memory+of+Clive+Wainwright&l=": {
     "institution": "Victoria and Albert Museum",
@@ -502,9 +505,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "both",
-    "closing_date": "Not found",
+    "closing_date": "18 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-18"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4288291?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Procurement+Manager&l=": {
     "institution": "Victoria and Albert Museum",
@@ -515,9 +519,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "both",
-    "closing_date": "Not found",
+    "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-30"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4284887?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Marketing+Manager%2c+V%26A+East&l=": {
     "institution": "Victoria and Albert Museum",
@@ -528,9 +533,10 @@
     "location_text": "Queen Elizabeth Olympic Park, Stratford, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-02"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4285440?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Senior+Manager%2c+Marketing+Planning&l=": {
     "institution": "Victoria and Albert Museum",
@@ -541,9 +547,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-02"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4286845?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Lead+Conservator+(Books%2c+Paper+and+Photographs)&l=": {
     "institution": "Victoria and Albert Museum",
@@ -554,9 +561,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "20 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-20"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4285442?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Volunteering+Project+Lead&l=": {
     "institution": "Victoria and Albert Museum",
@@ -567,9 +575,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "31 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-31"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4284904?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Senior+Manager%2c+Customer+Growth&l=": {
     "institution": "Victoria and Albert Museum",
@@ -580,9 +589,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-02"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4284891?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Brand+and+Venue+Marketing+Lead&l=": {
     "institution": "Victoria and Albert Museum",
@@ -593,9 +603,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "full_time",
-    "closing_date": "Not found",
+    "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-02"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4298131?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Junior+Graphic+Designer&l=": {
     "institution": "Victoria and Albert Museum",
@@ -606,9 +617,10 @@
     "location_text": "Cromwell Road, London",
     "is_london": true,
     "employment_type": "part_time",
-    "closing_date": "Not found",
+    "closing_date": "13 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.barbican.org.uk/our-story/our-people/careers/technician-lighting-bias-0": {
     "institution": "Barbican Centre",
