@@ -3,6 +3,8 @@ import sys
 
 import requests
 
+from .branding import style_for
+
 NTFY_BASE_URL = "https://ntfy.sh"
 
 
@@ -33,6 +35,7 @@ def send_push(jobs: list) -> None:
                     "Title": job.title.encode("utf-8"),
                     "Click": job.url.encode("utf-8"),
                     "Priority": "default",
+                    "Tags": style_for(job.institution)["emoji_tag"],
                 },
                 timeout=15,
             )

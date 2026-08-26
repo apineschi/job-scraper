@@ -32,9 +32,6 @@ jobs:
         run: |
           python main.py > results.txt
           cat results.txt
-          echo "SCRAPER_BODY<<EOF" >> $GITHUB_ENV
-          cat results.txt >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
 
           if grep -q "FOUND" results.txt; then
             echo "MATCH_FOUND=true" >> $GITHUB_ENV
@@ -51,10 +48,7 @@ jobs:
           subject: "Job Alert: New Match Found!"
           to: ${{ secrets.EMAIL_TO }}
           from: "Job Scraper Bot"
-          body: |
-            The scraper found new matches!
-
-            ${{ env.SCRAPER_BODY }}
+          html_body: file://email_digest.html
 
       - name: Save scan results
         if: always()

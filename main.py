@@ -5,7 +5,7 @@ import traceback
 
 import yaml
 
-from notify.email import format_digest
+from notify.email import format_digest, format_digest_html
 from notify.ntfy import send_push
 from scrapers import SOURCES
 from scrapers.base import matches_filters, now_iso
@@ -15,6 +15,7 @@ CONFIG_PATH = os.path.join(ROOT, "config.yaml")
 SEEN_JOBS_PATH = os.path.join(ROOT, "data", "seen_jobs.json")
 STATUS_PATH = os.path.join(ROOT, "docs", "status.json")
 JOBS_PATH = os.path.join(ROOT, "docs", "jobs.json")
+EMAIL_HTML_PATH = os.path.join(ROOT, "email_digest.html")
 MAX_RECENT_JOBS = 100
 
 
@@ -112,6 +113,9 @@ def main():
 
     digest = format_digest(new_matches)
     print(digest)
+
+    with open(EMAIL_HTML_PATH, "w", encoding="utf-8") as f:
+        f.write(format_digest_html(new_matches))
 
     if new_matches:
         send_push(new_matches)
