@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import traceback
 
 import yaml
@@ -59,7 +60,10 @@ def run_scrapers(previous_status: dict) -> tuple[list, list]:
                 "jobs_found": len(jobs),
             })
         except Exception as e:
-            print(f"[{source_name}] FAILED: {e}")
+            # stderr, not stdout: the workflow captures stdout verbatim into the
+            # user-facing email body, and scraper failures belong in the Action log
+            # and the status dashboard, not in an alert email about new jobs.
+            print(f"[{source_name}] FAILED: {e}", file=sys.stderr)
             traceback.print_exc()
             status_entries.append({
                 "source": source_name,
