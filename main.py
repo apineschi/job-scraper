@@ -2,7 +2,7 @@ import json
 import os
 import sys
 import traceback
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 import yaml
 
@@ -89,6 +89,12 @@ def main():
     seen_jobs = load_json(SEEN_JOBS_PATH, {})
     previous_status = {entry["source"]: entry for entry in load_json(STATUS_PATH, [])}
 
+    # Backfill closing_date_iso for records written before that field existed.
+    for record in seen_jobs.values():
+        if "closing_date_iso" not in record:
+            closing = parse_closing_date(record.get("closing_date", ""))
+            record["closing_date_iso"] = closing.isoformat() if closing else None
+
     all_jobs, status_entries = run_scrapers(previous_status)
 
     new_matches = []
@@ -99,6 +105,8 @@ def main():
             matched = matches_filters(job, filters)
             record = job.to_dict()
             record["matched"] = matched
+            closing = parse_closing_date(job.closing_date)
+            record["closing_date_iso"] = closing.isoformat() if closing else None
             seen_jobs[job.url] = record
             if matched:
                 new_matches.append(job)
@@ -115,8 +123,8 @@ def main():
     today = datetime.now(timezone.utc).date()
 
     def is_expired(record: dict) -> bool:
-        closing = parse_closing_date(record.get("closing_date", ""))
-        return closing is not None and closing < today
+        iso = record.get("closing_date_iso")
+        return bool(iso) and date.fromisoformat(iso) < today
 
     recent_matches = sorted(
         (v for v in seen_jobs.values() if v.get("matched") and not is_expired(v)),

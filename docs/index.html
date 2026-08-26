@@ -56,6 +56,19 @@
   .job a { color: #111; text-decoration: none; font-weight: 600; }
   .job a:hover { text-decoration: underline; }
   .job .meta { margin-top: 0.3rem; }
+  .job-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.6rem; }
+  .closing-soon {
+    background: #ffd6d6;
+    color: #7a1a1a;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
   .empty { color: var(--muted); font-size: 0.9rem; }
 </style>
 </head>
@@ -134,13 +147,30 @@
         return;
       }
 
+      const todayMidnight = new Date();
+      todayMidnight.setHours(0, 0, 0, 0);
+
       jobs.forEach(j => {
         const style = branding.institutions[j.institution] || branding.default;
+
+        let closingSoonBadge = '';
+        if (j.closing_date_iso) {
+          const closing = new Date(j.closing_date_iso + 'T00:00:00');
+          const daysLeft = Math.round((closing - todayMidnight) / 86400000);
+          if (daysLeft >= 0 && daysLeft <= 3) {
+            const label = daysLeft === 0 ? 'Closes today' : daysLeft === 1 ? '1 day left' : `${daysLeft} days left`;
+            closingSoonBadge = `<span class="closing-soon">${label}</span>`;
+          }
+        }
+
         const el = document.createElement('div');
         el.className = 'job';
         el.style.background = style.color;
         el.innerHTML = `
-          <a href="${j.url}" target="_blank" rel="noopener">${style.emoji || ''} ${j.title}</a>
+          <div class="job-top">
+            <a href="${j.url}" target="_blank" rel="noopener">${style.emoji || ''} ${j.title}</a>
+            ${closingSoonBadge}
+          </div>
           <div class="meta">
             ${j.institution} · ${j.salary_text} · ${j.location_text}<br>
             Closes: ${j.closing_date} · First seen: ${fmtDate(j.first_seen)}
