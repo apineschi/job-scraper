@@ -89,11 +89,13 @@ def main():
     seen_jobs = load_json(SEEN_JOBS_PATH, {})
     previous_status = {entry["source"]: entry for entry in load_json(STATUS_PATH, [])}
 
-    # Backfill closing_date_iso for records written before that field existed.
+    # Recompute closing_date_iso for every record each run rather than only when
+    # missing — cheap (pure string parsing, no network calls), and self-heals if a
+    # git merge of this JSON file (bot-committed scan results vs. manual edits)
+    # ever drops or staples in a stale value for some records, as happened once.
     for record in seen_jobs.values():
-        if "closing_date_iso" not in record:
-            closing = parse_closing_date(record.get("closing_date", ""))
-            record["closing_date_iso"] = closing.isoformat() if closing else None
+        closing = parse_closing_date(record.get("closing_date", ""))
+        record["closing_date_iso"] = closing.isoformat() if closing else None
 
     all_jobs, status_entries = run_scrapers(previous_status)
 

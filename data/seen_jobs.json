@@ -10,7 +10,8 @@
     "employment_type": "full_time",
     "closing_date": "30 September, 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-30"
   },
   "https://jobsearch.tate.org.uk/jobs/job/Waiting-Staff/869": {
     "institution": "Tate",
@@ -23,7 +24,8 @@
     "employment_type": "full_time",
     "closing_date": "30 September, 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-30"
   },
   "https://jobsearch.tate.org.uk/jobs/job/TG34309867-Marketing-Officer/867": {
     "institution": "Tate",
@@ -36,7 +38,8 @@
     "employment_type": "full_time",
     "closing_date": "1 September, 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-01"
   },
   "https://jobsearch.tate.org.uk/jobs/job/Pastry-Chef-de-Partie-Restaurant/843": {
     "institution": "Tate",
@@ -49,7 +52,8 @@
     "employment_type": "full_time",
     "closing_date": "31 August, 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-31"
   },
   "https://jobsearch.tate.org.uk/jobs/job/Head-Chef-Production-Kitchen-Corner-Bar/842": {
     "institution": "Tate",
@@ -62,7 +66,8 @@
     "employment_type": "full_time",
     "closing_date": "31 August, 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://jobsearch.tate.org.uk/jobs/job/Head-Chef-Restaurant/841": {
     "institution": "Tate",
@@ -75,7 +80,8 @@
     "employment_type": "full_time",
     "closing_date": "31 August, 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://jobsearch.tate.org.uk/jobs/job/Brooks-International-Fellow-Programme/839": {
     "institution": "Tate",
@@ -101,7 +107,8 @@
     "employment_type": "full_time",
     "closing_date": "30 August, 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-30"
   },
   "https://www.kcl.ac.uk/jobs/155766-a-star-research-assistant": {
     "institution": "King's College London",
@@ -114,7 +121,8 @@
     "employment_type": "full_time",
     "closing_date": "06 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.kcl.ac.uk/jobs/155445-alumni-and-stakeholder-engagement-manager": {
     "institution": "King's College London",
@@ -127,7 +135,8 @@
     "employment_type": "full_time",
     "closing_date": "06 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.kcl.ac.uk/jobs/151185-associate-hr-business-partner": {
     "institution": "King's College London",
@@ -140,7 +149,8 @@
     "employment_type": "full_time",
     "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-30"
   },
   "https://www.kcl.ac.uk/jobs/151106-av-technician": {
     "institution": "King's College London",
@@ -153,7 +163,8 @@
     "employment_type": "full_time",
     "closing_date": "26 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-26"
   },
   "https://www.kcl.ac.uk/jobs/154725-carbon-reduction-officer": {
     "institution": "King's College London",
@@ -166,7 +177,8 @@
     "employment_type": "full_time",
     "closing_date": "31 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://www.kcl.ac.uk/jobs/156245-cleaning-supervisor-internal-only": {
     "institution": "King's College London",
@@ -179,7 +191,8 @@
     "employment_type": "part_time",
     "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-30"
   },
   "https://www.kcl.ac.uk/jobs/154086-clinical-research-associate": {
     "institution": "King's College London",
@@ -192,7 +205,8 @@
     "employment_type": "part_time",
     "closing_date": "27 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-27"
   },
   "https://www.kcl.ac.uk/jobs/155765-clinical-research-fellow": {
     "institution": "King's College London",
@@ -205,7 +219,8 @@
     "employment_type": "full_time",
     "closing_date": "01 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-01"
   },
   "https://www.kcl.ac.uk/jobs/155785-clinical-research-fellow-in-adult-congenital-cardiac-mri": {
     "institution": "King's College London",
@@ -218,7 +233,8 @@
     "employment_type": "full_time",
     "closing_date": "06 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.kcl.ac.uk/jobs/155987-clinical-research-practitioner": {
     "institution": "King's College London",
@@ -231,7 +247,8 @@
     "employment_type": "full_time",
     "closing_date": "06 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.kcl.ac.uk/jobs/154605-commercial-trials-associate": {
     "institution": "King's College London",
@@ -244,7 +261,8 @@
     "employment_type": "full_time",
     "closing_date": "28 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-28"
   },
   "https://www.kcl.ac.uk/jobs/154365-computer-scientist": {
     "institution": "King's College London",
@@ -257,7 +275,8 @@
     "employment_type": "full_time",
     "closing_date": "31 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://www.kcl.ac.uk/jobs/154765-css-trainer": {
     "institution": "King's College London",
@@ -270,7 +289,8 @@
     "employment_type": "full_time",
     "closing_date": "06 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.kcl.ac.uk/jobs/155285-digit-mhg-research-coordinator": {
     "institution": "King's College London",
@@ -283,7 +303,8 @@
     "employment_type": "full_time",
     "closing_date": "27 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-27"
   },
   "https://www.kcl.ac.uk/jobs/153446-digital-content-officer": {
     "institution": "King's College London",
@@ -296,7 +317,8 @@
     "employment_type": "full_time",
     "closing_date": "12 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-12"
   },
   "https://www.kcl.ac.uk/jobs/154466-director-of-academic-freedom-and-freedom-of-expression": {
     "institution": "King's College London",
@@ -309,7 +331,8 @@
     "employment_type": "unknown",
     "closing_date": "09 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-09"
   },
   "https://www.kcl.ac.uk/jobs/154565-director-of-education-senior-lecturer-internal-only": {
     "institution": "King's College London",
@@ -322,7 +345,8 @@
     "employment_type": "full_time",
     "closing_date": "01 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-01"
   },
   "https://www.kcl.ac.uk/jobs/154427-electrical-engineer-strand": {
     "institution": "King's College London",
@@ -335,7 +359,8 @@
     "employment_type": "full_time",
     "closing_date": "26 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-26"
   },
   "https://www.kcl.ac.uk/jobs/156165-engineering-supervisor-electrical": {
     "institution": "King's College London",
@@ -348,7 +373,8 @@
     "employment_type": "full_time",
     "closing_date": "13 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.kcl.ac.uk/jobs/152685-executive-dean-social-science-and-public-policy": {
     "institution": "King's College London",
@@ -361,7 +387,8 @@
     "employment_type": "unknown",
     "closing_date": "07 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-07"
   },
   "https://www.kcl.ac.uk/jobs/156005-executive-director-of-the-visual-commentary-on-scripture-project-internal-only": {
     "institution": "King's College London",
@@ -374,7 +401,8 @@
     "employment_type": "full_time",
     "closing_date": "27 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-27"
   },
   "https://www.kcl.ac.uk/jobs/156305-handyperson-strand": {
     "institution": "King's College London",
@@ -387,7 +415,8 @@
     "employment_type": "full_time",
     "closing_date": "07 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-07"
   },
   "https://www.kcl.ac.uk/jobs/156185-handyperson-waterloo": {
     "institution": "King's College London",
@@ -400,7 +429,8 @@
     "employment_type": "full_time",
     "closing_date": "07 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-07"
   },
   "https://www.kcl.ac.uk/jobs/154966-head-of-business-operations-internal-only": {
     "institution": "King's College London",
@@ -413,7 +443,8 @@
     "employment_type": "full_time",
     "closing_date": "31 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://www.kcl.ac.uk/jobs/155465-inplace-product-owner": {
     "institution": "King's College London",
@@ -426,7 +457,8 @@
     "employment_type": "full_time",
     "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-30"
   },
   "https://www.kcl.ac.uk/jobs/156246-institute-manager-global-health-part-time-internal-only": {
     "institution": "King's College London",
@@ -439,7 +471,8 @@
     "employment_type": "part_time",
     "closing_date": "02 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-02"
   },
   "https://www.kcl.ac.uk/jobs/156006-junior-research-data-scientist": {
     "institution": "King's College London",
@@ -452,7 +485,8 @@
     "employment_type": "full_time",
     "closing_date": "03 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-03"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4292654?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Research+Fellow%3a+Library+Provenance&l=": {
     "institution": "Victoria and Albert Museum",
@@ -633,7 +667,8 @@
     "employment_type": "full_time",
     "closing_date": "23:55, Thursday 3rd September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-03"
   },
   "https://www.artsjobs.org.uk/jobs/search/84055": {
     "institution": "ArtsJobs UK",
@@ -646,7 +681,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 27 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-27"
   },
   "https://www.artsjobs.org.uk/jobs/search/84051": {
     "institution": "ArtsJobs UK",
@@ -659,7 +695,8 @@
     "employment_type": "part_time",
     "closing_date": "Mon, 14 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-14"
   },
   "https://www.artsjobs.org.uk/jobs/search/84050": {
     "institution": "ArtsJobs UK",
@@ -672,7 +709,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 11 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84048": {
     "institution": "ArtsJobs UK",
@@ -685,7 +723,8 @@
     "employment_type": "part_time",
     "closing_date": "Tue, 22 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-22"
   },
   "https://www.artsjobs.org.uk/jobs/search/84047": {
     "institution": "ArtsJobs UK",
@@ -698,7 +737,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 07 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-07"
   },
   "https://www.artsjobs.org.uk/jobs/search/84042": {
     "institution": "ArtsJobs UK",
@@ -711,7 +751,8 @@
     "employment_type": "full_time",
     "closing_date": "Wed, 30 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/84034": {
     "institution": "ArtsJobs UK",
@@ -724,7 +765,8 @@
     "employment_type": "part_time",
     "closing_date": "Wed, 02 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-02"
   },
   "https://www.artsjobs.org.uk/jobs/search/84033": {
     "institution": "ArtsJobs UK",
@@ -737,7 +779,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 06 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.artsjobs.org.uk/jobs/search/84032": {
     "institution": "ArtsJobs UK",
@@ -750,7 +793,8 @@
     "employment_type": "part_time",
     "closing_date": "Fri, 04 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/84030": {
     "institution": "ArtsJobs UK",
@@ -763,7 +807,8 @@
     "employment_type": "part_time",
     "closing_date": "Tue, 01 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/84029": {
     "institution": "ArtsJobs UK",
@@ -776,7 +821,8 @@
     "employment_type": "part_time",
     "closing_date": "Fri, 18 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/84025": {
     "institution": "ArtsJobs UK",
@@ -789,7 +835,8 @@
     "employment_type": "part_time",
     "closing_date": "Sun, 06 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.artsjobs.org.uk/jobs/search/83976": {
     "institution": "ArtsJobs UK",
@@ -802,7 +849,8 @@
     "employment_type": "full_time",
     "closing_date": "Wed, 30 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83939": {
     "institution": "ArtsJobs UK",
@@ -815,7 +863,8 @@
     "employment_type": "full_time",
     "closing_date": "Tue, 15 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-15"
   },
   "https://www.artsjobs.org.uk/jobs/search/83793": {
     "institution": "ArtsJobs UK",
@@ -828,7 +877,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 20 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/83993": {
     "institution": "ArtsJobs UK",
@@ -841,7 +891,8 @@
     "employment_type": "part_time",
     "closing_date": "Sun, 30 Aug 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83942": {
     "institution": "ArtsJobs UK",
@@ -854,7 +905,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 31 Aug 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-31"
   },
   "https://www.artsjobs.org.uk/jobs/search/83926": {
     "institution": "ArtsJobs UK",
@@ -867,7 +919,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 30 Nov 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-11-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83851": {
     "institution": "ArtsJobs UK",
@@ -880,7 +933,8 @@
     "employment_type": "part_time",
     "closing_date": "Fri, 04 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/83849": {
     "institution": "ArtsJobs UK",
@@ -893,7 +947,8 @@
     "employment_type": "part_time",
     "closing_date": "Tue, 01 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/83474": {
     "institution": "ArtsJobs UK",
@@ -906,7 +961,8 @@
     "employment_type": "part_time",
     "closing_date": "Fri, 04 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/84024": {
     "institution": "ArtsJobs UK",
@@ -919,7 +975,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 14 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-14"
   },
   "https://www.artsjobs.org.uk/jobs/search/84021": {
     "institution": "ArtsJobs UK",
@@ -932,7 +989,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 11 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84020": {
     "institution": "ArtsJobs UK",
@@ -945,7 +1003,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 21 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84015": {
     "institution": "ArtsJobs UK",
@@ -958,7 +1017,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 21 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84014": {
     "institution": "ArtsJobs UK",
@@ -971,7 +1031,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 07 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-07"
   },
   "https://www.artsjobs.org.uk/jobs/search/84011": {
     "institution": "ArtsJobs UK",
@@ -984,7 +1045,8 @@
     "employment_type": "full_time",
     "closing_date": "Tue, 08 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-08"
   },
   "https://www.artsjobs.org.uk/jobs/search/84010": {
     "institution": "ArtsJobs UK",
@@ -997,7 +1059,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 13 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84008": {
     "institution": "ArtsJobs UK",
@@ -1010,7 +1073,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 25 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-25"
   },
   "https://www.artsjobs.org.uk/jobs/search/83998": {
     "institution": "ArtsJobs UK",
@@ -1023,7 +1087,8 @@
     "employment_type": "full_time",
     "closing_date": "Tue, 08 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-08"
   },
   "https://www.artsjobs.org.uk/jobs/search/83992": {
     "institution": "ArtsJobs UK",
@@ -1036,7 +1101,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 28 Aug 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-28"
   },
   "https://www.artsjobs.org.uk/jobs/search/83951": {
     "institution": "ArtsJobs UK",
@@ -1049,7 +1115,8 @@
     "employment_type": "both",
     "closing_date": "Tue, 15 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-15"
   },
   "https://www.artsjobs.org.uk/jobs/search/84007": {
     "institution": "ArtsJobs UK",
@@ -1062,7 +1129,8 @@
     "employment_type": "part_time",
     "closing_date": "Sun, 20 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/84005": {
     "institution": "ArtsJobs UK",
@@ -1075,7 +1143,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 20 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/84002": {
     "institution": "ArtsJobs UK",
@@ -1088,7 +1157,8 @@
     "employment_type": "part_time",
     "closing_date": "Fri, 18 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/84001": {
     "institution": "ArtsJobs UK",
@@ -1101,7 +1171,8 @@
     "employment_type": "part_time",
     "closing_date": "Fri, 18 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/83999": {
     "institution": "ArtsJobs UK",
@@ -1114,7 +1185,8 @@
     "employment_type": "full_time",
     "closing_date": "Wed, 16 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-16"
   },
   "https://www.artsjobs.org.uk/jobs/search/83995": {
     "institution": "ArtsJobs UK",
@@ -1127,7 +1199,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 07 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-07"
   },
   "https://www.artsjobs.org.uk/jobs/search/83981": {
     "institution": "ArtsJobs UK",
@@ -1140,7 +1213,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 18 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/83941": {
     "institution": "ArtsJobs UK",
@@ -1153,7 +1227,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 20 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/83807": {
     "institution": "ArtsJobs UK",
@@ -1166,7 +1241,8 @@
     "employment_type": "part_time",
     "closing_date": "Fri, 18 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/83991": {
     "institution": "ArtsJobs UK",
@@ -1179,7 +1255,8 @@
     "employment_type": "part_time",
     "closing_date": "Wed, 21 Oct 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-10-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/83990": {
     "institution": "ArtsJobs UK",
@@ -1192,7 +1269,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 06 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.artsjobs.org.uk/jobs/search/83989": {
     "institution": "ArtsJobs UK",
@@ -1205,7 +1283,8 @@
     "employment_type": "part_time",
     "closing_date": "Sun, 13 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/83985": {
     "institution": "ArtsJobs UK",
@@ -1218,7 +1297,8 @@
     "employment_type": "full_time",
     "closing_date": "Wed, 09 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-09"
   },
   "https://www.artsjobs.org.uk/jobs/search/83971": {
     "institution": "ArtsJobs UK",
@@ -1231,7 +1311,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 13 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/83946": {
     "institution": "ArtsJobs UK",
@@ -1244,7 +1325,8 @@
     "employment_type": "part_time",
     "closing_date": "Sun, 30 Aug 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83870": {
     "institution": "ArtsJobs UK",
@@ -1257,7 +1339,8 @@
     "employment_type": "part_time",
     "closing_date": "Wed, 09 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-09"
   },
   "https://www.artsjobs.org.uk/jobs/search/83874": {
     "institution": "ArtsJobs UK",
@@ -1270,7 +1353,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 13 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/83986": {
     "institution": "ArtsJobs UK",
@@ -1283,7 +1367,8 @@
     "employment_type": "part_time",
     "closing_date": "Sun, 20 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/83984": {
     "institution": "ArtsJobs UK",
@@ -1296,7 +1381,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 06 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.artsjobs.org.uk/jobs/search/83983": {
     "institution": "ArtsJobs UK",
@@ -1309,7 +1395,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 25 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-25"
   },
   "https://www.artsjobs.org.uk/jobs/search/83980": {
     "institution": "ArtsJobs UK",
@@ -1322,7 +1409,8 @@
     "employment_type": "part_time",
     "closing_date": "Wed, 30 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83979": {
     "institution": "ArtsJobs UK",
@@ -1335,7 +1423,8 @@
     "employment_type": "part_time",
     "closing_date": "Fri, 04 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/83978": {
     "institution": "ArtsJobs UK",
@@ -1348,7 +1437,8 @@
     "employment_type": "part_time",
     "closing_date": "Sun, 13 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/83974": {
     "institution": "ArtsJobs UK",
@@ -1361,7 +1451,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 30 Aug 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83972": {
     "institution": "ArtsJobs UK",
@@ -1374,7 +1465,8 @@
     "employment_type": "both",
     "closing_date": "Fri, 18 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/83970": {
     "institution": "ArtsJobs UK",
@@ -1387,7 +1479,8 @@
     "employment_type": "both",
     "closing_date": "Sun, 06 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://www.artsjobs.org.uk/jobs/search/83966": {
     "institution": "ArtsJobs UK",
@@ -1400,7 +1493,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 20 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/83962": {
     "institution": "ArtsJobs UK",
@@ -1413,7 +1507,8 @@
     "employment_type": "part_time",
     "closing_date": "Thu, 10 Sep 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-10"
   },
   "https://careers.southbankcentre.co.uk/en/postings/eb75c746-c668-4a53-9755-2bd0666f27f1": {
     "institution": "Southbank Centre",
@@ -1426,7 +1521,8 @@
     "employment_type": "full_time",
     "closing_date": "2026-08-30",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-30"
   },
   "https://careers.southbankcentre.co.uk/en/postings/80a869d2-d486-4e22-969c-e3e8a37918f9": {
     "institution": "Southbank Centre",
@@ -1439,7 +1535,8 @@
     "employment_type": "full_time",
     "closing_date": "2026-09-08",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-08"
   },
   "https://careers.southbankcentre.co.uk/en/postings/7a8f938d-a987-4abf-9550-0f3c222e2dff": {
     "institution": "Southbank Centre",
@@ -1452,7 +1549,8 @@
     "employment_type": "full_time",
     "closing_date": "2026-09-27",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-27"
   },
   "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/etrec179gf.open?WVID=7102672HeH&LANG=USA&VACANCY_ID=3637064oQ8": {
     "institution": "National Gallery",
@@ -1465,7 +1563,8 @@
     "employment_type": "full_time",
     "closing_date": "08/09/2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-08"
   },
   "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/etrec179gf.open?WVID=7102672HeH&LANG=USA&VACANCY_ID=8988124oQ8": {
     "institution": "National Gallery",
@@ -1478,7 +1577,8 @@
     "employment_type": "full_time",
     "closing_date": "13/09/2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-13"
   },
   "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/etrec179gf.open?WVID=7102672HeH&LANG=USA&VACANCY_ID=1481364niB": {
     "institution": "National Gallery",
@@ -1491,7 +1591,8 @@
     "employment_type": "full_time",
     "closing_date": "06/09/2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/etrec179gf.open?WVID=7102672HeH&LANG=USA&VACANCY_ID=5012234ncT": {
     "institution": "National Gallery",
@@ -1504,7 +1605,8 @@
     "employment_type": "full_time",
     "closing_date": "13/09/2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-13"
   },
   "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/etrec179gf.open?WVID=7102672HeH&LANG=USA&VACANCY_ID=7565854ncT": {
     "institution": "National Gallery",
@@ -1517,7 +1619,8 @@
     "employment_type": "full_time",
     "closing_date": "06/09/2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-06"
   },
   "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/etrec179gf.open?WVID=7102672HeH&LANG=USA&VACANCY_ID=6171534me4": {
     "institution": "National Gallery",
@@ -1530,7 +1633,8 @@
     "employment_type": "full_time",
     "closing_date": "06/09/2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/etrec179gf.open?WVID=7102672HeH&LANG=USA&VACANCY_ID=7835444lt0": {
     "institution": "National Gallery",
@@ -1543,7 +1647,8 @@
     "employment_type": "full_time",
     "closing_date": "31/08/2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://ce0838li.webitrent.com/ce0838li_webrecruitment/wrd/run/etrec179gf.open?WVID=7102672HeH&LANG=USA&VACANCY_ID=9370754i59": {
     "institution": "National Gallery",
@@ -1556,7 +1661,8 @@
     "employment_type": "full_time",
     "closing_date": "01/09/2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-01"
   },
   "https://jobsearch.tate.org.uk/jobs/job/Business-Development-Corporate-Membership-Executive/868": {
     "institution": "Tate",
@@ -1569,7 +1675,8 @@
     "employment_type": "full_time",
     "closing_date": "13 September, 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84054": {
     "institution": "ArtsJobs UK",
@@ -1582,7 +1689,8 @@
     "employment_type": "full_time",
     "closing_date": "Tue, 01 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/84053": {
     "institution": "ArtsJobs UK",
@@ -1595,7 +1703,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 28 Aug 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-28"
   },
   "https://www.artsjobs.org.uk/jobs/search/84044": {
     "institution": "ArtsJobs UK",
@@ -1608,7 +1717,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 11 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84041": {
     "institution": "ArtsJobs UK",
@@ -1621,7 +1731,8 @@
     "employment_type": "part_time",
     "closing_date": "Mon, 21 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84040": {
     "institution": "ArtsJobs UK",
@@ -1634,7 +1745,8 @@
     "employment_type": "part_time",
     "closing_date": "Mon, 21 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84038": {
     "institution": "ArtsJobs UK",
@@ -1647,7 +1759,8 @@
     "employment_type": "part_time",
     "closing_date": "Wed, 30 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/84037": {
     "institution": "ArtsJobs UK",
@@ -1660,7 +1773,8 @@
     "employment_type": "part_time",
     "closing_date": "Tue, 01 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/84036": {
     "institution": "ArtsJobs UK",
@@ -1673,7 +1787,8 @@
     "employment_type": "full_time",
     "closing_date": "Fri, 04 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/84035": {
     "institution": "ArtsJobs UK",
@@ -1686,7 +1801,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 07 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-07"
   },
   "https://www.artsjobs.org.uk/jobs/search/84013": {
     "institution": "ArtsJobs UK",
@@ -1699,7 +1815,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 14 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-14"
   },
   "https://www.artsjobs.org.uk/jobs/search/83875": {
     "institution": "ArtsJobs UK",
@@ -1712,7 +1829,8 @@
     "employment_type": "part_time",
     "closing_date": "Tue, 01 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/83873": {
     "institution": "ArtsJobs UK",
@@ -1725,7 +1843,8 @@
     "employment_type": "part_time",
     "closing_date": "Tue, 01 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/82852": {
     "institution": "ArtsJobs UK",
@@ -1738,7 +1857,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 28 Sep 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-28"
   },
   "https://jobsearch.tate.org.uk/jobs/job/Operations-Manager/866": {
     "institution": "Tate",
@@ -1751,7 +1871,8 @@
     "employment_type": "full_time",
     "closing_date": "3 September, 2026",
     "first_seen": "2026-08-26T13:30:19+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-03"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/9069/Associate-Director-of-Strategy-Planning-and-Governance": {
     "institution": "British Museum",
@@ -1764,7 +1885,8 @@
     "employment_type": "full_time",
     "closing_date": "08 September 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-08"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/9034/Administrator-for-the-Learning--Programmes-department": {
     "institution": "British Museum",
@@ -1777,7 +1899,8 @@
     "employment_type": "part_time",
     "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-30"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/8770/Development-Relations-Manager": {
     "institution": "British Museum",
@@ -1790,7 +1913,8 @@
     "employment_type": "full_time",
     "closing_date": "31 August 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/9020/Legal-Counsel": {
     "institution": "British Museum",
@@ -1803,7 +1927,8 @@
     "employment_type": "full_time",
     "closing_date": "31 August 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-31"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/8939/Philanthropy-Manager-Grants": {
     "institution": "British Museum",
@@ -1816,7 +1941,8 @@
     "employment_type": "full_time",
     "closing_date": "06 September 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/8984/Fundraising-Campaign-Project-Manager-Masterplan": {
     "institution": "British Museum",
@@ -1829,7 +1955,8 @@
     "employment_type": "full_time",
     "closing_date": "06 September 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-06"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/9012/Project-Curator-Cuneiform-Tablets": {
     "institution": "British Museum",
@@ -1842,7 +1969,8 @@
     "employment_type": "full_time",
     "closing_date": "27 August 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-27"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/8975/Project-Curator-Amazons-Exhibition": {
     "institution": "British Museum",
@@ -1855,7 +1983,8 @@
     "employment_type": "part_time",
     "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-08-30"
   },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/8992/Project-Curator-Ancient-Anatolia": {
     "institution": "British Museum",
@@ -1868,7 +1997,8 @@
     "employment_type": "full_time",
     "closing_date": "30 August 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-08-30"
   },
   "https://www.kcl.ac.uk/jobs/154845-kings-prize-fellowship": {
     "institution": "King's College London",
@@ -1881,7 +2011,8 @@
     "employment_type": "full_time",
     "closing_date": "26 October 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-10-26"
   },
   "https://www.kcl.ac.uk/jobs/154985-lecturer-in-computational-social-science": {
     "institution": "King's College London",
@@ -1894,7 +2025,8 @@
     "employment_type": "full_time",
     "closing_date": "15 September 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-15"
   },
   "https://www.kcl.ac.uk/jobs/154745-lecturer-in-creative-writing": {
     "institution": "King's College London",
@@ -1907,7 +2039,8 @@
     "employment_type": "part_time",
     "closing_date": "11 September 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true
+    "matched": true,
+    "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84062": {
     "institution": "ArtsJobs UK",
@@ -1920,7 +2053,8 @@
     "employment_type": "full_time",
     "closing_date": "Mon, 07 Sep 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-07"
   },
   "https://www.artsjobs.org.uk/jobs/search/84057": {
     "institution": "ArtsJobs UK",
@@ -1933,7 +2067,8 @@
     "employment_type": "full_time",
     "closing_date": "Sun, 13 Sep 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84056": {
     "institution": "ArtsJobs UK",
@@ -1946,6 +2081,7 @@
     "employment_type": "part_time",
     "closing_date": "Mon, 21 Sep 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": false
+    "matched": false,
+    "closing_date_iso": "2026-09-21"
   }
 }
