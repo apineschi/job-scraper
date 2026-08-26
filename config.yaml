@@ -1,7 +1,7 @@
 # Job alert filters. Edit these values and push to change what you get notified about.
 filters:
-  salary_min: 35000
-  employment_type: any        # full_time | part_time | any
+  salary_min: 38000
+  employment_type: full_time        # full_time | part_time | any
   location: any                 # london | outside_london | any
   include_keywords: []          # job must contain at least one of these (in title/institution) if non-empty
   exclude_keywords: []          # job is dropped if it contains any of these
