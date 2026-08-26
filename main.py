@@ -2,19 +2,22 @@ import json
 import os
 import sys
 import traceback
+from datetime import datetime, timezone
 
 import yaml
 
+from notify.branding import DEFAULT_STYLE, INSTITUTION_STYLE
 from notify.email import format_digest, format_digest_html
 from notify.ntfy import send_push
 from scrapers import SOURCES
-from scrapers.base import matches_filters, now_iso
+from scrapers.base import matches_filters, now_iso, parse_closing_date
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(ROOT, "config.yaml")
 SEEN_JOBS_PATH = os.path.join(ROOT, "data", "seen_jobs.json")
 STATUS_PATH = os.path.join(ROOT, "docs", "status.json")
 JOBS_PATH = os.path.join(ROOT, "docs", "jobs.json")
+BRANDING_PATH = os.path.join(ROOT, "docs", "branding.json")
 EMAIL_HTML_PATH = os.path.join(ROOT, "email_digest.html")
 MAX_RECENT_JOBS = 100
 
@@ -103,9 +106,20 @@ def main():
 
     save_json(SEEN_JOBS_PATH, seen_jobs)
     save_json(STATUS_PATH, status_entries)
+    save_json(BRANDING_PATH, {"institutions": INSTITUTION_STYLE, "default": DEFAULT_STYLE})
+
+    # Jobs past their closing date drop off the *displayed* list (docs/jobs.json)
+    # but stay in data/seen_jobs.json forever — that file is the research archive,
+    # this one is just "what's currently open". A closing date we can't parse
+    # (missing/malformed) is treated as "unknown, don't assume expired".
+    today = datetime.now(timezone.utc).date()
+
+    def is_expired(record: dict) -> bool:
+        closing = parse_closing_date(record.get("closing_date", ""))
+        return closing is not None and closing < today
 
     recent_matches = sorted(
-        (v for v in seen_jobs.values() if v.get("matched")),
+        (v for v in seen_jobs.values() if v.get("matched") and not is_expired(v)),
         key=lambda v: v.get("first_seen", ""),
         reverse=True,
     )[:MAX_RECENT_JOBS]

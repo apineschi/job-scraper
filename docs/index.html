@@ -46,13 +46,14 @@
   .meta { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
   .error-text { color: var(--err); font-size: 0.82rem; margin-top: 0.4rem; word-break: break-word; }
   .job {
-    background: var(--card);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 0.9rem 1rem;
     margin-bottom: 0.6rem;
+    color: #1a1a1a;
   }
-  .job a { color: var(--text); text-decoration: none; font-weight: 600; }
+  .job .meta { color: #3a3a3a; }
+  .job a { color: #111; text-decoration: none; font-weight: 600; }
   .job a:hover { text-decoration: underline; }
   .job .meta { margin-top: 0.3rem; }
   .empty { color: var(--muted); font-size: 0.9rem; }
@@ -115,6 +116,14 @@
       document.getElementById('status-grid').innerHTML = '<div class="empty">Could not load status.json</div>';
     }
 
+    let branding = { institutions: {}, default: { color: '#eeeeee', emoji: '💼' } };
+    try {
+      branding = await loadJSON('branding.json');
+    } catch (e) {
+      // branding.json is new — older workflow runs won't have written it yet.
+      // Fall back to the neutral default style rather than failing the job list.
+    }
+
     try {
       const jobs = await loadJSON('jobs.json');
       const list = document.getElementById('jobs-list');
@@ -126,10 +135,12 @@
       }
 
       jobs.forEach(j => {
+        const style = branding.institutions[j.institution] || branding.default;
         const el = document.createElement('div');
         el.className = 'job';
+        el.style.background = style.color;
         el.innerHTML = `
-          <a href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
+          <a href="${j.url}" target="_blank" rel="noopener">${style.emoji || ''} ${j.title}</a>
           <div class="meta">
             ${j.institution} · ${j.salary_text} · ${j.location_text}<br>
             Closes: ${j.closing_date} · First seen: ${fmtDate(j.first_seen)}

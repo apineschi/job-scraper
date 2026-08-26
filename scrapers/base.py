@@ -1,11 +1,12 @@
 import re
 import time
 from dataclasses import dataclass, asdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from typing import Optional
 
 import requests
 from bs4 import BeautifulSoup
+from dateutil import parser as dateutil_parser
 
 DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -43,6 +44,30 @@ class Job:
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def parse_closing_date(text: str) -> Optional[date]:
+    """Best-effort parse of a closing/deadline date from any of the free-text formats
+    our sources use ("13 September, 2026", "08/09/2026", "2026-09-08", "Wed, 21 Oct
+    2026", ...). Returns None when the text isn't a recognizable date (e.g. "Not
+    found") — callers should treat that as "unknown, don't assume expired".
+    """
+    if not text:
+        return None
+    text = text.strip()
+
+    try:
+        return datetime.strptime(text, "%Y-%m-%d").date()
+    except ValueError:
+        pass
+
+    try:
+        # dayfirst=True because every source here is UK-based (DD/MM/YYYY, not
+        # MM/DD/YYYY) — the ISO check above already handles the one unambiguous
+        # format that dayfirst would otherwise mis-parse.
+        return dateutil_parser.parse(text, fuzzy=True, dayfirst=True).date()
+    except (ValueError, OverflowError, TypeError):
+        return None
 
 
 def fetch_html(url: str, timeout: int = 20) -> str:
