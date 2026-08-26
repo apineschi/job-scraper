@@ -84,6 +84,52 @@
     flex-shrink: 0;
   }
   .archive-btn:hover { background: rgba(0,0,0,0.16); }
+  .jobs-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; margin: 2rem 0 0.75rem; }
+  .jobs-header h2 { margin: 0; }
+  .filter-wrap { position: relative; }
+  .filter-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .filter-btn:hover { border-color: var(--muted); }
+  .filter-panel {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.4rem);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem;
+    min-width: 240px;
+    max-height: 320px;
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+  .filter-panel.open { display: block; }
+  .filter-panel-actions { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  .filter-panel-actions button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 0.78rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+  .filter-panel-actions button:hover { color: var(--text); }
+  .filter-option { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0.2rem; font-size: 0.85rem; cursor: pointer; }
+  .filter-option:hover { color: var(--muted); }
+  .filter-option input { flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -93,7 +139,19 @@
   <h2>Source health</h2>
   <div class="grid" id="status-grid"><div class="empty">Loading status…</div></div>
 
-  <h2>Recent matches</h2>
+  <div class="jobs-header">
+    <h2>Recent matches</h2>
+    <div class="filter-wrap">
+      <button class="filter-btn" type="button" id="filterBtn">Institutions <span id="filterSummary">(all)</span> ▾</button>
+      <div class="filter-panel" id="filterPanel">
+        <div class="filter-panel-actions">
+          <button type="button" id="filterSelectAll">Select all</button>
+          <button type="button" id="filterClearAll">Clear all</button>
+        </div>
+        <div id="filterOptions"></div>
+      </div>
+    </div>
+  </div>
   <div id="jobs-list"><div class="empty">Loading jobs…</div></div>
 
 <script>
@@ -143,6 +201,27 @@
     if (!closingDateIso) return null;
     const closing = new Date(closingDateIso + 'T00:00:00');
     return Math.round((closing - todayMidnight) / 86400000);
+  }
+
+  const INSTITUTION_FILTER_KEY = 'selectedInstitutions';
+
+  // null means "no filter saved yet" — treated as "show everything" until the
+  // user actually deselects something, so the default view is unfiltered.
+  function getSelectedInstitutions() {
+    try {
+      const raw = localStorage.getItem(INSTITUTION_FILTER_KEY);
+      return raw === null ? null : new Set(JSON.parse(raw));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveSelectedInstitutions(set) {
+    try {
+      localStorage.setItem(INSTITUTION_FILTER_KEY, JSON.stringify([...set]));
+    } catch (e) {
+      // localStorage unavailable — filter still works for this page load.
+    }
   }
 
   async function render() {
@@ -198,12 +277,70 @@
       const allJobs = await loadJSON('jobs.json');
       const jobs = allJobs.filter(j => !archived.has(j.url));
       const list = document.getElementById('jobs-list');
-      list.innerHTML = '';
 
-      if (!jobs.length) {
-        list.innerHTML = '<div class="empty">No matching jobs yet.</div>';
-        return;
+      const allInstitutions = [...new Set(jobs.map(j => j.institution))].sort();
+      const savedSelection = getSelectedInstitutions();
+      // No saved selection at all (first visit) defaults to everything shown.
+      // Once the user has customized it, a brand-new institution that shows up
+      // later starts unselected until they notice and check it in the panel.
+      let selected = savedSelection === null
+        ? new Set(allInstitutions)
+        : new Set([...savedSelection].filter(i => allInstitutions.includes(i)));
+
+      function updateFilterSummary() {
+        const summary = document.getElementById('filterSummary');
+        summary.textContent = selected.size === allInstitutions.length ? '(all)' : `(${selected.size} of ${allInstitutions.length})`;
       }
+
+      function renderFilterOptions() {
+        const optionsEl = document.getElementById('filterOptions');
+        optionsEl.innerHTML = '';
+        allInstitutions.forEach(inst => {
+          const style = branding.institutions[inst] || branding.default;
+          const label = document.createElement('label');
+          label.className = 'filter-option';
+          label.innerHTML = `<input type="checkbox" ${selected.has(inst) ? 'checked' : ''}> ${style.emoji || ''} ${inst}`;
+          label.querySelector('input').addEventListener('change', (e) => {
+            if (e.target.checked) selected.add(inst); else selected.delete(inst);
+            saveSelectedInstitutions(selected);
+            updateFilterSummary();
+            renderJobList();
+          });
+          optionsEl.appendChild(label);
+        });
+      }
+
+      if (!allInstitutions.length) {
+        document.querySelector('.filter-wrap').style.display = 'none';
+      } else {
+        renderFilterOptions();
+        updateFilterSummary();
+      }
+
+      document.getElementById('filterSelectAll').addEventListener('click', () => {
+        selected = new Set(allInstitutions);
+        saveSelectedInstitutions(selected);
+        updateFilterSummary();
+        renderFilterOptions();
+        renderJobList();
+      });
+      document.getElementById('filterClearAll').addEventListener('click', () => {
+        selected = new Set();
+        saveSelectedInstitutions(selected);
+        updateFilterSummary();
+        renderFilterOptions();
+        renderJobList();
+      });
+
+      const filterBtn = document.getElementById('filterBtn');
+      const filterPanel = document.getElementById('filterPanel');
+      filterBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        filterPanel.classList.toggle('open');
+      });
+      document.addEventListener('click', (e) => {
+        if (!filterPanel.contains(e.target) && e.target !== filterBtn) filterPanel.classList.remove('open');
+      });
 
       const todayMidnight = new Date();
       todayMidnight.setHours(0, 0, 0, 0);
@@ -243,11 +380,23 @@
         return el;
       }
 
-      const withDays = jobs
-        .map(j => ({ job: j, daysLeft: daysLeftFor(j.closing_date_iso, todayMidnight) }))
-        .sort((a, b) => (a.daysLeft ?? Infinity) - (b.daysLeft ?? Infinity)); // soonest closing first; no deadline listed sorts last
+      function renderJobList() {
+        list.innerHTML = '';
+        const visible = jobs.filter(j => selected.has(j.institution));
 
-      withDays.forEach(x => list.appendChild(renderJobCard(x.job, x.daysLeft)));
+        if (!visible.length) {
+          list.innerHTML = `<div class="empty">${jobs.length ? 'No jobs match the selected institutions.' : 'No matching jobs yet.'}</div>`;
+          return;
+        }
+
+        const withDays = visible
+          .map(j => ({ job: j, daysLeft: daysLeftFor(j.closing_date_iso, todayMidnight) }))
+          .sort((a, b) => (a.daysLeft ?? Infinity) - (b.daysLeft ?? Infinity)); // soonest closing first; no deadline listed sorts last
+
+        withDays.forEach(x => list.appendChild(renderJobCard(x.job, x.daysLeft)));
+      }
+
+      renderJobList();
     } catch (e) {
       document.getElementById('jobs-list').innerHTML = '<div class="empty">Could not load jobs.json</div>';
     }
