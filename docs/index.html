@@ -70,6 +70,17 @@
     flex-shrink: 0;
   }
   .empty { color: var(--muted); font-size: 0.9rem; }
+  .archive-btn {
+    background: rgba(0,0,0,0.08);
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.72rem;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .archive-btn:hover { background: rgba(0,0,0,0.16); }
 </style>
 </head>
 <body>
@@ -94,6 +105,27 @@
     const d = new Date(iso);
     if (isNaN(d.getTime())) return iso;
     return d.toLocaleString();
+  }
+
+  const ARCHIVE_KEY = 'archivedJobUrls';
+
+  function getArchivedUrls() {
+    try {
+      return new Set(JSON.parse(localStorage.getItem(ARCHIVE_KEY) || '[]'));
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  function archiveUrl(url) {
+    try {
+      const archived = getArchivedUrls();
+      archived.add(url);
+      localStorage.setItem(ARCHIVE_KEY, JSON.stringify([...archived]));
+    } catch (e) {
+      // localStorage unavailable (private browsing, storage blocked, etc.) —
+      // the card still gets removed from view for this page load either way.
+    }
   }
 
   async function render() {
@@ -138,7 +170,9 @@
     }
 
     try {
-      const jobs = await loadJSON('jobs.json');
+      const archived = getArchivedUrls();
+      const allJobs = await loadJSON('jobs.json');
+      const jobs = allJobs.filter(j => !archived.has(j.url));
       const list = document.getElementById('jobs-list');
       list.innerHTML = '';
 
@@ -169,13 +203,23 @@
         el.innerHTML = `
           <div class="job-top">
             <a href="${j.url}" target="_blank" rel="noopener">${style.emoji || ''} ${j.title}</a>
-            ${closingSoonBadge}
+            <span style="display:flex; gap:0.4rem; align-items:flex-start;">
+              ${closingSoonBadge}
+              <button class="archive-btn" type="button">Archive</button>
+            </span>
           </div>
           <div class="meta">
             ${j.institution} · ${j.salary_text} · ${j.location_text}<br>
             Closes: ${j.closing_date} · First seen: ${fmtDate(j.first_seen)}
           </div>
         `;
+        el.querySelector('.archive-btn').addEventListener('click', () => {
+          archiveUrl(j.url);
+          el.remove();
+          if (!list.querySelector('.job')) {
+            list.innerHTML = '<div class="empty">No matching jobs yet.</div>';
+          }
+        });
         list.appendChild(el);
       });
     } catch (e) {
