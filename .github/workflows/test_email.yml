@@ -1,10 +1,10 @@
-name: Test Email Output
+name: Manual Smoke Test
 
 on:
   workflow_dispatch:
 
 jobs:
-  test_send:
+  test_run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -17,30 +17,29 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install playwright beautifulsoup4
-          playwright install chromium
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
 
-      - name: Run Scraper
+      - name: Run scraper (no commit, no push)
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: |
-          # We run the script and capture EVERYTHING it prints
-          python jobscraper.py > test_results.txt
-          
-          # Load the results into the environment
+          python main.py > test_results.txt
           echo "TEST_BODY<<EOF" >> $GITHUB_ENV
           cat test_results.txt >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Send Test Email
+      - name: Send test email
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Job Scraper Test Results"
+          subject: "Job Scraper Test Run"
           to: ${{ secrets.EMAIL_TO }}
-          from: "Museum Job Bot"
+          from: "Job Scraper Bot"
           body: |
-            Here are the results from the scraper:
+            Manual smoke test results:
 
             ${{ env.TEST_BODY }}

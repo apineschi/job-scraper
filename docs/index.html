@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Scraper Status</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #1a1d24;
+    --border: #2a2e37;
+    --text: #e8e9ec;
+    --muted: #9198a5;
+    --ok: #3ecf6e;
+    --err: #f2545b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 1.5rem;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 0.25rem; }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  h2 { font-size: 1.1rem; margin: 2rem 0 0.75rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.75rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--muted);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+  }
+  .card.ok { border-left-color: var(--ok); }
+  .card.error { border-left-color: var(--err); }
+  .card-title { font-weight: 600; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .dot.ok { background: var(--ok); }
+  .dot.error { background: var(--err); }
+  .meta { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+  .error-text { color: var(--err); font-size: 0.82rem; margin-top: 0.4rem; word-break: break-word; }
+  .job {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.6rem;
+  }
+  .job a { color: var(--text); text-decoration: none; font-weight: 600; }
+  .job a:hover { text-decoration: underline; }
+  .job .meta { margin-top: 0.3rem; }
+  .empty { color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+  <h1>Job Scraper Status</h1>
+  <div class="subtitle" id="last-updated">Loading…</div>
+
+  <h2>Source health</h2>
+  <div class="grid" id="status-grid"><div class="empty">Loading status…</div></div>
+
+  <h2>Recent matches</h2>
+  <div id="jobs-list"><div class="empty">Loading jobs…</div></div>
+
+<script>
+  async function loadJSON(path) {
+    const res = await fetch(path + '?t=' + Date.now());
+    if (!res.ok) throw new Error('Failed to load ' + path);
+    return res.json();
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return 'never';
+    const d = new Date(iso);
+    if (isNaN(d.getTime())) return iso;
+    return d.toLocaleString();
+  }
+
+  async function render() {
+    try {
+      const status = await loadJSON('status.json');
+      const grid = document.getElementById('status-grid');
+      grid.innerHTML = '';
+
+      if (!status.length) {
+        grid.innerHTML = '<div class="empty">No status data yet — run the workflow once.</div>';
+      }
+
+      let latestCheck = null;
+      status.forEach(s => {
+        if (s.checked_at && (!latestCheck || s.checked_at > latestCheck)) latestCheck = s.checked_at;
+        const card = document.createElement('div');
+        card.className = 'card ' + s.status;
+        card.innerHTML = `
+          <div class="card-title"><span class="dot ${s.status}"></span>${s.institution || s.source}</div>
+          <div class="meta">
+            Checked: ${fmtDate(s.checked_at)}<br>
+            Last success: ${fmtDate(s.last_success)}<br>
+            Jobs found: ${s.jobs_found ?? '—'}
+          </div>
+          ${s.status === 'error' ? `<div class="error-text">${s.error}</div>` : ''}
+        `;
+        grid.appendChild(card);
+      });
+
+      document.getElementById('last-updated').textContent =
+        latestCheck ? 'Last scan: ' + fmtDate(latestCheck) : 'No scans recorded yet';
+    } catch (e) {
+      document.getElementById('status-grid').innerHTML = '<div class="empty">Could not load status.json</div>';
+    }
+
+    try {
+      const jobs = await loadJSON('jobs.json');
+      const list = document.getElementById('jobs-list');
+      list.innerHTML = '';
+
+      if (!jobs.length) {
+        list.innerHTML = '<div class="empty">No matching jobs yet.</div>';
+        return;
+      }
+
+      jobs.forEach(j => {
+        const el = document.createElement('div');
+        el.className = 'job';
+        el.innerHTML = `
+          <a href="${j.url}" target="_blank" rel="noopener">${j.title}</a>
+          <div class="meta">
+            ${j.institution} · ${j.salary_text} · ${j.location_text}<br>
+            Closes: ${j.closing_date} · First seen: ${fmtDate(j.first_seen)}
+          </div>
+        `;
+        list.appendChild(el);
+      });
+    } catch (e) {
+      document.getElementById('jobs-list').innerHTML = '<div class="empty">Could not load jobs.json</div>';
+    }
+  }
+
+  render();
+</script>
+</body>
+</html>
