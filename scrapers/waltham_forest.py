@@ -3,7 +3,7 @@ import re
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
-from .base import DEFAULT_USER_AGENT, Job, classify_employment_type, classify_london, parse_salary
+from .base import DEFAULT_USER_AGENT, Job, classify_employment_type, classify_london, goto_with_retry, parse_salary
 
 SITE_URL = "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/"
 INSTITUTION = "London Borough of Waltham Forest"
@@ -12,7 +12,9 @@ INSTITUTION = "London Borough of Waltham Forest"
 # culture/heritage-related in title or listing text, per explicit user request.
 # Word-boundary matched: a plain substring check on "art" false-positives on
 # ordinary words like "Partner" or "Department".
-CULTURE_KEYWORD_RE = re.compile(r'\b(?:librar(?:y|ies)|galler(?:y|ies)|arts?|cultural?)\b', re.IGNORECASE)
+CULTURE_KEYWORD_RE = re.compile(
+    r'\b(?:librar(?:y|ies)|galler(?:y|ies)|arts?|cultural?|exhibitions?|museums?)\b', re.IGNORECASE
+)
 
 
 def _matches_culture_keywords(*texts: str) -> bool:
@@ -25,7 +27,7 @@ def fetch_jobs() -> list[Job]:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(user_agent=DEFAULT_USER_AGENT, locale="en-GB")
         page = context.new_page()
-        page.goto(SITE_URL, wait_until="networkidle", timeout=45000)
+        goto_with_retry(page, SITE_URL, wait_until="networkidle", timeout=45000)
         page.wait_for_timeout(3000)
         html = page.content()
         browser.close()

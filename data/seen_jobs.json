@@ -5416,5 +5416,19 @@
     "first_seen": "2026-08-26T17:09:29+00:00",
     "matched": false,
     "closing_date_iso": null
+  },
+  "https://www.cam.ac.uk/jobs/business-administration-apprentice-x-2-ew49664": {
+    "institution": "University of Cambridge",
+    "title": "Business Administration Apprentice x 2",
+    "url": "https://www.cam.ac.uk/jobs/business-administration-apprentice-x-2-ew49664",
+    "salary_text": "£20,058",
+    "salary_annual_est": 20058,
+    "location_text": "Cambridge Research Office",
+    "is_london": false,
+    "employment_type": "unknown",
+    "closing_date": "20 September 2026",
+    "first_seen": "2026-08-27T07:26:58+00:00",
+    "matched": false,
+    "closing_date_iso": "2026-09-20"
   }
 }

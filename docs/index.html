@@ -25,6 +25,23 @@
   h1 { font-size: 1.4rem; margin: 0 0 0.25rem; }
   .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
   h2 { font-size: 1.1rem; margin: 2rem 0 0.75rem; }
+  .health-accordion summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .health-accordion summary::-webkit-details-marker { display: none; }
+  .health-accordion summary h2 { margin: 2rem 0 0.75rem; display: inline; }
+  .health-accordion summary::before {
+    content: '▾';
+    font-size: 0.85rem;
+    color: var(--muted);
+    transition: transform 0.15s ease;
+  }
+  .health-accordion:not([open]) summary::before { transform: rotate(-90deg); }
+  .filter-note { color: var(--muted); font-size: 0.78rem; margin-top: 0.4rem; font-style: italic; }
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -130,14 +147,29 @@
   .filter-option { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0.2rem; font-size: 0.85rem; cursor: pointer; }
   .filter-option:hover { color: var(--muted); }
   .filter-option input { flex-shrink: 0; }
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1.2rem 0; }
+  .pagination button {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .pagination button:hover:not(:disabled) { border-color: var(--muted); }
+  .pagination button:disabled { opacity: 0.35; cursor: default; }
+  .pagination span { color: var(--muted); font-size: 0.85rem; }
 </style>
 </head>
 <body>
   <h1>Job Scraper Status</h1>
   <div class="subtitle" id="last-updated">Loading…</div>
 
-  <h2>Source health</h2>
-  <div class="grid" id="status-grid"><div class="empty">Loading status…</div></div>
+  <details class="health-accordion" open>
+    <summary><h2>Source health</h2></summary>
+    <div class="grid" id="status-grid"><div class="empty">Loading status…</div></div>
+  </details>
 
   <div class="jobs-header">
     <h2>Recent matches</h2>
@@ -153,6 +185,7 @@
     </div>
   </div>
   <div id="jobs-list"><div class="empty">Loading jobs…</div></div>
+  <div class="pagination" id="pagination"></div>
 
 <script>
   async function loadJSON(path) {
@@ -225,7 +258,7 @@
   }
 
   async function render() {
-    let branding = { institutions: {}, sources: {}, default: { color: '#eeeeee', emoji: '💼', url: null } };
+    let branding = { institutions: {}, sources: {}, default: { color: '#eeeeee', emoji: '💼', url: null, filter_note: null } };
     try {
       branding = await loadJSON('branding.json');
     } catch (e) {
@@ -261,6 +294,7 @@
             Last success: ${fmtDate(s.last_success)}<br>
             Jobs found: ${s.jobs_found ?? '—'}
           </div>
+          ${style.filter_note ? `<div class="filter-note">${style.filter_note}</div>` : ''}
           ${s.status === 'error' ? `<div class="error-text">${s.error}</div>` : ''}
         `;
         grid.appendChild(card);
@@ -304,6 +338,7 @@
             if (e.target.checked) selected.add(inst); else selected.delete(inst);
             saveSelectedInstitutions(selected);
             updateFilterSummary();
+            currentPage = 1;
             renderJobList();
           });
           optionsEl.appendChild(label);
@@ -322,6 +357,7 @@
         saveSelectedInstitutions(selected);
         updateFilterSummary();
         renderFilterOptions();
+        currentPage = 1;
         renderJobList();
       });
       document.getElementById('filterClearAll').addEventListener('click', () => {
@@ -329,6 +365,7 @@
         saveSelectedInstitutions(selected);
         updateFilterSummary();
         renderFilterOptions();
+        currentPage = 1;
         renderJobList();
       });
 
@@ -372,20 +409,40 @@
         `;
         el.querySelector('.archive-btn').addEventListener('click', () => {
           archiveUrl(j.url);
-          el.remove();
-          if (!list.querySelector('.job')) {
-            list.innerHTML = '<div class="empty">No matching jobs yet.</div>';
-          }
+          const idx = jobs.indexOf(j);
+          if (idx !== -1) jobs.splice(idx, 1);
+          renderJobList();
         });
         return el;
       }
 
+      const PAGE_SIZE = 20;
+      let currentPage = 1;
+
+      function renderPagination(totalPages, totalCount) {
+        const el = document.getElementById('pagination');
+        if (totalPages <= 1) {
+          el.innerHTML = '';
+          return;
+        }
+        el.innerHTML = `
+          <button type="button" id="prevPage" ${currentPage === 1 ? 'disabled' : ''}>‹ Prev</button>
+          <span>Page ${currentPage} of ${totalPages} · ${totalCount} job${totalCount === 1 ? '' : 's'}</span>
+          <button type="button" id="nextPage" ${currentPage === totalPages ? 'disabled' : ''}>Next ›</button>
+        `;
+        const scrollToList = () => list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const prevBtn = document.getElementById('prevPage');
+        const nextBtn = document.getElementById('nextPage');
+        if (prevBtn) prevBtn.addEventListener('click', () => { currentPage--; renderJobList(); scrollToList(); });
+        if (nextBtn) nextBtn.addEventListener('click', () => { currentPage++; renderJobList(); scrollToList(); });
+      }
+
       function renderJobList() {
-        list.innerHTML = '';
         const visible = jobs.filter(j => selected.has(j.institution));
 
         if (!visible.length) {
           list.innerHTML = `<div class="empty">${jobs.length ? 'No jobs match the selected institutions.' : 'No matching jobs yet.'}</div>`;
+          document.getElementById('pagination').innerHTML = '';
           return;
         }
 
@@ -393,7 +450,16 @@
           .map(j => ({ job: j, daysLeft: daysLeftFor(j.closing_date_iso, todayMidnight) }))
           .sort((a, b) => (a.daysLeft ?? Infinity) - (b.daysLeft ?? Infinity)); // soonest closing first; no deadline listed sorts last
 
-        withDays.forEach(x => list.appendChild(renderJobCard(x.job, x.daysLeft)));
+        const totalPages = Math.max(1, Math.ceil(withDays.length / PAGE_SIZE));
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
+
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const pageItems = withDays.slice(start, start + PAGE_SIZE);
+
+        list.innerHTML = '';
+        pageItems.forEach(x => list.appendChild(renderJobCard(x.job, x.daysLeft)));
+        renderPagination(totalPages, withDays.length);
       }
 
       renderJobList();

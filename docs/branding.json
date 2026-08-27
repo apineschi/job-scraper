@@ -40,7 +40,8 @@
       "color": "#fbe8d6",
       "emoji_tag": "briefcase",
       "emoji": "💼",
-      "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums"
+      "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums",
+      "filter_note": "Filtered to the Museums category only"
     },
     "Southbank Centre": {
       "institution": "Southbank Centre",
@@ -82,7 +83,8 @@
       "color": "#eef0d8",
       "emoji_tag": "office",
       "emoji": "🏢",
-      "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/"
+      "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/",
+      "filter_note": "Filtered to jobs mentioning library, gallery, art, cultural, exhibitions, or museum"
     },
     "National Trust": {
       "institution": "National Trust",
@@ -147,7 +149,8 @@
       "color": "#fbe8d6",
       "emoji_tag": "briefcase",
       "emoji": "💼",
-      "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums"
+      "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums",
+      "filter_note": "Filtered to the Museums category only"
     },
     "southbank": {
       "institution": "Southbank Centre",
@@ -189,7 +192,8 @@
       "color": "#eef0d8",
       "emoji_tag": "office",
       "emoji": "🏢",
-      "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/"
+      "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/",
+      "filter_note": "Filtered to jobs mentioning library, gallery, art, cultural, exhibitions, or museum"
     },
     "national_trust": {
       "institution": "National Trust",
@@ -218,6 +222,7 @@
     "color": "#eeeeee",
     "emoji_tag": "briefcase",
     "emoji": "💼",
-    "url": null
+    "url": null,
+    "filter_note": null
   }
 }

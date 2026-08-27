@@ -19,7 +19,11 @@ STATUS_PATH = os.path.join(ROOT, "docs", "status.json")
 JOBS_PATH = os.path.join(ROOT, "docs", "jobs.json")
 BRANDING_PATH = os.path.join(ROOT, "docs", "branding.json")
 EMAIL_HTML_PATH = os.path.join(ROOT, "email_digest.html")
-MAX_RECENT_JOBS = 100
+# This only bounds pathological growth — real coverage comes from the closing-date
+# expiry filter, which already keeps the list to "currently open" postings. With
+# 15 sources (Cambridge alone regularly finds 100+), the old cap of 100 was
+# silently hiding whole institutions from the dashboard's job list/filter.
+MAX_RECENT_JOBS = 1000
 
 
 def load_config() -> dict:

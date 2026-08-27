@@ -47,6 +47,24 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+def goto_with_retry(page, url: str, attempts: int = 3, retry_delay: float = 3.0, **goto_kwargs):
+    """page.goto with retries — some sites (Oracle's Akamai-fronted Cloud HCM
+    domains especially) intermittently fail DNS resolution inside headless
+    Chromium even though the OS resolver has no trouble with them, likely due
+    to their very short DNS TTL. A transient failure here shouldn't be treated
+    the same as the site genuinely being unreachable.
+    """
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return page.goto(url, **goto_kwargs)
+        except Exception as e:
+            last_error = e
+            if attempt < attempts:
+                time.sleep(retry_delay)
+    raise last_error
+
+
 def parse_closing_date(text: str) -> Optional[date]:
     """Best-effort parse of a closing/deadline date from any of the free-text formats
     our sources use ("13 September, 2026", "08/09/2026", "2026-09-08", "Wed, 21 Oct

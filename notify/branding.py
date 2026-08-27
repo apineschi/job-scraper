@@ -42,6 +42,7 @@ SOURCE_BRANDING = {
         "institution": "ArtsJobs UK",
         "color": "#fbe8d6", "emoji_tag": "briefcase", "emoji": "💼",
         "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums",
+        "filter_note": "Filtered to the Museums category only",
     },
     "southbank": {
         "institution": "Southbank Centre",
@@ -72,6 +73,7 @@ SOURCE_BRANDING = {
         "institution": "London Borough of Waltham Forest",
         "color": "#eef0d8", "emoji_tag": "office", "emoji": "🏢",
         "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/",
+        "filter_note": "Filtered to jobs mentioning library, gallery, art, cultural, exhibitions, or museum",
     },
     "national_trust": {
         "institution": "National Trust",
@@ -90,7 +92,7 @@ SOURCE_BRANDING = {
     },
 }
 
-DEFAULT_STYLE = {"institution": None, "color": "#eeeeee", "emoji_tag": "briefcase", "emoji": "💼", "url": None}
+DEFAULT_STYLE = {"institution": None, "color": "#eeeeee", "emoji_tag": "briefcase", "emoji": "💼", "url": None, "filter_note": None}
 
 # Kept for the email/ntfy code paths, which only know the institution display name
 # (from a Job record), not which scraper module produced it.
