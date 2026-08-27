@@ -88,7 +88,7 @@ def run_scrapers(previous_status: dict) -> tuple[list, list]:
 
 # Aggregator boards surface postings already sourced directly from other
 # institutions in this project — dedupe them against the direct sources.
-AGGREGATOR_SOURCES = {"National Museums"}
+AGGREGATOR_SOURCES = {"National Museums", "ArtsJobs UK"}
 
 
 def dedupe_aggregators(all_jobs: list) -> list:
