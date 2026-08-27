@@ -108,6 +108,24 @@ def run_scrapers(previous_status: dict, disabled_sources: set) -> tuple[list, li
 AGGREGATOR_SOURCES = {"National Museums", "ArtsJobs UK"}
 
 
+def build_source_branding() -> dict:
+    """Merge the static per-source branding with each scraper module's own
+    FILTER_NOTE constant, when it defines one. This keeps the dashboard's filter
+    description generated from the same code that does the actual filtering
+    (see scrapers/waltham_forest.py, scrapers/artsjobs.py) instead of a
+    hand-maintained copy in notify/branding.py that can drift out of sync.
+    """
+    merged = {}
+    for module in SOURCES:
+        source_name = module.__name__.rsplit(".", 1)[-1]
+        style = dict(SOURCE_BRANDING.get(source_name, DEFAULT_STYLE))
+        filter_note = getattr(module, "FILTER_NOTE", None)
+        if filter_note:
+            style["filter_note"] = filter_note
+        merged[source_name] = style
+    return merged
+
+
 def dedupe_aggregators(all_jobs: list) -> list:
     """Drop an aggregator's listing when its title exactly matches (case-insensitive)
     a job already found from a different, non-aggregator institution this run —
@@ -163,7 +181,7 @@ def main():
     save_json(STATUS_PATH, status_entries)
     save_json(BRANDING_PATH, {
         "institutions": INSTITUTION_STYLE,
-        "sources": SOURCE_BRANDING,
+        "sources": build_source_branding(),
         "default": DEFAULT_STYLE,
     })
 

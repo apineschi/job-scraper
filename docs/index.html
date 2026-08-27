@@ -98,8 +98,8 @@
   .job a:hover { text-decoration: underline; }
   .job-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.6rem; }
   .closing-soon {
-    background: rgba(255, 90, 90, 0.22);
-    color: #ff9c9c;
+    background: #8b1a1a;
+    color: #ffffff;
     font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -417,11 +417,11 @@
         el.style.background = hexToRgba(style.color, 0.75);
         el.innerHTML = `
           <div class="job-top">
-            <a href="${j.url}" target="_blank" rel="noopener">${style.emoji || ''} ${j.title}</a>
-            <span style="display:flex; gap:0.4rem; align-items:flex-start;">
+            <span style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
               ${closingSoonBadge}
-              <button class="archive-btn" type="button">Archive</button>
+              <a href="${j.url}" target="_blank" rel="noopener">${style.emoji || ''} ${j.title}</a>
             </span>
+            <button class="archive-btn" type="button">Archive</button>
           </div>
           <div class="meta">
             ${j.institution} · ${j.salary_text} · ${j.location_text}<br>

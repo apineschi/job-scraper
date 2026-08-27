@@ -43,10 +43,14 @@ These filters apply to every active institution. Two sources also have their
 own extra, fixed filter on top of this (not editable from the tool):
 - **Waltham Forest** — only surfaces postings mentioning library, gallery, art,
   cultural, exhibitions, or museum (it's a general council job board, not a
-  culture-sector one). Edit `CULTURE_KEYWORD_RE` in
-  `scrapers/waltham_forest.py` if you want to change this list.
-- **ArtsJobs UK** — pre-filtered to the "Museums" category at the source
-  (via a URL parameter in `scrapers/artsjobs.py`).
+  culture-sector one). Edit the `CULTURE_KEYWORDS` list near the top of
+  `scrapers/waltham_forest.py` to change this — each entry is a
+  `(regex_pattern, display_label)` pair, and both the actual filter and the
+  note shown on its dashboard card are generated from this one list, so
+  they can't drift out of sync.
+- **ArtsJobs UK** — pre-filtered to the "Museums" category at the source, via
+  the `ART_FORM_CATEGORY` constant near the top of `scrapers/artsjobs.py`
+  (also used to build both the URL and the dashboard note).
 
 Both show a note about this on their status card on the dashboard.
 

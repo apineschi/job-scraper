@@ -11,6 +11,13 @@
 #
 # Any source not listed here — e.g. a newly added scraper — falls back to
 # DEFAULT_STYLE rather than erroring.
+#
+# "filter_note" (shown on a source's status card when it has a special filter
+# beyond the global config.yaml filters) is deliberately NOT set here — it's
+# read from that scraper module's own FILTER_NOTE constant by
+# main.py:build_source_branding(), so the note can never drift out of sync
+# with the actual filtering code. See scrapers/waltham_forest.py or
+# scrapers/artsjobs.py for the pattern.
 
 SOURCE_BRANDING = {
     "british_museum": {
@@ -42,7 +49,6 @@ SOURCE_BRANDING = {
         "institution": "ArtsJobs UK",
         "color": "#fbe8d6", "emoji_tag": "briefcase", "emoji": "💼",
         "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums",
-        "filter_note": "Filtered to the Museums category only",
     },
     "southbank": {
         "institution": "Southbank Centre",
@@ -73,7 +79,6 @@ SOURCE_BRANDING = {
         "institution": "London Borough of Waltham Forest",
         "color": "#eef0d8", "emoji_tag": "office", "emoji": "🏢",
         "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/",
-        "filter_note": "Filtered to jobs mentioning library, gallery, art, cultural, exhibitions, or museum",
     },
     "national_trust": {
         "institution": "National Trust",

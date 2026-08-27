@@ -10,11 +10,24 @@ INSTITUTION = "London Borough of Waltham Forest"
 
 # General council job board, not culture-sector — only surface postings that look
 # culture/heritage-related in title or listing text, per explicit user request.
+# This list is the single source of truth for both the actual filter and the
+# human-readable note shown on this source's dashboard card (see FILTER_NOTE
+# below) — edit it here and both stay in sync automatically.
 # Word-boundary matched: a plain substring check on "art" false-positives on
 # ordinary words like "Partner" or "Department".
+CULTURE_KEYWORDS = [
+    ("librar(?:y|ies)", "library"),
+    ("galler(?:y|ies)", "gallery"),
+    ("arts?", "art"),
+    ("cultural?", "cultural"),
+    ("exhibitions?", "exhibitions"),
+    ("museums?", "museum"),
+]
 CULTURE_KEYWORD_RE = re.compile(
-    r'\b(?:librar(?:y|ies)|galler(?:y|ies)|arts?|cultural?|exhibitions?|museums?)\b', re.IGNORECASE
+    r'\b(?:' + '|'.join(pattern for pattern, _label in CULTURE_KEYWORDS) + r')\b', re.IGNORECASE
 )
+_labels = [label for _pattern, label in CULTURE_KEYWORDS]
+FILTER_NOTE = f"Filtered to jobs mentioning {', '.join(_labels[:-1])}, or {_labels[-1]}"
 
 
 def _matches_culture_keywords(*texts: str) -> bool:
