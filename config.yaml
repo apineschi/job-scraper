@@ -5,3 +5,8 @@ filters:
   location: any                 # london | outside_london | any
   include_keywords: []          # job must contain at least one of these (in title/institution) if non-empty
   exclude_keywords: []          # job is dropped if it contains any of these
+
+# Sources listed here are skipped entirely during scraping (paused, not removed —
+# they still show up on the dashboard, grayed out). Use the source's module name
+# (see scrapers/__init__.py), e.g. "kcl", "cambridge".
+disabled_sources: []

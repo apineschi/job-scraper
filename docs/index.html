@@ -57,12 +57,32 @@
   }
   .card.ok { border-left-color: var(--ok); }
   .card.error { border-left-color: var(--err); }
+  .card.inactive {
+    border-left-color: var(--muted);
+    background: var(--card) !important;
+    filter: grayscale(0.7);
+    opacity: 0.6;
+    color: var(--text);
+  }
+  .card.inactive .meta { color: var(--muted); }
   .card-title { font-weight: 600; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem; }
   .card-title a { color: #111; text-decoration: none; }
+  .card.inactive .card-title a { color: var(--text); }
   .card-title a:hover { text-decoration: underline; }
   .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
   .dot.ok { background: var(--ok); }
   .dot.error { background: var(--err); }
+  .dot.inactive { background: var(--muted); }
+  .paused-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+    border: 1px solid var(--muted);
+    border-radius: 4px;
+    padding: 0.05rem 0.4rem;
+    margin-left: auto;
+  }
   .meta { color: #333; font-size: 0.82rem; line-height: 1.5; }
   .error-text { color: #a4232b; font-size: 0.82rem; margin-top: 0.4rem; word-break: break-word; }
   .job {
@@ -284,15 +304,16 @@
           ? `<a href="${style.url}" target="_blank" rel="noopener">${name}</a>`
           : name;
 
+        const isInactive = s.status === 'inactive';
         const card = document.createElement('div');
         card.className = 'card ' + s.status;
-        card.style.background = hexToRgba(style.color, 0.75);
+        if (!isInactive) card.style.background = hexToRgba(style.color, 0.75);
         card.innerHTML = `
-          <div class="card-title"><span class="dot ${s.status}"></span>${style.emoji || ''} ${nameHtml}</div>
+          <div class="card-title"><span class="dot ${s.status}"></span>${style.emoji || ''} ${nameHtml}${isInactive ? '<span class="paused-tag">Paused</span>' : ''}</div>
           <div class="meta">
-            Checked: ${fmtDate(s.checked_at)}<br>
-            Last success: ${fmtDate(s.last_success)}<br>
-            Jobs found: ${s.jobs_found ?? '—'}
+            ${isInactive
+              ? `Paused — not scraped this run<br>Last success while active: ${fmtDate(s.last_success)}`
+              : `Checked: ${fmtDate(s.checked_at)}<br>Last success: ${fmtDate(s.last_success)}<br>Jobs found: ${s.jobs_found ?? '—'}`}
           </div>
           ${style.filter_note ? `<div class="filter-note">${style.filter_note}</div>` : ''}
           ${s.status === 'error' ? `<div class="error-text">${s.error}</div>` : ''}

@@ -66,6 +66,18 @@
   #status { font-size: 0.82rem; color: var(--accent); margin-top: 0.6rem; min-height: 1.2em; }
   .steps { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
   .steps b { color: var(--text); }
+  .source-row { display: flex; align-items: center; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid var(--border); }
+  .source-row:last-child { border-bottom: none; }
+  .source-row span { font-size: 0.88rem; }
+  .source-row select {
+    width: auto;
+    background: #11141a;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+  }
 </style>
 </head>
 <body>
@@ -110,6 +122,11 @@
   </div>
 
   <div class="card">
+    <label style="margin-bottom:0.6rem;">Institutions (pause ingest without removing it from the dashboard)</label>
+    <div id="sourceList"></div>
+  </div>
+
+  <div class="card">
     <label>Resulting config.yaml</label>
     <textarea id="yamlOutput" rows="9" readonly></textarea>
     <div class="row" style="margin-top:0.8rem;">
@@ -133,11 +150,56 @@
     location: document.getElementById('location'),
     includeKeywords: document.getElementById('includeKeywords'),
     excludeKeywords: document.getElementById('excludeKeywords'),
+    sourceList: document.getElementById('sourceList'),
     yamlOutput: document.getElementById('yamlOutput'),
     downloadBtn: document.getElementById('downloadBtn'),
     copyBtn: document.getElementById('copyBtn'),
     status: document.getElementById('status'),
   };
+
+  // Must match the module names in scrapers/__init__.py.
+  const SOURCES = [
+    ['british_museum', 'British Museum'],
+    ['tate', 'Tate'],
+    ['kcl', "King's College London"],
+    ['vam', 'Victoria and Albert Museum'],
+    ['barbican', 'Barbican Centre'],
+    ['artsjobs', 'ArtsJobs UK'],
+    ['southbank', 'Southbank Centre'],
+    ['national_gallery', 'National Gallery'],
+    ['nhm', 'Natural History Museum'],
+    ['royal_academy', 'Royal Academy of Arts'],
+    ['cambridge', 'University of Cambridge'],
+    ['waltham_forest', 'London Borough of Waltham Forest'],
+    ['national_trust', 'National Trust'],
+    ['william_morris_gallery', 'William Morris Gallery'],
+    ['national_museums', 'National Museums'],
+  ];
+
+  const disabledSources = new Set();
+
+  function renderSourceList() {
+    els.sourceList.innerHTML = '';
+    SOURCES.forEach(([key, label]) => {
+      const row = document.createElement('div');
+      row.className = 'source-row';
+      row.innerHTML = `
+        <span>${label}</span>
+        <select data-source="${key}">
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      `;
+      const select = row.querySelector('select');
+      select.value = disabledSources.has(key) ? 'inactive' : 'active';
+      select.addEventListener('change', () => {
+        if (select.value === 'inactive') disabledSources.add(key);
+        else disabledSources.delete(key);
+        refresh();
+      });
+      els.sourceList.appendChild(row);
+    });
+  }
 
   function parseKeywordList(raw) {
     return raw.split(',').map(s => s.trim()).filter(Boolean);
@@ -152,6 +214,8 @@
 
     const incStr = include.length ? `[${include.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
     const excStr = exclude.length ? `[${exclude.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
+    const disabledList = [...disabledSources];
+    const disabledStr = disabledList.length ? `[${disabledList.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
 
     return `# Job alert filters. Edit these values and push to change what you get notified about.
 filters:
@@ -160,6 +224,11 @@ filters:
   location: ${location}                 # london | outside_london | any
   include_keywords: ${incStr}          # job must contain at least one of these (in title/institution) if non-empty
   exclude_keywords: ${excStr}          # job is dropped if it contains any of these
+
+# Sources listed here are skipped entirely during scraping (paused, not removed —
+# they still show up on the dashboard, grayed out). Use the source's module name
+# (see scrapers/__init__.py), e.g. "kcl", "cambridge".
+disabled_sources: ${disabledStr}
 `;
   }
 
@@ -173,6 +242,7 @@ filters:
     const locMatch = text.match(/location:\s*(\w+)/);
     const incMatch = text.match(/include_keywords:\s*\[(.*?)\]/);
     const excMatch = text.match(/exclude_keywords:\s*\[(.*?)\]/);
+    const disabledMatch = text.match(/disabled_sources:\s*\[(.*?)\]/);
 
     function parseFlowList(raw) {
       if (!raw || !raw.trim()) return [];
@@ -184,6 +254,11 @@ filters:
     if (locMatch) els.location.value = locMatch[1];
     els.includeKeywords.value = parseFlowList(incMatch ? incMatch[1] : '').join(', ');
     els.excludeKeywords.value = parseFlowList(excMatch ? excMatch[1] : '').join(', ');
+
+    disabledSources.clear();
+    parseFlowList(disabledMatch ? disabledMatch[1] : '').forEach(s => disabledSources.add(s));
+    renderSourceList();
+
     refresh();
     els.status.textContent = 'Loaded current config.yaml values.';
   }
@@ -219,6 +294,7 @@ filters:
     }
   });
 
+  renderSourceList();
   refresh();
 </script>
 </body>

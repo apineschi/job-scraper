@@ -44,9 +44,9 @@ def save_json(path: str, data) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def run_scrapers(previous_status: dict) -> tuple[list, list]:
-    """Run every registered scraper, isolating failures so one broken source never
-    stops the others. Returns (all_jobs, status_entries).
+def run_scrapers(previous_status: dict, disabled_sources: set) -> tuple[list, list]:
+    """Run every registered, non-disabled scraper, isolating failures so one broken
+    source never stops the others. Returns (all_jobs, status_entries).
     """
     all_jobs = []
     status_entries = []
@@ -59,6 +59,19 @@ def run_scrapers(previous_status: dict) -> tuple[list, list]:
         # more reliable than deriving it from jobs[0], which is unavailable
         # whenever a source finds zero jobs (a legitimate outcome, not a failure).
         display_name = SOURCE_BRANDING.get(source_name, {}).get("institution", source_name)
+
+        if source_name in disabled_sources:
+            status_entries.append({
+                "source": source_name,
+                "institution": display_name,
+                "status": "inactive",
+                "error": None,
+                "checked_at": checked_at,
+                "last_success": prev.get("last_success"),
+                "jobs_found": 0,
+            })
+            continue
+
         try:
             jobs = module.fetch_jobs()
             all_jobs.extend(jobs)
@@ -115,6 +128,7 @@ def dedupe_aggregators(all_jobs: list) -> list:
 def main():
     config = load_config()
     filters = config.get("filters", {})
+    disabled_sources = set(config.get("disabled_sources") or [])
 
     seen_jobs = load_json(SEEN_JOBS_PATH, {})
     previous_status = {entry["source"]: entry for entry in load_json(STATUS_PATH, [])}
@@ -127,7 +141,7 @@ def main():
         closing = parse_closing_date(record.get("closing_date", ""))
         record["closing_date_iso"] = closing.isoformat() if closing else None
 
-    all_jobs, status_entries = run_scrapers(previous_status)
+    all_jobs, status_entries = run_scrapers(previous_status, disabled_sources)
     all_jobs = dedupe_aggregators(all_jobs)
 
     new_matches = []
