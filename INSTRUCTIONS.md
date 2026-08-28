@@ -10,6 +10,22 @@ All the edits below follow the same pattern: change a file locally, then commit
 and push (e.g. via GitHub Desktop). The next scan (daily at 9am UTC, or run
 manually from the Actions tab) picks up the change.
 
+> **⚠️ `tools/filters-editor.html` is a form you open in a browser — never
+> edit its code directly.** Several sections below say "open the tool, load
+> your config, change a field, download/copy the result." That means:
+> double-click the file so it opens as a page in your browser, use the
+> **Load your current config.yaml** button, change the setting *in that
+> page's input fields*, then **Download config.yaml** (or **Copy to
+> clipboard**) and replace the real `config.yaml` with what it generates.
+>
+> If you instead open `tools/filters-editor.html` in a code/text editor and
+> change the text in there (e.g. editing a `value="..."` attribute), you've
+> only changed what that field shows the *next* time someone opens the tool
+> fresh — it never touches `config.yaml`, and `main.py` only ever reads
+> `config.yaml`. Nothing about the live scan changes. This is an easy mistake
+> to make since both files are plain text — the tell is that `config.yaml`
+> itself is unchanged after you "edit" a filter this way.
+
 ---
 
 ## 1. Make an institution active / inactive
@@ -59,6 +75,24 @@ The keyword list and the set of institutions it applies to are both stored in
 `config.yaml`'s `keyword_filter` section, and the note shown on each affected
 institution's dashboard card is generated fresh from that same config every
 run — so it can never drift out of sync with the actual filter.
+
+Matching is whole-word (and whole-phrase for multi-word entries like
+`project manager`), case-insensitive, and checked against the title and —
+where a scraper fetches it — the job's own description text. Because it's
+whole-word, plurals need their own entry: `museum` won't match "Museums", so
+the list carries both `museum` and `museums` (same for `gallery`/`galleries`,
+`exhibition`/`exhibitions`, and `project manager`/`project managers`). If you
+add a new term and it doesn't seem to be catching postings you'd expect,
+check whether you need the plural form too.
+
+Any change here (or to the salary/employment/location/include/exclude
+filters above) is retroactive: every scan re-checks every job ever recorded
+in `data/seen_jobs.json` against the *current* `config.yaml`, not just newly
+scraped ones — so broadening a filter can surface an older posting you'd
+previously have missed, and narrowing one can drop something that used to
+show. That re-check only happens during an actual scan run (the scheduled
+one, or `workflow_dispatch` from the Actions tab); it doesn't update the
+instant you push a config change.
 
 **ArtsJobs UK** has its own separate, fixed filter that isn't part of the
 above: it's pre-filtered to the "Museums" category at the source, via the

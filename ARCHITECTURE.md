@@ -184,14 +184,27 @@ Roughly, per run:
 ### Self-healing backfills
 
 `data/seen_jobs.json` records are written once at `first_seen` and otherwise
-never touched again — so any new piece of logic (date formatting, keyword
+never touched again — so any new piece of logic (date formatting, filter
 matching) that should apply retroactively to already-seen jobs needs an
-*explicit* backfill pass, or those old records silently never update. Both
-`normalize_closing_date()` and `reapply_keyword_filter_to_seen()` exist for
+*explicit* backfill pass, or those old records silently never update.
+`normalize_closing_date()` and `recompute_matched_for_seen()` exist for
 exactly this reason, and both re-run unconditionally on every scan (cheap —
-pure string parsing, no network calls) rather than only "if missing", so they
-also self-heal if the JSON file itself ever gets corrupted by something like
-a bad merge.
+pure string parsing/regex, no network calls) rather than only "if missing",
+so they also self-heal if the JSON file itself ever gets corrupted by
+something like a bad merge.
+
+`recompute_matched_for_seen()` is a *full* recompute, not a one-directional
+patch: it reconstructs an equivalent `Job` from each stored record (every
+field `matches_filters()`/the keyword filter need is already on the record,
+since it's `job.to_dict()` plus `matched`/`closing_date_iso`) and re-runs the
+exact same checks used for freshly scraped jobs. This means any change to
+`config.yaml` — salary_min, employment_type, location, include/exclude
+keywords, or `keyword_filter` — retroactively re-evaluates *every* archived
+job on the next scan, promoting newly-qualifying jobs and demoting ones that
+no longer qualify. (An earlier version only ever demoted, to avoid
+incorrectly reviving a job some other filter had legitimately excluded —
+that's no longer a concern once the recompute re-runs *all* filters
+together, not just the one that changed.)
 
 ## Why `tools/` isn't in `docs/`
 

@@ -500,7 +500,7 @@
     "employment_type": "part_time",
     "closing_date": "Monday, 31 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-08-31"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4286757?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Collections+Care+and+Access+Coordinator&l=": {
@@ -514,7 +514,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-08-30"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4283751?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Accounts+Payable+Officer+-+Maternity+Cover&l=": {
@@ -794,7 +794,7 @@
     "employment_type": "part_time",
     "closing_date": "Friday, 4 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/84030": {
@@ -808,7 +808,7 @@
     "employment_type": "part_time",
     "closing_date": "Tuesday, 1 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/84029": {
@@ -822,7 +822,7 @@
     "employment_type": "part_time",
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/84025": {
@@ -948,7 +948,7 @@
     "employment_type": "part_time",
     "closing_date": "Tuesday, 1 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/83474": {
@@ -962,7 +962,7 @@
     "employment_type": "part_time",
     "closing_date": "Friday, 4 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/84024": {
@@ -1158,7 +1158,7 @@
     "employment_type": "part_time",
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/84001": {
@@ -1172,7 +1172,7 @@
     "employment_type": "part_time",
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/83999": {
@@ -1242,7 +1242,7 @@
     "employment_type": "part_time",
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/83991": {
@@ -1256,7 +1256,7 @@
     "employment_type": "part_time",
     "closing_date": "Wednesday, 21 October 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-10-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/83990": {
@@ -1340,7 +1340,7 @@
     "employment_type": "part_time",
     "closing_date": "Wednesday, 9 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-09"
   },
   "https://www.artsjobs.org.uk/jobs/search/83874": {
@@ -1410,7 +1410,7 @@
     "employment_type": "part_time",
     "closing_date": "Wednesday, 30 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83979": {
@@ -1438,7 +1438,7 @@
     "employment_type": "part_time",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/83974": {
@@ -1732,7 +1732,7 @@
     "employment_type": "part_time",
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84040": {
@@ -1746,7 +1746,7 @@
     "employment_type": "part_time",
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84038": {
@@ -1774,7 +1774,7 @@
     "employment_type": "part_time",
     "closing_date": "Tuesday, 1 September 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/84036": {
@@ -1998,7 +1998,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 30 August 2026",
     "first_seen": "2026-08-26T13:52:34+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-08-30"
   },
   "https://www.kcl.ac.uk/jobs/154845-kings-prize-fellowship": {
@@ -3706,7 +3706,7 @@
     "employment_type": "unknown",
     "closing_date": "Thursday, 27 August 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": false,
+    "matched": true,
     "closing_date_iso": "2026-08-27"
   },
   "https://www.cam.ac.uk/jobs/project-manager-fixed-term-pd50677": {
@@ -3720,7 +3720,7 @@
     "employment_type": "unknown",
     "closing_date": "Monday, 31 August 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": false,
+    "matched": true,
     "closing_date_iso": "2026-08-31"
   },
   "https://www.cam.ac.uk/jobs/purchasing-assistant-ka49172": {
@@ -6458,5 +6458,20 @@
     "description": "",
     "matched": false,
     "closing_date_iso": "2026-08-31"
+  },
+  "https://vam.current-vacancies.com/Jobs/FeedLink/4301465?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Exhibitions+Interpretation+Producer&l=": {
+    "institution": "Victoria and Albert Museum",
+    "title": "Exhibitions Interpretation Producer",
+    "url": "https://vam.current-vacancies.com/Jobs/FeedLink/4301465?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Exhibitions+Interpretation+Producer&l=",
+    "salary_text": "£35,561",
+    "salary_annual_est": 35561,
+    "location_text": "Cromwell Road, London",
+    "is_london": true,
+    "employment_type": "full_time",
+    "closing_date": "Tuesday, 15 September 2026",
+    "first_seen": "2026-08-28T11:02:28+00:00",
+    "description": "",
+    "matched": false,
+    "closing_date_iso": "2026-09-15"
   }
 }

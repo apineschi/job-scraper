@@ -3,6 +3,7 @@ import os
 import re
 import sys
 import traceback
+from dataclasses import fields
 from datetime import date, datetime, timezone
 
 import yaml
@@ -11,7 +12,9 @@ from notify.branding import DEFAULT_STYLE, INSTITUTION_STYLE, SOURCE_BRANDING
 from notify.email import format_digest, format_digest_html
 from notify.ntfy import send_push
 from scrapers import SOURCES
-from scrapers.base import format_long_date, matches_filters, now_iso, parse_closing_date
+from scrapers.base import Job, format_long_date, matches_filters, now_iso, parse_closing_date
+
+JOB_FIELD_NAMES = {f.name for f in fields(Job)}
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(ROOT, "config.yaml")
@@ -169,6 +172,12 @@ def _keyword_pattern(keywords: list):
     return re.compile(r'\b(?:' + '|'.join(re.escape(k) for k in keywords) + r')\b', re.IGNORECASE)
 
 
+def _passes_keyword_filter(job, filtered_institutions: set, pattern) -> bool:
+    if not pattern or job.institution not in filtered_institutions:
+        return True
+    return bool(pattern.search(f"{job.title} {job.location_text} {job.description}"))
+
+
 def apply_keyword_filter(all_jobs: list, keyword_filter: dict) -> list:
     """Some general job boards (council sites, universities — not culture-sector
     specific) are pre-filtered to only surface postings that look relevant,
@@ -177,36 +186,30 @@ def apply_keyword_filter(all_jobs: list, keyword_filter: dict) -> list:
     """
     filtered_institutions = _institutions_for_sources(keyword_filter.get("sources") or [])
     pattern = _keyword_pattern(keyword_filter.get("keywords") or [])
-    if not pattern or not filtered_institutions:
-        return all_jobs
-
-    result = []
-    for job in all_jobs:
-        if job.institution in filtered_institutions:
-            if not pattern.search(f"{job.title} {job.location_text} {job.description}"):
-                continue
-        result.append(job)
-    return result
+    return [job for job in all_jobs if _passes_keyword_filter(job, filtered_institutions, pattern)]
 
 
-def reapply_keyword_filter_to_seen(seen_jobs: dict, keyword_filter: dict) -> None:
+def recompute_matched_for_seen(seen_jobs: dict, filters: dict, keyword_filter: dict) -> None:
     """A record's "matched" flag is set once at first_seen time and otherwise
-    never touched — so if an institution gets newly added to (or its keyword
-    list changed in) config.yaml's keyword_filter, its *existing* matched=True
-    records need re-checking too, or they'd keep showing on the dashboard forever
-    despite no longer qualifying. Only ever downgrades True -> False (never
-    re-promotes a record some other filter already excluded); mutates in place.
+    never touched — so any change to config.yaml's filters (salary_min, keyword
+    lists, keyword_filter's sources/keywords, ...) would otherwise only affect
+    jobs scraped *after* the change, silently leaving already-archived jobs on
+    the old verdict forever. Every field matches_filters()/_passes_keyword_filter()
+    need is already stored on the record (it's exactly job.to_dict() plus
+    "matched"/"closing_date_iso"), so this reconstructs an equivalent Job and
+    re-runs the *exact* same checks used for freshly scraped jobs — a full
+    recompute, safe to promote or demote either way. Mutates in place.
     """
     filtered_institutions = _institutions_for_sources(keyword_filter.get("sources") or [])
     pattern = _keyword_pattern(keyword_filter.get("keywords") or [])
-    if not pattern or not filtered_institutions:
-        return
 
     for record in seen_jobs.values():
-        if record.get("matched") and record.get("institution") in filtered_institutions:
-            text = f"{record.get('title', '')} {record.get('location_text', '')} {record.get('description', '')}"
-            if not pattern.search(text):
-                record["matched"] = False
+        job_kwargs = {k: v for k, v in record.items() if k in JOB_FIELD_NAMES}
+        pseudo_job = Job(**job_kwargs)
+        record["matched"] = (
+            matches_filters(pseudo_job, filters)
+            and _passes_keyword_filter(pseudo_job, filtered_institutions, pattern)
+        )
 
 
 def build_source_branding(keyword_filter: dict) -> dict:
@@ -252,7 +255,7 @@ def main():
     for record in seen_jobs.values():
         record["closing_date_iso"] = normalize_closing_date(record)
 
-    reapply_keyword_filter_to_seen(seen_jobs, keyword_filter)
+    recompute_matched_for_seen(seen_jobs, filters, keyword_filter)
 
     all_jobs, status_entries = run_scrapers(previous_status, disabled_sources)
     all_jobs = dedupe_job_boards(all_jobs, job_board_sources)

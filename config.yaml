@@ -18,7 +18,7 @@ disabled_sources: []
 # module names as disabled_sources above. Applies to every source listed, using
 # one shared keyword list — edit either and both take effect on the next scan.
 keyword_filter:
-  keywords: [library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums]
+  keywords: [library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, project managers]
   sources: [waltham_forest, cambridge, kcl]
 
 # Sources that aggregate postings already sourced directly from other
