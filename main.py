@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 import traceback
 from datetime import date, datetime, timezone
@@ -10,7 +11,7 @@ from notify.branding import DEFAULT_STYLE, INSTITUTION_STYLE, SOURCE_BRANDING
 from notify.email import format_digest, format_digest_html
 from notify.ntfy import send_push
 from scrapers import SOURCES
-from scrapers.base import matches_filters, now_iso, parse_closing_date
+from scrapers.base import format_long_date, matches_filters, now_iso, parse_closing_date
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(ROOT, "config.yaml")
@@ -42,6 +43,24 @@ def save_json(path: str, data) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
+
+def normalize_closing_date(record_or_job) -> str | None:
+    """Reparse whatever's currently in .closing_date (raw scraped text, or our own
+    previously-applied long format — both parse fine, see scrapers/base.py) and
+    rewrite it to the long form ("Sunday, 12 August 2026"). Returns the ISO date
+    string for storage, or None if genuinely unparseable (left as original text).
+    """
+    is_job = hasattr(record_or_job, "closing_date")
+    text = record_or_job.closing_date if is_job else record_or_job.get("closing_date", "")
+    closing = parse_closing_date(text)
+    if closing:
+        long_text = format_long_date(closing)
+        if is_job:
+            record_or_job.closing_date = long_text
+        else:
+            record_or_job["closing_date"] = long_text
+    return closing.isoformat() if closing else None
 
 
 def run_scrapers(previous_status: dict, disabled_sources: set) -> tuple[list, list]:
@@ -103,75 +122,152 @@ def run_scrapers(previous_status: dict, disabled_sources: set) -> tuple[list, li
     return all_jobs, status_entries
 
 
-# Aggregator boards surface postings already sourced directly from other
-# institutions in this project — dedupe them against the direct sources.
-AGGREGATOR_SOURCES = {"National Museums", "ArtsJobs UK"}
+def _institutions_for_sources(source_keys) -> set:
+    return {
+        SOURCE_BRANDING[src]["institution"]
+        for src in (source_keys or [])
+        if src in SOURCE_BRANDING
+    }
 
 
-def build_source_branding() -> dict:
-    """Merge the static per-source branding with each scraper module's own
-    FILTER_NOTE constant, when it defines one. This keeps the dashboard's filter
-    description generated from the same code that does the actual filtering
-    (see scrapers/waltham_forest.py, scrapers/artsjobs.py) instead of a
-    hand-maintained copy in notify/branding.py that can drift out of sync.
+def dedupe_job_boards(all_jobs: list, job_board_sources: list) -> list:
+    """Job-board/aggregator sources (config.yaml's job_board_sources — e.g.
+    National Museums, ArtsJobs UK) surface postings already sourced directly from
+    other institutions in this project. Drop a job-board listing when its title
+    exactly matches (case-insensitive) a job already found from a different,
+    non-job-board institution this run — keeps the direct source's listing
+    instead of double-notifying for the same underlying vacancy.
     """
+    job_board_institutions = _institutions_for_sources(job_board_sources)
+    if not job_board_institutions:
+        return all_jobs
+
+    direct_titles = {
+        job.title.strip().lower()
+        for job in all_jobs
+        if job.institution not in job_board_institutions
+    }
+    return [
+        job for job in all_jobs
+        if not (job.institution in job_board_institutions and job.title.strip().lower() in direct_titles)
+    ]
+
+
+def format_keyword_note(keywords: list) -> str | None:
+    keywords = [k for k in keywords if k]
+    if not keywords:
+        return None
+    if len(keywords) == 1:
+        return f"Filtered to jobs mentioning {keywords[0]}"
+    return f"Filtered to jobs mentioning {', '.join(keywords[:-1])}, or {keywords[-1]}"
+
+
+def _keyword_pattern(keywords: list):
+    keywords = [k for k in keywords if k]
+    if not keywords:
+        return None
+    return re.compile(r'\b(?:' + '|'.join(re.escape(k) for k in keywords) + r')\b', re.IGNORECASE)
+
+
+def apply_keyword_filter(all_jobs: list, keyword_filter: dict) -> list:
+    """Some general job boards (council sites, universities — not culture-sector
+    specific) are pre-filtered to only surface postings that look relevant,
+    per config.yaml's keyword_filter. Applies to whichever institutions are
+    listed there (by source/module name), leaving everyone else untouched.
+    """
+    filtered_institutions = _institutions_for_sources(keyword_filter.get("sources") or [])
+    pattern = _keyword_pattern(keyword_filter.get("keywords") or [])
+    if not pattern or not filtered_institutions:
+        return all_jobs
+
+    result = []
+    for job in all_jobs:
+        if job.institution in filtered_institutions:
+            if not pattern.search(f"{job.title} {job.location_text}"):
+                continue
+        result.append(job)
+    return result
+
+
+def reapply_keyword_filter_to_seen(seen_jobs: dict, keyword_filter: dict) -> None:
+    """A record's "matched" flag is set once at first_seen time and otherwise
+    never touched — so if an institution gets newly added to (or its keyword
+    list changed in) config.yaml's keyword_filter, its *existing* matched=True
+    records need re-checking too, or they'd keep showing on the dashboard forever
+    despite no longer qualifying. Only ever downgrades True -> False (never
+    re-promotes a record some other filter already excluded); mutates in place.
+    """
+    filtered_institutions = _institutions_for_sources(keyword_filter.get("sources") or [])
+    pattern = _keyword_pattern(keyword_filter.get("keywords") or [])
+    if not pattern or not filtered_institutions:
+        return
+
+    for record in seen_jobs.values():
+        if record.get("matched") and record.get("institution") in filtered_institutions:
+            text = f"{record.get('title', '')} {record.get('location_text', '')}"
+            if not pattern.search(text):
+                record["matched"] = False
+
+
+def build_source_branding(keyword_filter: dict) -> dict:
+    """Merge the static per-source branding with each source's own filter note:
+    either a scraper module's FILTER_NOTE constant (e.g. ArtsJobs' category
+    filter), or — for sources listed in config.yaml's keyword_filter — a note
+    generated fresh from that config each run. Either way the dashboard's filter
+    description is derived from the actual filtering configuration, not a
+    hand-maintained copy that can drift out of sync.
+    """
+    keyword_note = format_keyword_note(keyword_filter.get("keywords") or [])
+    keyword_sources = set(keyword_filter.get("sources") or [])
+
     merged = {}
     for module in SOURCES:
         source_name = module.__name__.rsplit(".", 1)[-1]
         style = dict(SOURCE_BRANDING.get(source_name, DEFAULT_STYLE))
         filter_note = getattr(module, "FILTER_NOTE", None)
+        if source_name in keyword_sources and keyword_note:
+            filter_note = keyword_note
         if filter_note:
             style["filter_note"] = filter_note
         merged[source_name] = style
     return merged
 
 
-def dedupe_aggregators(all_jobs: list) -> list:
-    """Drop an aggregator's listing when its title exactly matches (case-insensitive)
-    a job already found from a different, non-aggregator institution this run —
-    keeps the direct source's listing instead of double-notifying for the same
-    underlying vacancy (e.g. National Museums re-listing a National Gallery role).
-    """
-    direct_titles = {
-        job.title.strip().lower()
-        for job in all_jobs
-        if job.institution not in AGGREGATOR_SOURCES
-    }
-    return [
-        job for job in all_jobs
-        if not (job.institution in AGGREGATOR_SOURCES and job.title.strip().lower() in direct_titles)
-    ]
-
-
 def main():
     config = load_config()
     filters = config.get("filters", {})
     disabled_sources = set(config.get("disabled_sources") or [])
+    job_board_sources = config.get("job_board_sources") or []
+    keyword_filter = config.get("keyword_filter") or {}
+    push_enabled = config.get("push_notifications_enabled", True)
 
     seen_jobs = load_json(SEEN_JOBS_PATH, {})
     previous_status = {entry["source"]: entry for entry in load_json(STATUS_PATH, [])}
 
-    # Recompute closing_date_iso for every record each run rather than only when
-    # missing — cheap (pure string parsing, no network calls), and self-heals if a
-    # git merge of this JSON file (bot-committed scan results vs. manual edits)
-    # ever drops or staples in a stale value for some records, as happened once.
+    # Recompute closing_date_iso (and the normalized long-form display text) for
+    # every record each run rather than only when missing — cheap (pure string
+    # parsing, no network calls), and self-heals if a git merge of this JSON file
+    # (bot-committed scan results vs. manual edits) ever drops or staples in a
+    # stale value for some records, as happened once.
     for record in seen_jobs.values():
-        closing = parse_closing_date(record.get("closing_date", ""))
-        record["closing_date_iso"] = closing.isoformat() if closing else None
+        record["closing_date_iso"] = normalize_closing_date(record)
+
+    reapply_keyword_filter_to_seen(seen_jobs, keyword_filter)
 
     all_jobs, status_entries = run_scrapers(previous_status, disabled_sources)
-    all_jobs = dedupe_aggregators(all_jobs)
+    all_jobs = dedupe_job_boards(all_jobs, job_board_sources)
+    all_jobs = apply_keyword_filter(all_jobs, keyword_filter)
 
     new_matches = []
     for job in all_jobs:
         is_new = job.url not in seen_jobs
         if is_new:
             job.first_seen = now_iso()
+            closing_iso = normalize_closing_date(job)  # rewrites job.closing_date to the long form in place
             matched = matches_filters(job, filters)
             record = job.to_dict()
             record["matched"] = matched
-            closing = parse_closing_date(job.closing_date)
-            record["closing_date_iso"] = closing.isoformat() if closing else None
+            record["closing_date_iso"] = closing_iso
             seen_jobs[job.url] = record
             if matched:
                 new_matches.append(job)
@@ -181,7 +277,7 @@ def main():
     save_json(STATUS_PATH, status_entries)
     save_json(BRANDING_PATH, {
         "institutions": INSTITUTION_STYLE,
-        "sources": build_source_branding(),
+        "sources": build_source_branding(keyword_filter),
         "default": DEFAULT_STYLE,
     })
 
@@ -209,7 +305,14 @@ def main():
         f.write(format_digest_html(new_matches))
 
     if new_matches:
-        send_push(new_matches)
+        if push_enabled:
+            send_push(new_matches)
+        else:
+            print(
+                "Push notifications are suppressed (push_notifications_enabled: false "
+                "in config.yaml) — skipping ntfy push. See INSTRUCTIONS.md to re-enable.",
+                file=sys.stderr,
+            )
 
 
 if __name__ == "__main__":

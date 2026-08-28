@@ -10,3 +10,22 @@ filters:
 # they still show up on the dashboard, grayed out). Use the source's module name
 # (see scrapers/__init__.py), e.g. "kcl", "cambridge".
 disabled_sources: []
+
+# General job boards (not culture-sector specific) that only get pre-filtered to
+# postings mentioning at least one of these keywords. "sources" uses the same
+# module names as disabled_sources above. Applies to every source listed, using
+# one shared keyword list — edit either and both take effect on the next scan.
+keyword_filter:
+  keywords: [library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums]
+  sources: [waltham_forest, cambridge, kcl]
+
+# Sources that aggregate postings already sourced directly from other
+# institutions in this project (e.g. a "jobs board" re-listing a museum's own
+# vacancy). Anything listed here gets checked for exact-title duplicates against
+# every other active source each run, and the duplicate is dropped so you're not
+# notified twice about the same underlying vacancy.
+job_board_sources: [national_museums, artsjobs]
+
+# Set to false to suppress ntfy push notifications without removing the feature —
+# email alerts and the dashboard are unaffected. Set back to true to re-enable.
+push_notifications_enabled: true

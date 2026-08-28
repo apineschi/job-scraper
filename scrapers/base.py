@@ -89,6 +89,14 @@ def parse_closing_date(text: str) -> Optional[date]:
         return None
 
 
+def format_long_date(d: date) -> str:
+    """"Sunday, 12 August 2026" — deliberately not using %d (leading zero) or the
+    platform-specific %-d/%#d no-padding flags, since this runs on both Windows
+    (local testing) and Ubuntu (GitHub Actions).
+    """
+    return f"{d.strftime('%A')}, {d.day} {d.strftime('%B')} {d.year}"
+
+
 def fetch_html(url: str, timeout: int = 20) -> str:
     resp = requests.get(url, headers={"User-Agent": DEFAULT_USER_AGENT}, timeout=timeout)
     resp.raise_for_status()

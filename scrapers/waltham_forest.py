@@ -8,31 +8,10 @@ from .base import DEFAULT_USER_AGENT, Job, classify_employment_type, classify_lo
 SITE_URL = "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/"
 INSTITUTION = "London Borough of Waltham Forest"
 
-# General council job board, not culture-sector — only surface postings that look
-# culture/heritage-related in title or listing text, per explicit user request.
-# This list is the single source of truth for both the actual filter and the
-# human-readable note shown on this source's dashboard card (see FILTER_NOTE
-# below) — edit it here and both stay in sync automatically.
-# Word-boundary matched: a plain substring check on "art" false-positives on
-# ordinary words like "Partner" or "Department".
-CULTURE_KEYWORDS = [
-    ("librar(?:y|ies)", "library"),
-    ("galler(?:y|ies)", "gallery"),
-    ("arts?", "art"),
-    ("cultural?", "cultural"),
-    ("exhibitions?", "exhibitions"),
-    ("museums?", "museum"),
-]
-CULTURE_KEYWORD_RE = re.compile(
-    r'\b(?:' + '|'.join(pattern for pattern, _label in CULTURE_KEYWORDS) + r')\b', re.IGNORECASE
-)
-_labels = [label for _pattern, label in CULTURE_KEYWORDS]
-FILTER_NOTE = f"Filtered to jobs mentioning {', '.join(_labels[:-1])}, or {_labels[-1]}"
-
-
-def _matches_culture_keywords(*texts: str) -> bool:
-    combined = " ".join(t or "" for t in texts)
-    return bool(CULTURE_KEYWORD_RE.search(combined))
+# This is a general council job board (all departments, not just culture), so
+# it returns everything unfiltered here — narrowing to culture-relevant postings
+# happens generically in main.py, per config.yaml's keyword_filter, which can
+# also apply the same filter to other general-board sources (see INSTRUCTIONS.md).
 
 
 def fetch_jobs() -> list[Job]:
@@ -61,8 +40,6 @@ def fetch_jobs() -> list[Job]:
             continue
 
         card_text = card.get_text("\n", strip=True)
-        if not _matches_culture_keywords(title, card_text):
-            continue
 
         # Card text runs fields together with no separator ("Grade: PO10 £68,784 to
         # £72,399 Full-time/Permanent Closing Date: ..."), so capture just the money

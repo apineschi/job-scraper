@@ -40,8 +40,7 @@
       "color": "#fbe8d6",
       "emoji_tag": "briefcase",
       "emoji": "💼",
-      "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums",
-      "filter_note": "Filtered to the Museums category only"
+      "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums"
     },
     "Southbank Centre": {
       "institution": "Southbank Centre",
@@ -83,8 +82,7 @@
       "color": "#eef0d8",
       "emoji_tag": "office",
       "emoji": "🏢",
-      "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/",
-      "filter_note": "Filtered to jobs mentioning library, gallery, art, cultural, exhibitions, or museum"
+      "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/"
     },
     "National Trust": {
       "institution": "National Trust",
@@ -128,7 +126,8 @@
       "color": "#ede0f0",
       "emoji_tag": "mortar_board",
       "emoji": "🎓",
-      "url": "https://www.kcl.ac.uk/jobs/search?term="
+      "url": "https://www.kcl.ac.uk/jobs/search?term=",
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, or museums"
     },
     "vam": {
       "institution": "Victoria and Albert Museum",
@@ -185,7 +184,8 @@
       "color": "#e6f2f5",
       "emoji_tag": "books",
       "emoji": "📚",
-      "url": "https://www.cam.ac.uk/jobs/search?search_api_views_fulltext="
+      "url": "https://www.cam.ac.uk/jobs/search?search_api_views_fulltext=",
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, or museums"
     },
     "waltham_forest": {
       "institution": "London Borough of Waltham Forest",
@@ -193,7 +193,7 @@
       "emoji_tag": "office",
       "emoji": "🏢",
       "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/",
-      "filter_note": "Filtered to jobs mentioning library, gallery, art, cultural, exhibitions, or museum"
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, or museums"
     },
     "national_trust": {
       "institution": "National Trust",

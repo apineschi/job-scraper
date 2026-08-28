@@ -66,9 +66,9 @@
   #status { font-size: 0.82rem; color: var(--accent); margin-top: 0.6rem; min-height: 1.2em; }
   .steps { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
   .steps b { color: var(--text); }
-  .source-row { display: flex; align-items: center; justify-content: space-between; padding: 0.45rem 0; border-bottom: 1px solid var(--border); }
+  .source-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
   .source-row:last-child { border-bottom: none; }
-  .source-row span { font-size: 0.88rem; }
+  .source-row > span:first-child { font-size: 0.88rem; flex: 1; min-width: 140px; }
   .source-row select {
     width: auto;
     background: #11141a;
@@ -78,6 +78,12 @@
     padding: 0.25rem 0.5rem;
     font-size: 0.8rem;
   }
+  .source-controls { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; }
+  .source-controls label { display: flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--muted); margin: 0; cursor: pointer; }
+  .source-controls input[type="checkbox"] { width: auto; }
+  .toggle-row { display: flex; align-items: center; gap: 0.6rem; }
+  .toggle-row label { margin: 0; }
+  .toggle-row input[type="checkbox"] { width: auto; }
 </style>
 </head>
 <body>
@@ -122,8 +128,30 @@
   </div>
 
   <div class="card">
-    <label style="margin-bottom:0.6rem;">Institutions (pause ingest without removing it from the dashboard)</label>
+    <label style="margin-bottom:0.6rem;">Institutions</label>
+    <div class="hint" style="margin-top:0; margin-bottom:0.6rem;">
+      <b style="color:var(--text);">Active/Inactive</b> pauses ingest without removing the card from the dashboard.
+      <b style="color:var(--text);">Keyword-filtered</b> applies the shared keyword list below — only postings
+      mentioning one of those words get surfaced. <b style="color:var(--text);">Job board</b> marks a source as an
+      aggregator, so its listings get checked for exact-title duplicates against every other active source.
+    </div>
     <div id="sourceList"></div>
+  </div>
+
+  <div class="card">
+    <label>Keyword filter keywords (shared by every institution marked "Keyword-filtered" above)</label>
+    <input type="text" id="keywordFilterWords" value="library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums">
+    <div class="hint">Comma-separated. A postings must mention at least one of these to be surfaced from a
+      keyword-filtered institution.</div>
+  </div>
+
+  <div class="card">
+    <div class="toggle-row">
+      <input type="checkbox" id="pushEnabled" checked>
+      <label for="pushEnabled" style="margin:0; color:var(--text); font-size:0.9rem;">Push notifications enabled</label>
+    </div>
+    <div class="hint">Uncheck to suppress ntfy push notifications without removing the feature — email alerts and
+      the dashboard are unaffected. Re-check any time to reactivate.</div>
   </div>
 
   <div class="card">
@@ -151,6 +179,8 @@
     includeKeywords: document.getElementById('includeKeywords'),
     excludeKeywords: document.getElementById('excludeKeywords'),
     sourceList: document.getElementById('sourceList'),
+    keywordFilterWords: document.getElementById('keywordFilterWords'),
+    pushEnabled: document.getElementById('pushEnabled'),
     yamlOutput: document.getElementById('yamlOutput'),
     downloadBtn: document.getElementById('downloadBtn'),
     copyBtn: document.getElementById('copyBtn'),
@@ -177,6 +207,9 @@
   ];
 
   const disabledSources = new Set();
+  // Defaults match config.yaml as shipped — overwritten if you load an existing file.
+  const keywordFilterSources = new Set(['waltham_forest', 'cambridge', 'kcl']);
+  const jobBoardSources = new Set(['national_museums', 'artsjobs']);
 
   function renderSourceList() {
     els.sourceList.innerHTML = '';
@@ -185,10 +218,14 @@
       row.className = 'source-row';
       row.innerHTML = `
         <span>${label}</span>
-        <select data-source="${key}">
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-        </select>
+        <div class="source-controls">
+          <select data-source="${key}" data-role="active">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+          <label><input type="checkbox" data-source="${key}" data-role="keyword"> Keyword-filtered</label>
+          <label><input type="checkbox" data-source="${key}" data-role="jobboard"> Job board</label>
+        </div>
       `;
       const select = row.querySelector('select');
       select.value = disabledSources.has(key) ? 'inactive' : 'active';
@@ -197,6 +234,23 @@
         else disabledSources.delete(key);
         refresh();
       });
+
+      const kwCheckbox = row.querySelector('input[data-role="keyword"]');
+      kwCheckbox.checked = keywordFilterSources.has(key);
+      kwCheckbox.addEventListener('change', () => {
+        if (kwCheckbox.checked) keywordFilterSources.add(key);
+        else keywordFilterSources.delete(key);
+        refresh();
+      });
+
+      const jbCheckbox = row.querySelector('input[data-role="jobboard"]');
+      jbCheckbox.checked = jobBoardSources.has(key);
+      jbCheckbox.addEventListener('change', () => {
+        if (jbCheckbox.checked) jobBoardSources.add(key);
+        else jobBoardSources.delete(key);
+        refresh();
+      });
+
       els.sourceList.appendChild(row);
     });
   }
@@ -214,8 +268,17 @@
 
     const incStr = include.length ? `[${include.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
     const excStr = exclude.length ? `[${exclude.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
-    const disabledList = [...disabledSources];
-    const disabledStr = disabledList.length ? `[${disabledList.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
+
+    const toYamlList = (set) => {
+      const list = [...set];
+      return list.length ? `[${list.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
+    };
+    const disabledStr = toYamlList(disabledSources);
+    const jobBoardStr = toYamlList(jobBoardSources);
+    const keywordSourcesStr = toYamlList(keywordFilterSources);
+    const keywordWords = parseKeywordList(els.keywordFilterWords.value);
+    const keywordWordsStr = keywordWords.length ? `[${keywordWords.map(k => JSON.stringify(k)).join(', ')}]` : '[]';
+    const pushEnabled = els.pushEnabled.checked;
 
     return `# Job alert filters. Edit these values and push to change what you get notified about.
 filters:
@@ -229,6 +292,25 @@ filters:
 # they still show up on the dashboard, grayed out). Use the source's module name
 # (see scrapers/__init__.py), e.g. "kcl", "cambridge".
 disabled_sources: ${disabledStr}
+
+# General job boards (not culture-sector specific) that only get pre-filtered to
+# postings mentioning at least one of these keywords. "sources" uses the same
+# module names as disabled_sources above. Applies to every source listed, using
+# one shared keyword list — edit either and both take effect on the next scan.
+keyword_filter:
+  keywords: ${keywordWordsStr}
+  sources: ${keywordSourcesStr}
+
+# Sources that aggregate postings already sourced directly from other
+# institutions in this project (e.g. a "jobs board" re-listing a museum's own
+# vacancy). Anything listed here gets checked for exact-title duplicates against
+# every other active source each run, and the duplicate is dropped so you're not
+# notified twice about the same underlying vacancy.
+job_board_sources: ${jobBoardStr}
+
+# Set to false to suppress ntfy push notifications without removing the feature —
+# email alerts and the dashboard are unaffected. Set back to true to re-enable.
+push_notifications_enabled: ${pushEnabled}
 `;
   }
 
@@ -243,6 +325,10 @@ disabled_sources: ${disabledStr}
     const incMatch = text.match(/include_keywords:\s*\[(.*?)\]/);
     const excMatch = text.match(/exclude_keywords:\s*\[(.*?)\]/);
     const disabledMatch = text.match(/disabled_sources:\s*\[(.*?)\]/);
+    const keywordWordsMatch = text.match(/keyword_filter:[\s\S]*?keywords:\s*\[(.*?)\]/);
+    const keywordSourcesMatch = text.match(/keyword_filter:[\s\S]*?sources:\s*\[(.*?)\]/);
+    const jobBoardMatch = text.match(/job_board_sources:\s*\[(.*?)\]/);
+    const pushMatch = text.match(/push_notifications_enabled:\s*(true|false)/);
 
     function parseFlowList(raw) {
       if (!raw || !raw.trim()) return [];
@@ -257,6 +343,16 @@ disabled_sources: ${disabledStr}
 
     disabledSources.clear();
     parseFlowList(disabledMatch ? disabledMatch[1] : '').forEach(s => disabledSources.add(s));
+
+    keywordFilterSources.clear();
+    parseFlowList(keywordSourcesMatch ? keywordSourcesMatch[1] : '').forEach(s => keywordFilterSources.add(s));
+    els.keywordFilterWords.value = parseFlowList(keywordWordsMatch ? keywordWordsMatch[1] : '').join(', ');
+
+    jobBoardSources.clear();
+    parseFlowList(jobBoardMatch ? jobBoardMatch[1] : '').forEach(s => jobBoardSources.add(s));
+
+    if (pushMatch) els.pushEnabled.checked = pushMatch[1] === 'true';
+
     renderSourceList();
 
     refresh();
@@ -271,8 +367,9 @@ disabled_sources: ${disabledStr}
     reader.readAsText(file);
   });
 
-  [els.salaryMin, els.employmentType, els.location, els.includeKeywords, els.excludeKeywords]
+  [els.salaryMin, els.employmentType, els.location, els.includeKeywords, els.excludeKeywords, els.keywordFilterWords]
     .forEach(el => el.addEventListener('input', refresh));
+  els.pushEnabled.addEventListener('change', refresh);
 
   els.downloadBtn.addEventListener('click', () => {
     const blob = new Blob([els.yamlOutput.value], { type: 'text/yaml' });
