@@ -30,4 +30,4 @@ job_board_sources: [national_museums, artsjobs]
 
 # Set to false to suppress ntfy push notifications without removing the feature —
 # email alerts and the dashboard are unaffected. Set back to true to re-enable.
-push_notifications_enabled: true
+push_notifications_enabled: false
