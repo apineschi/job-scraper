@@ -167,7 +167,12 @@
   .filter-option { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0.2rem; font-size: 0.85rem; cursor: pointer; }
   .filter-option:hover { color: var(--muted); }
   .filter-option input { flex-shrink: 0; }
-  .sync-panel { min-width: 280px; }
+  .sync-panel {
+    min-width: 280px;
+    max-width: calc(100vw - 2rem);
+    left: 0;
+    right: auto;
+  }
   .sync-desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; }
   #syncCode {
     width: 100%;
