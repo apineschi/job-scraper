@@ -1,9 +1,10 @@
 # Instructions
 
-Everyday changes to this project — filters, pausing a source, branding, adding a
-new institution, and finding old jobs. This file lives at the repo root rather
-than in `docs/`, so it's never served by the live dashboard site (github.com is
-the only place it's readable).
+Everyday changes to this project — filters, pausing a source, duplicate
+checking, branding, adding a new institution, finding old jobs, and push
+notifications. This file lives at the repo root rather than in `docs/`, so
+it's never served by the live dashboard site (github.com is the only place
+it's readable).
 
 All the edits below follow the same pattern: change a file locally, then commit
 and push (e.g. via GitHub Desktop). The next scan (daily at 9am UTC, or run
@@ -39,24 +40,55 @@ Same tool: `tools/filters-editor.html`.
    keywords**, and/or **Exclude keywords**.
 3. Download/copy the result, replace `config.yaml`, commit, push.
 
-These filters apply to every active institution. Two sources also have their
-own extra, fixed filter on top of this (not editable from the tool):
-- **Waltham Forest** — only surfaces postings mentioning library, gallery, art,
-  cultural, exhibitions, or museum (it's a general council job board, not a
-  culture-sector one). Edit the `CULTURE_KEYWORDS` list near the top of
-  `scrapers/waltham_forest.py` to change this — each entry is a
-  `(regex_pattern, display_label)` pair, and both the actual filter and the
-  note shown on its dashboard card are generated from this one list, so
-  they can't drift out of sync.
-- **ArtsJobs UK** — pre-filtered to the "Museums" category at the source, via
-  the `ART_FORM_CATEGORY` constant near the top of `scrapers/artsjobs.py`
-  (also used to build both the URL and the dashboard note).
+These global filters apply to every active institution.
 
-Both show a note about this on their status card on the dashboard.
+**Keyword filter for general job boards**: some sources (currently Waltham
+Forest, University of Cambridge, King's College London) are general job
+boards, not culture-sector specific — most of what they post is irrelevant.
+These get an *extra* filter on top of the global one: a posting only
+surfaces if its title or location mentions one of a shared list of keywords
+(by default: library, gallery, art, cultural, exhibitions, museum, and their
+plurals). To change this:
+
+1. In the same tool, under **Institutions**, tick/untick **"Keyword-filtered"**
+   next to whichever institutions you want this applied to.
+2. Edit the **"Keyword filter keywords"** field to add/remove words (comma-separated).
+3. Download/copy, replace `config.yaml`, commit, push.
+
+The keyword list and the set of institutions it applies to are both stored in
+`config.yaml`'s `keyword_filter` section, and the note shown on each affected
+institution's dashboard card is generated fresh from that same config every
+run — so it can never drift out of sync with the actual filter.
+
+**ArtsJobs UK** has its own separate, fixed filter that isn't part of the
+above: it's pre-filtered to the "Museums" category at the source, via the
+`ART_FORM_CATEGORY` constant near the top of `scrapers/artsjobs.py` (also used
+to build both the search URL and its dashboard note).
 
 ---
 
-## 3. Change the branding (emoji, colour, opacity)
+## 3. Check for duplicate postings across job boards
+
+Some sources are aggregators — general job boards that re-list postings
+already sourced directly from other institutions in this project (e.g.
+National Museums re-listing a National Gallery vacancy, or ArtsJobs UK
+re-listing something Tate already posted directly). Anything marked as a
+**job board** gets checked each run: if one of its listings has the exact
+same title (case-insensitive) as a job already found from a different,
+non-job-board institution that run, the job-board duplicate is dropped —
+you only get notified once, from the direct source.
+
+To mark more institutions as job boards (or unmark one):
+1. Open `tools/filters-editor.html`, load your current `config.yaml`.
+2. Under **Institutions**, tick/untick **"Job board"** for whichever ones apply.
+3. Download/copy, replace `config.yaml`, commit, push.
+
+This is stored in `config.yaml`'s `job_board_sources` list (currently National
+Museums and ArtsJobs UK by default).
+
+---
+
+## 4. Change the branding (emoji, colour, opacity)
 
 **Emoji and colour** (per institution): edit `notify/branding.py`, in the
 `SOURCE_BRANDING` dictionary. Each entry has:
@@ -76,14 +108,14 @@ After editing `notify/branding.py`, commit and push as usual — `docs/branding.
 
 ---
 
-## 4. Add a new institution
+## 5. Add a new institution
 
 This one needs a bit of code, since every site is structured differently. The
 easiest way is to ask Claude directly: give it the vacancy-listing page URL for
-the institution, and mention any special filtering you want (like the Waltham
-Forest keyword filter, or the ArtsJobs category filter). Claude will inspect
-the real site, write a new file in `scrapers/`, register it, and add a branding
-entry.
+the institution, and mention any special filtering you want (e.g. "add it to
+the keyword filter" if it's a general job board like Cambridge/KCL/Waltham
+Forest). Claude will inspect the real site, write a new file in `scrapers/`,
+register it, and add a branding entry.
 
 If you want to do it yourself: look at `scrapers/tate.py` for the simplest
 template (a static HTML site using the shared `scrape_link_pattern_site()`
@@ -99,7 +131,7 @@ that pattern.
 
 ---
 
-## 5. Find previous jobs in the database
+## 6. Find previous jobs in the database
 
 `data/seen_jobs.json` is the permanent record — every job any scraper has ever
 found, going back to when that scraper was added. It's never pruned, even once
@@ -121,3 +153,20 @@ location, closing date, employment type, when it was first found
 The dashboard (`docs/jobs.json`, what `https://apineschi.github.io/job-scraper/`
 shows) is a *derived*, temporary view — only currently-open, filter-matching,
 non-archived jobs. `data/seen_jobs.json` is the real archive.
+
+Closing dates are always normalized to a long form with the weekday
+("Sunday, 12 August 2026") regardless of how the source originally displayed
+it — this happens automatically once, the first time a job is recorded.
+
+---
+
+## 7. Turn phone push notifications off / back on
+
+1. Open `tools/filters-editor.html`, load your current `config.yaml`.
+2. Untick **"Push notifications enabled"**.
+3. Download/copy, replace `config.yaml`, commit, push.
+
+This suppresses ntfy push without removing the feature or touching anything
+else — email alerts and the dashboard keep working exactly as before. To
+reactivate, tick the box again (or directly edit `config.yaml` and set
+`push_notifications_enabled: true`), commit, push.
