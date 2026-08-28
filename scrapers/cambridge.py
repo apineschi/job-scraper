@@ -1,8 +1,22 @@
-from .base import DEFAULT_USER_AGENT, Job, classify_employment_type, classify_london, get_soup, parse_salary
+import time
+
+import requests
+
+from .base import DEFAULT_USER_AGENT, DESCRIPTION_MAX_LEN, Job, classify_employment_type, classify_london, extract_main_text, get_soup, parse_salary
 
 INSTITUTION = "University of Cambridge"
 LISTING_URL = "https://www.cam.ac.uk/jobs/search?search_api_views_fulltext="
 BASE_URL = "https://www.cam.ac.uk"
+
+
+def _fetch_description(url: str) -> str:
+    # Best-effort: the listing page already has everything matches_filters()
+    # needs except description, so a detail-page failure shouldn't drop the job.
+    try:
+        detail_soup = get_soup(url)
+        return extract_main_text(detail_soup)[:DESCRIPTION_MAX_LEN]
+    except requests.RequestException:
+        return ""
 
 
 def fetch_jobs() -> list[Job]:
@@ -33,6 +47,7 @@ def fetch_jobs() -> list[Job]:
         closing_cell = row.select_one(".views-field-field-closing-date")
         closing_date = closing_cell.get_text(strip=True) if closing_cell else "Not found"
 
+        time.sleep(0.4)  # be a polite scraper — avoid tripping rate limits on daily runs
         jobs.append(Job(
             institution=INSTITUTION,
             title=title,
@@ -43,5 +58,6 @@ def fetch_jobs() -> list[Job]:
             is_london=classify_london(INSTITUTION, location_text, default=False),
             employment_type=classify_employment_type(title_cell.parent.get_text(" ", strip=True)),
             closing_date=closing_date,
+            description=_fetch_description(url),
         ))
     return jobs

@@ -5,8 +5,10 @@ from playwright.sync_api import sync_playwright
 
 from .base import (
     DEFAULT_USER_AGENT,
+    DESCRIPTION_MAX_LEN,
     Job,
     classify_london,
+    extract_main_text,
     parse_salary,
     scan_common_fields,
     visible_text,
@@ -59,6 +61,7 @@ def fetch_jobs() -> list[Job]:
                 is_london=classify_london(INSTITUTION, location_text),
                 employment_type=employment_type,
                 closing_date=closing_date,
+                description=extract_main_text(detail_soup)[:DESCRIPTION_MAX_LEN],
             ))
 
         browser.close()

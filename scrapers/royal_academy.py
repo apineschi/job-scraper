@@ -1,8 +1,9 @@
 from datetime import datetime
 
+from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
-from .base import DEFAULT_USER_AGENT, Job, classify_employment_type, classify_london, parse_salary
+from .base import DEFAULT_USER_AGENT, DESCRIPTION_MAX_LEN, Job, classify_employment_type, classify_london, parse_salary
 
 SEARCH_URL = "https://royalacademyarts.current-vacancies.com/Careers/RA-vacancy-search-page-3191"
 INSTITUTION = "Royal Academy of Arts"
@@ -65,6 +66,8 @@ def fetch_jobs() -> list[Job]:
         location_text = record.get("Location") or "Not listed"
         contract_type = _field(record, "_ContractType")
         closing_date = _format_expiry(record.get("ExpiryDate", ""))
+        raw_description = record.get("JobDescription", "")
+        description = BeautifulSoup(raw_description, "html.parser").get_text(" ", strip=True)[:DESCRIPTION_MAX_LEN] if raw_description else ""
 
         jobs.append(Job(
             institution=INSTITUTION,
@@ -74,7 +77,8 @@ def fetch_jobs() -> list[Job]:
             salary_annual_est=parse_salary(salary_text),
             location_text=location_text,
             is_london=classify_london(INSTITUTION, location_text),
-            employment_type=classify_employment_type(f"{contract_type} {record.get('JobDescription', '')}"),
+            employment_type=classify_employment_type(f"{contract_type} {raw_description}"),
             closing_date=closing_date,
+            description=description,
         ))
     return jobs

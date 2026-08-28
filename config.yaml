@@ -3,8 +3,8 @@ filters:
   salary_min: 38000
   employment_type: full_time        # full_time | part_time | any
   location: any                 # london | outside_london | any
-  include_keywords: []          # job must contain at least one of these (in title/institution) if non-empty
-  exclude_keywords: []          # job is dropped if it contains any of these
+  include_keywords: []          # job must contain at least one of these (in title/institution/description) if non-empty
+  exclude_keywords: []          # job is dropped if it contains any of these (title/institution/description)
 
 # Sources listed here are skipped entirely during scraping (paused, not removed —
 # they still show up on the dashboard, grayed out). Use the source's module name
@@ -12,7 +12,9 @@ filters:
 disabled_sources: []
 
 # General job boards (not culture-sector specific) that only get pre-filtered to
-# postings mentioning at least one of these keywords. "sources" uses the same
+# postings mentioning at least one of these keywords (checked against title and,
+# where available, the job's own description text — nav/boilerplate is stripped
+# out first, see scrapers/base.py's extract_main_text()). "sources" uses the same
 # module names as disabled_sources above. Applies to every source listed, using
 # one shared keyword list — edit either and both take effect on the next scan.
 keyword_filter:

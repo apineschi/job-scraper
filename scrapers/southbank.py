@@ -1,8 +1,17 @@
 import requests
+from bs4 import BeautifulSoup
 
-from .base import DEFAULT_USER_AGENT, Job, classify_employment_type, classify_london, parse_salary
+from .base import DEFAULT_USER_AGENT, DESCRIPTION_MAX_LEN, Job, classify_employment_type, classify_london, parse_salary
 
 POSTINGS_URL = "https://southbankcentre.pinpointhq.com/postings.json"
+
+
+def _plain_description(posting: dict) -> str:
+    html = posting.get("description") or ""
+    if not html:
+        return ""
+    text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
+    return text[:DESCRIPTION_MAX_LEN]
 
 
 def _estimate_annual_salary(posting: dict) -> int:
@@ -40,5 +49,6 @@ def fetch_jobs() -> list[Job]:
             is_london=classify_london("Southbank Centre", location_text),
             employment_type=classify_employment_type(posting.get("employment_type_text") or ""),
             closing_date=deadline_at or "Not found",
+            description=_plain_description(posting),
         ))
     return jobs

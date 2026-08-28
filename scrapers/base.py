@@ -38,9 +38,13 @@ class Job:
     employment_type: str = "unknown"  # full_time | part_time | both | unknown
     closing_date: str = "Not found"
     first_seen: str = ""
+    description: str = ""  # best-effort excerpt, used for keyword matching only
 
     def to_dict(self):
         return asdict(self)
+
+
+DESCRIPTION_MAX_LEN = 2000  # bounds data/seen_jobs.json growth — plenty for keyword search
 
 
 def now_iso() -> str:
@@ -115,6 +119,19 @@ def visible_text(soup: BeautifulSoup) -> str:
     for tag in soup(["script", "style"]):
         tag.decompose()
     return soup.get_text("\n", strip=True)
+
+
+def extract_main_text(soup: BeautifulSoup) -> str:
+    """Best-effort isolation of a page's main content, for the description field
+    only — prefers <article>, then <main>, falling back to the whole page. Many
+    career sites repeat identical nav/footer text (site-wide menu links like
+    "Libraries" or "Museums and collections") on every single job page, which can
+    accidentally satisfy a keyword filter meant to catch sector-specific vocabulary
+    in the job's *own* content, not the page chrome around it — confirmed on both
+    Cambridge (nav) and Waltham Forest (a boilerplate "About Us" paragraph).
+    """
+    container = soup.find("article") or soup.find("main") or soup
+    return visible_text(container)
 
 
 def parse_salary(text: str) -> int:
@@ -252,6 +269,7 @@ def scrape_link_pattern_site(
             is_london=classify_london(institution, location_text),
             employment_type=employment_type,
             closing_date=closing_date,
+            description=extract_main_text(soup)[:DESCRIPTION_MAX_LEN],
         ))
     return jobs
 
@@ -307,7 +325,7 @@ def matches_filters(job: Job, filters: dict) -> bool:
     if location == "outside_london" and job.is_london is True:
         return False
 
-    text = f"{job.title} {job.institution}".lower()
+    text = f"{job.title} {job.institution} {job.description}".lower()
 
     for kw in filters.get("exclude_keywords") or []:
         if kw.strip() and kw.strip().lower() in text:

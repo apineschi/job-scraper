@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
-from .base import DEFAULT_USER_AGENT, Job, classify_london, parse_salary, scan_common_fields, visible_text
+from .base import DEFAULT_USER_AGENT, DESCRIPTION_MAX_LEN, Job, classify_london, extract_main_text, parse_salary, scan_common_fields, visible_text
 
 LISTING_URL = "https://bmrecruit.ciphr-irecruit.com/templates/CIPHR/job_list.aspx"
 BASE_URL = "https://bmrecruit.ciphr-irecruit.com"
@@ -55,6 +55,7 @@ def fetch_jobs() -> list[Job]:
                 is_london=classify_london("British Museum", location_text),
                 employment_type=employment_type,
                 closing_date=closing_date,
+                description=extract_main_text(detail_soup)[:DESCRIPTION_MAX_LEN],
             ))
 
         browser.close()

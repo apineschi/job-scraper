@@ -183,7 +183,7 @@ def apply_keyword_filter(all_jobs: list, keyword_filter: dict) -> list:
     result = []
     for job in all_jobs:
         if job.institution in filtered_institutions:
-            if not pattern.search(f"{job.title} {job.location_text}"):
+            if not pattern.search(f"{job.title} {job.location_text} {job.description}"):
                 continue
         result.append(job)
     return result
@@ -204,7 +204,7 @@ def reapply_keyword_filter_to_seen(seen_jobs: dict, keyword_filter: dict) -> Non
 
     for record in seen_jobs.values():
         if record.get("matched") and record.get("institution") in filtered_institutions:
-            text = f"{record.get('title', '')} {record.get('location_text', '')}"
+            text = f"{record.get('title', '')} {record.get('location_text', '')} {record.get('description', '')}"
             if not pattern.search(text):
                 record["matched"] = False
 
