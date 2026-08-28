@@ -18,6 +18,13 @@ LISTING_URL = "https://jobs.nhm.ac.uk/Home/Job"
 BASE_URL = "https://jobs.nhm.ac.uk"
 INSTITUTION = "Natural History Museum"
 LINK_PATTERN = re.compile(r'/Job/JobDetail\?JobId=\d+')
+# The listing page has no visible pagination control (seemingly renders every
+# result on one page today) — but it does self-report a total ("There are 11
+# jobs matching..."). If that total ever exceeds what we actually parsed, a
+# page-size limit or "load more" control we're not aware of has appeared —
+# same failure shape as British Museum silently missing page 2. Fail loudly
+# instead of silently under-reporting.
+TOTAL_COUNT_PATTERN = re.compile(r'There are (\d+) jobs?\s+matching', re.IGNORECASE)
 
 
 def fetch_jobs() -> list[Job]:
@@ -42,6 +49,15 @@ def fetch_jobs() -> list[Job]:
         if not links:
             browser.close()
             raise RuntimeError(f"{INSTITUTION}: no job links found — site structure may have changed or access is blocked")
+
+        total_match = TOTAL_COUNT_PATTERN.search(visible_text(soup))
+        if total_match and int(total_match.group(1)) > len(links):
+            browser.close()
+            raise RuntimeError(
+                f"{INSTITUTION}: page reports {total_match.group(1)} jobs but only "
+                f"{len(links)} link(s) were found — a page-size limit or pagination "
+                f"control may have appeared that this scraper doesn't handle yet"
+            )
 
         jobs = []
         for url, title in links.items():

@@ -6474,21 +6474,6 @@
     "matched": false,
     "closing_date_iso": "2026-09-15"
   },
-  "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/10-2-1/?proximityDistance=0&proximityUnit=0": {
-    "institution": "British Museum",
-    "title": "2",
-    "url": "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/10-2-1/?proximityDistance=0&proximityUnit=0",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
-    "location_text": "Posted",
-    "is_london": true,
-    "employment_type": "unknown",
-    "closing_date": "Location",
-    "first_seen": "2026-08-28T14:38:48+00:00",
-    "description": "Current vacancies\nOur current vacancies are listed below. Refine by using the search, filter and sorting options.\nQuery\nFilter options\nSort results by\nApplication Deadline\nLocation\nPosted\nTitle\nSort order\nResults per page\n5\n10\n25\n50\n100\n200\nAll\nApply Filters\n«« First\n« Previous\nPage 2 of 2\n1\n2\nNext »\nLast »»\nA table listing available vacancies\nTitle\nApplication Deadline\nLocation\nProject Curator: Ancient Anatolia\nSunday, 30 August 2026\nBloomsbury, London with travel to other sites in London and Reading as needed\nView Details »\n«« First\n« Previous\nPage 2 of 2\n1\n2\nNext »\nLast »»\n11 vacancies found.",
-    "matched": true,
-    "closing_date_iso": null
-  },
   "https://bmrecruit.ciphr-irecruit.com/Applicants/vacancy/9059/Senior-Infrastructure-Engineer": {
     "institution": "British Museum",
     "title": "Senior Infrastructure Engineer",
@@ -6668,5 +6653,20 @@
     "description": "Jobs - National Museum Directors' Council Website\nToggle navigation\nAbout us\nNews\nWhat we do\nOur members\nPublications\nJobs\nSearch term\nHome\nJobs\nDetails:\nLocation:\nGreenwich\nCategory:\nEducation\nSalary:\n£38,568\nContract type:\nContract\nPermanent\nHours:\nFull time\nTelephone:\n02083128565\nSchools Learning Producer\nAbout us\nRoyal Museums Greenwich is a collection of diverse historical sites. The sites are the National Maritime Museum, Cutty Sark, the Royal Observatory, and the Queen’s House. Each of these sites has a unique identity and a common purpose to serve our communities, through sharing our collections and expertise. We are a place to explore the sea, space, art and history, and our strategy ‘Charting Our Course’ puts people at the core of its success.\nThe Role\nIf you are passionate about the role Museums play in the learning journeys of children and young people, then this is the role for you. We are looking for a dynamic individual to work with schools and teachers to support and inspire collections-based learning at the National Maritime Museum and the Queen’s House. You will lead on the development, delivery and resourcing of historical enquiry programmes from early years to post 16, giving all school learners a high-quality experience that is unique to our sites. You will also nurture relationships with key internal and external stakeholders, ensuring that audience voice is embedded into everything we do.\nThe successful candidate will have a proven track record of engaging children and young people using museum collections and a great understanding of the needs of school learners and teachers. Effective time management and written and verbal presentation skills are also required. This role involves working with histories relating to empire and the transatlantic trade of enslaved people so experience of culturally sensitive approaches to exploring these topics is essential. It’s a fast-paced and rewarding role that puts learning at the centre of the Museum.\nThi",
     "matched": true,
     "closing_date_iso": null
+  },
+  "https://www.nationalmuseums.org.uk/jobs/job/22815/": {
+    "institution": "National Museums",
+    "title": "Membership Services Coordinator (Member Relations)",
+    "url": "https://www.nationalmuseums.org.uk/jobs/job/22815/",
+    "salary_text": "£31,979 per annum",
+    "salary_annual_est": 31979,
+    "location_text": "Bloomsbury",
+    "is_london": true,
+    "employment_type": "full_time",
+    "closing_date": "Sunday, 13 September 2026",
+    "first_seen": "2026-08-28T14:54:05+00:00",
+    "description": "Jobs - National Museum Directors' Council Website\nToggle navigation\nAbout us\nNews\nWhat we do\nOur members\nPublications\nJobs\nSearch term\nHome\nJobs\nDetails:\nLocation:\nBloomsbury\nCategory:\nFront of house/visitor services\nSalary:\n£31,979 per annum\nContract type:\nContract\nPermanent\nHours:\nFull time\nTelephone:\nN/A\nMembership Services Coordinator (Member Relations)\nMembership Services Coordinator (Member Relations)\nFull-time\nHybrid (at least 4 days per week on-site in Bloomsbury, London)\nPermanent\n£31,979 per annum\nApplication deadline: 23:59 on Sunday, 13 September 2026\nAbout the role\nThis is an exciting time to join the Membership Services team at the British Museum. As we continue to evolve and enhance the experience we offer our Members, we're looking for a proactive and customer-focused Membership Services Coordinator to play a key role in helping us deliver an outstanding service.\nThis position offers a unique opportunity for someone who enjoys improving processes, solving problems and building strong relationships. You'll work at the heart of our Membership operation, helping to shape how we support Members, develop best practice and contribute to continuous service improvements across the team. You would support the manager in looking after the department and providing training and support for new team members. This role offers excellent opportunities to broaden your skills, take on additional responsibility and develop expertise across customer service, membership operations, reporting and stakeholder engagement.\nIf you're passionate about delivering exceptional customer experiences and are looking for an opportunity to make a meaningful impact while growing your own skills and career, we'd love to hear from you.\nAbout you\nWe're seeking someone who combines excellent customer service skills with a genuine interest in improving processes and helping teams work more effectively.\nYou will bring:\n•\tExperience delivering excellent customer service in a public-facing env",
+    "matched": false,
+    "closing_date_iso": "2026-09-13"
   }
 }
