@@ -167,6 +167,32 @@
   .filter-option { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0.2rem; font-size: 0.85rem; cursor: pointer; }
   .filter-option:hover { color: var(--muted); }
   .filter-option input { flex-shrink: 0; }
+  .sync-panel { min-width: 280px; }
+  .sync-desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; }
+  #syncCode {
+    width: 100%;
+    resize: vertical;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem;
+    font-size: 0.75rem;
+    font-family: monospace;
+    box-sizing: border-box;
+  }
+  .sync-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .sync-actions button {
+    background: rgba(0,0,0,0.08);
+    color: var(--text);
+    border: none;
+    border-radius: 4px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+  .sync-actions button:hover { background: rgba(0,0,0,0.16); }
+  .sync-status { font-size: 0.78rem; color: var(--muted); margin-top: 0.4rem; min-height: 1.1em; }
   .pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1.2rem 0; }
   .pagination button {
     background: var(--card);
@@ -193,14 +219,28 @@
 
   <div class="jobs-header">
     <h2>Recent matches</h2>
-    <div class="filter-wrap">
-      <button class="filter-btn" type="button" id="filterBtn">Institutions <span id="filterSummary">(all)</span> ▾</button>
-      <div class="filter-panel" id="filterPanel">
-        <div class="filter-panel-actions">
-          <button type="button" id="filterSelectAll">Select all</button>
-          <button type="button" id="filterClearAll">Clear all</button>
+    <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+      <div class="filter-wrap">
+        <button class="filter-btn" type="button" id="syncBtn">Sync archive ▾</button>
+        <div class="filter-panel sync-panel" id="syncPanel">
+          <div class="sync-desc">Archived jobs are saved on this device only. To bring them to another device, copy a code here and paste it there.</div>
+          <textarea id="syncCode" rows="4" placeholder="Code appears here, or paste one from another device"></textarea>
+          <div class="sync-actions">
+            <button type="button" id="syncCopyBtn">Copy this device's code</button>
+            <button type="button" id="syncMergeBtn">Merge pasted code</button>
+          </div>
+          <div class="sync-status" id="syncStatus"></div>
         </div>
-        <div id="filterOptions"></div>
+      </div>
+      <div class="filter-wrap institution-filter-wrap">
+        <button class="filter-btn" type="button" id="filterBtn">Institutions <span id="filterSummary">(all)</span> ▾</button>
+        <div class="filter-panel" id="filterPanel">
+          <div class="filter-panel-actions">
+            <button type="button" id="filterSelectAll">Select all</button>
+            <button type="button" id="filterClearAll">Clear all</button>
+          </div>
+          <div id="filterOptions"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -367,7 +407,7 @@
       }
 
       if (!allInstitutions.length) {
-        document.querySelector('.filter-wrap').style.display = 'none';
+        document.querySelector('.institution-filter-wrap').style.display = 'none';
       } else {
         renderFilterOptions();
         updateFilterSummary();
@@ -390,14 +430,76 @@
         renderJobList();
       });
 
-      const filterBtn = document.getElementById('filterBtn');
-      const filterPanel = document.getElementById('filterPanel');
-      filterBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        filterPanel.classList.toggle('open');
+      function setupDropdown(btnId, panelId) {
+        const btn = document.getElementById(btnId);
+        const panel = document.getElementById(panelId);
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          panel.classList.toggle('open');
+        });
+        document.addEventListener('click', (e) => {
+          if (!panel.contains(e.target) && e.target !== btn) panel.classList.remove('open');
+        });
+        return panel;
+      }
+      setupDropdown('filterBtn', 'filterPanel');
+      setupDropdown('syncBtn', 'syncPanel');
+
+      // Archived jobs live in localStorage, which never leaves this device/browser.
+      // The sync panel lets someone move that list to another device manually: no
+      // server, no credentials — just a copy-pasted code, so there's nothing that
+      // could leak (unlike embedding a write token in this public page for e.g. a
+      // Gist-backed sync).
+      function encodeArchiveCode(urls) {
+        return btoa(unescape(encodeURIComponent(JSON.stringify(urls))));
+      }
+      function decodeArchiveCode(code) {
+        const parsed = JSON.parse(decodeURIComponent(escape(atob(code.trim()))));
+        if (!Array.isArray(parsed)) throw new Error('not an array');
+        return parsed;
+      }
+
+      document.getElementById('syncCopyBtn').addEventListener('click', async () => {
+        const status = document.getElementById('syncStatus');
+        const textarea = document.getElementById('syncCode');
+        const urls = [...archived];
+        const code = encodeArchiveCode(urls);
+        textarea.value = code;
+        try {
+          await navigator.clipboard.writeText(code);
+          status.textContent = `Copied ${urls.length} archived job${urls.length === 1 ? '' : 's'} to the clipboard — paste it on the other device.`;
+        } catch (e) {
+          textarea.select();
+          status.textContent = 'Clipboard access was blocked — the code above is selected, copy it manually.';
+        }
       });
-      document.addEventListener('click', (e) => {
-        if (!filterPanel.contains(e.target) && e.target !== filterBtn) filterPanel.classList.remove('open');
+
+      document.getElementById('syncMergeBtn').addEventListener('click', () => {
+        const status = document.getElementById('syncStatus');
+        let incoming;
+        try {
+          incoming = decodeArchiveCode(document.getElementById('syncCode').value);
+        } catch (e) {
+          status.textContent = 'That code could not be read — check it was pasted in full.';
+          return;
+        }
+
+        const before = archived.size;
+        incoming.forEach(u => archived.add(u));
+        const added = archived.size - before;
+        try {
+          localStorage.setItem(ARCHIVE_KEY, JSON.stringify([...archived]));
+        } catch (e) {
+          status.textContent = 'Could not save — local storage is unavailable on this device.';
+          return;
+        }
+
+        status.textContent = `Merged — ${added} newly archived job${added === 1 ? '' : 's'} added (${archived.size} total on this device now).`;
+        for (let i = jobs.length - 1; i >= 0; i--) {
+          if (archived.has(jobs[i].url)) jobs.splice(i, 1);
+        }
+        currentPage = 1;
+        renderJobList();
       });
 
       const todayMidnight = new Date();
