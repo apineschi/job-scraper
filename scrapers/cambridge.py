@@ -1,3 +1,4 @@
+import re
 import time
 
 import requests
@@ -8,13 +9,29 @@ INSTITUTION = "University of Cambridge"
 LISTING_URL = "https://www.cam.ac.uk/jobs/search?search_api_views_fulltext="
 BASE_URL = "https://www.cam.ac.uk"
 
+# Not every posting uses this heading (it's a department-level template, not a
+# university-wide one — unlike Waltham Forest's fixed "About Us" paragraph),
+# but where it appears it's a generic staff-benefits list ("University library
+# and extensive journal access", gym membership, pension, etc.) that can
+# satisfy the culture-sector keyword filter with words unrelated to what the
+# job actually is — confirmed on a "Junior Clinical Training Scholar in
+# Veterinary Anaesthesia" post matching on "library" this way.
+WHAT_WE_OFFER_RE = re.compile(
+    r'What We Offer.*?(?=Who Can Apply|How to Apply|Further Information|Additional Information|$)',
+    re.DOTALL | re.IGNORECASE,
+)
+
+
+def _strip_boilerplate(text: str) -> str:
+    return WHAT_WE_OFFER_RE.sub('', text)
+
 
 def _fetch_description(url: str) -> str:
     # Best-effort: the listing page already has everything matches_filters()
     # needs except description, so a detail-page failure shouldn't drop the job.
     try:
         detail_soup = get_soup(url)
-        return extract_main_text(detail_soup)[:DESCRIPTION_MAX_LEN]
+        return _strip_boilerplate(extract_main_text(detail_soup))[:DESCRIPTION_MAX_LEN]
     except requests.RequestException:
         return ""
 

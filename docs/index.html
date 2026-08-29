@@ -216,11 +216,32 @@
   .pagination button:hover:not(:disabled) { border-color: var(--muted); }
   .pagination button:disabled { opacity: 0.35; cursor: default; }
   .pagination span { color: var(--muted); font-size: 0.85rem; }
+  .run-scan-wrap { margin-bottom: 1.5rem; }
+  .run-scan-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .run-scan-btn:hover { border-color: var(--muted); }
+  .run-scan-hint { color: var(--muted); font-size: 0.78rem; margin-top: 0.4rem; max-width: 32rem; }
 </style>
 </head>
 <body>
   <h1>Job Scraper Status</h1>
   <div class="subtitle" id="last-updated">Loading…</div>
+
+  <div class="run-scan-wrap">
+    <a class="run-scan-btn" href="https://github.com/apineschi/job-scraper/actions/workflows/daily-scan.yml" target="_blank" rel="noopener">🔄 Run scan now</a>
+    <div class="run-scan-hint">Opens the scan's GitHub Actions page — click the <strong>Run workflow</strong> button there (requires being signed in to GitHub with access to this repo).</div>
+  </div>
 
   <details class="health-accordion">
     <summary><h2>Source health</h2></summary>
