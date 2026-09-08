@@ -486,7 +486,7 @@
     "employment_type": "full_time",
     "closing_date": "Thursday, 3 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": false,
+    "matched": true,
     "closing_date_iso": "2026-09-03"
   },
   "https://vam.current-vacancies.com/Jobs/FeedLink/4292654?cid=3279&linkType=1&rsid=24732&js=0&s=False&t=Research+Fellow%3a+Library+Provenance&l=": {
@@ -682,7 +682,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 27 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-27"
   },
   "https://www.artsjobs.org.uk/jobs/search/84051": {
@@ -710,7 +710,7 @@
     "employment_type": "full_time",
     "closing_date": "Friday, 11 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84048": {
@@ -738,7 +738,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 7 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-07"
   },
   "https://www.artsjobs.org.uk/jobs/search/84042": {
@@ -878,7 +878,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/83993": {
@@ -920,7 +920,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 30 November 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-11-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83851": {
@@ -976,7 +976,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 14 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-14"
   },
   "https://www.artsjobs.org.uk/jobs/search/84021": {
@@ -1018,7 +1018,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84014": {
@@ -1032,7 +1032,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 7 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-07"
   },
   "https://www.artsjobs.org.uk/jobs/search/84011": {
@@ -1060,7 +1060,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84008": {
@@ -1116,7 +1116,7 @@
     "employment_type": "both",
     "closing_date": "Tuesday, 15 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-15"
   },
   "https://www.artsjobs.org.uk/jobs/search/84007": {
@@ -1144,7 +1144,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/84002": {
@@ -1200,7 +1200,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 7 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-07"
   },
   "https://www.artsjobs.org.uk/jobs/search/83981": {
@@ -1214,7 +1214,7 @@
     "employment_type": "full_time",
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/83941": {
@@ -1270,7 +1270,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://www.artsjobs.org.uk/jobs/search/83989": {
@@ -1312,7 +1312,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/83946": {
@@ -1354,7 +1354,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/83986": {
@@ -1452,7 +1452,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 30 August 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-08-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/83972": {
@@ -1466,7 +1466,7 @@
     "employment_type": "both",
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/83970": {
@@ -1480,7 +1480,7 @@
     "employment_type": "both",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T12:34:13+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://www.artsjobs.org.uk/jobs/search/83966": {
@@ -1690,7 +1690,7 @@
     "employment_type": "full_time",
     "closing_date": "Tuesday, 1 September 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/84053": {
@@ -1704,7 +1704,7 @@
     "employment_type": "full_time",
     "closing_date": "Friday, 28 August 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-08-28"
   },
   "https://www.artsjobs.org.uk/jobs/search/84044": {
@@ -1718,7 +1718,7 @@
     "employment_type": "full_time",
     "closing_date": "Friday, 11 September 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84041": {
@@ -1816,7 +1816,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 14 September 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-14"
   },
   "https://www.artsjobs.org.uk/jobs/search/83875": {
@@ -1858,7 +1858,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 28 September 2026",
     "first_seen": "2026-08-26T13:00:36+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-28"
   },
   "https://jobsearch.tate.org.uk/jobs/job/Operations-Manager/866": {
@@ -2152,7 +2152,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84082": {
@@ -2166,7 +2166,7 @@
     "employment_type": "full_time",
     "closing_date": "Wednesday, 23 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-23"
   },
   "https://www.artsjobs.org.uk/jobs/search/84081": {
@@ -2180,7 +2180,7 @@
     "employment_type": "full_time",
     "closing_date": "Wednesday, 23 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-23"
   },
   "https://www.artsjobs.org.uk/jobs/search/84079": {
@@ -2194,7 +2194,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84075": {
@@ -2208,7 +2208,7 @@
     "employment_type": "full_time",
     "closing_date": "Friday, 11 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84071": {
@@ -2222,7 +2222,7 @@
     "employment_type": "full_time",
     "closing_date": "Thursday, 17 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-17"
   },
   "https://www.artsjobs.org.uk/jobs/search/84069": {
@@ -2278,7 +2278,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/84063": {
@@ -2292,7 +2292,7 @@
     "employment_type": "full_time",
     "closing_date": "Wednesday, 16 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-16"
   },
   "https://jobs.nhm.ac.uk/Job/JobDetail?JobId=883": {
@@ -2754,7 +2754,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 11 October 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": false,
+    "matched": true,
     "closing_date_iso": "2026-10-11"
   },
   "https://www.cam.ac.uk/jobs/collections-and-participation-fixed-term-pe50866": {
@@ -2768,7 +2768,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 11 October 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": false,
+    "matched": true,
     "closing_date_iso": "2026-10-11"
   },
   "https://www.cam.ac.uk/jobs/coordinator-undergraduate-full-time-maternity-cover-ue50803": {
@@ -3118,7 +3118,7 @@
     "employment_type": "unknown",
     "closing_date": "Tuesday, 8 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": false,
+    "matched": true,
     "closing_date_iso": "2026-09-08"
   },
   "https://www.cam.ac.uk/jobs/head-of-estates-finance-ba50557": {
@@ -4588,7 +4588,7 @@
     "employment_type": "unknown",
     "closing_date": "Friday, 28 August 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": false,
+    "matched": true,
     "closing_date_iso": "2026-08-28"
   },
   "https://www.cam.ac.uk/jobs/senior-building-services-technician-aq50516": {
@@ -4658,7 +4658,7 @@
     "employment_type": "unknown",
     "closing_date": "Friday, 28 August 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": false,
+    "matched": true,
     "closing_date_iso": "2026-08-28"
   },
   "https://www.cam.ac.uk/jobs/senior-research-ethics-governance-and-sample-coordinator-fixed-term-internal-candidates-only-ps50761": {
@@ -5008,7 +5008,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/178968": {
@@ -5022,7 +5022,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179117": {
@@ -5050,7 +5050,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179139": {
@@ -5092,7 +5092,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179163": {
@@ -5120,7 +5120,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179226": {
@@ -5176,7 +5176,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179284": {
@@ -5190,7 +5190,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179301": {
@@ -5204,7 +5204,7 @@
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22802/": {
@@ -5232,7 +5232,7 @@
     "employment_type": "full_time",
     "closing_date": "Not found",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": null
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22799/": {
@@ -5246,7 +5246,7 @@
     "employment_type": "full_time",
     "closing_date": "Friday, 14 September 2012",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2012-09-14"
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22798/": {
@@ -5260,7 +5260,7 @@
     "employment_type": "full_time",
     "closing_date": "Not found",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": null
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22796/": {
@@ -5302,7 +5302,7 @@
     "employment_type": "full_time",
     "closing_date": "Not found",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": null
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22792/": {
@@ -5316,7 +5316,7 @@
     "employment_type": "full_time",
     "closing_date": "Not found",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": null
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22788/": {
@@ -5386,7 +5386,7 @@
     "employment_type": "full_time",
     "closing_date": "Not found",
     "first_seen": "2026-08-26T17:09:29+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": null
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22784/": {
@@ -5694,7 +5694,7 @@
     "employment_type": "full_time",
     "closing_date": "Monday, 14 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-14"
   },
   "https://www.artsjobs.org.uk/jobs/search/84144": {
@@ -5736,7 +5736,7 @@
     "employment_type": "full_time",
     "closing_date": "Friday, 4 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/84046": {
@@ -5778,7 +5778,7 @@
     "employment_type": "full_time",
     "closing_date": "Thursday, 10 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-10"
   },
   "https://www.artsjobs.org.uk/jobs/search/83595": {
@@ -5792,7 +5792,7 @@
     "employment_type": "full_time",
     "closing_date": "Saturday, 5 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-05"
   },
   "https://www.artsjobs.org.uk/jobs/search/84125": {
@@ -5862,7 +5862,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 27 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-27"
   },
   "https://www.artsjobs.org.uk/jobs/search/84090": {
@@ -5932,7 +5932,7 @@
     "employment_type": "full_time",
     "closing_date": "Tuesday, 8 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-08"
   },
   "https://www.artsjobs.org.uk/jobs/search/84121": {
@@ -5974,7 +5974,7 @@
     "employment_type": "full_time",
     "closing_date": "Wednesday, 16 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-16"
   },
   "https://www.artsjobs.org.uk/jobs/search/84116": {
@@ -5988,7 +5988,7 @@
     "employment_type": "full_time",
     "closing_date": "Wednesday, 16 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-16"
   },
   "https://www.artsjobs.org.uk/jobs/search/84103": {
@@ -6002,7 +6002,7 @@
     "employment_type": "full_time",
     "closing_date": "Tuesday, 15 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-15"
   },
   "https://www.artsjobs.org.uk/jobs/search/84102": {
@@ -6072,7 +6072,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84078": {
@@ -6100,7 +6100,7 @@
     "employment_type": "full_time",
     "closing_date": "Tuesday, 8 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-08"
   },
   "https://www.artsjobs.org.uk/jobs/search/84073": {
@@ -6128,7 +6128,7 @@
     "employment_type": "full_time",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-27T19:30:09+00:00",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://jobs.nhm.ac.uk/Job/JobDetail?JobId=879": {
@@ -6763,30 +6763,30 @@
     "institution": "National Trust",
     "title": "Cook",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/173502",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£13.25 per hour",
+    "salary_annual_est": 25837,
     "location_text": "Newport",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/178367": {
     "institution": "National Trust",
     "title": "Project Co-ordinator",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/178367",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£14.16 per hour",
+    "salary_annual_est": 27612,
     "location_text": "Bethesda",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/178854": {
@@ -6831,67 +6831,67 @@
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179296": {
     "institution": "National Trust",
     "title": "Collections Assistant",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179296",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£13.25 per hour",
+    "salary_annual_est": 25837,
     "location_text": "Sevenoaks",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179303": {
     "institution": "National Trust",
     "title": "Community, Participation & Volunteering Co-ordinator",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179303",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "22,090 pa",
+    "salary_annual_est": 22090,
     "location_text": "Norwich",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179314": {
     "institution": "National Trust",
     "title": "Warehouse Operative",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179314",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£12.75 per hour",
+    "salary_annual_est": 24862,
     "location_text": "Melksham",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179329": {
     "institution": "National Trust",
     "title": "Holiday Cottage Cleaner",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179329",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£12.75 per hour",
+    "salary_annual_est": 24862,
     "location_text": "Colchester",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179370": {
@@ -6928,45 +6928,45 @@
     "institution": "National Trust",
     "title": "Service Team Member",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179424",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£13.25 per hour",
+    "salary_annual_est": 25837,
     "location_text": "Derby",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179436": {
     "institution": "National Trust",
     "title": "Food & Beverage Team Member",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179436",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£12.75 per hour",
+    "salary_annual_est": 24862,
     "location_text": "Derby",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179463": {
     "institution": "National Trust",
     "title": "Visitor Experience Assistant",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179463",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£13.25 per hour",
+    "salary_annual_est": 25837,
     "location_text": "Swanage",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 6 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-06"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179465": {
@@ -6988,15 +6988,15 @@
     "institution": "National Trust",
     "title": "Welcome & Service Team Member",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179467",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£13.25 per hour",
+    "salary_annual_est": 25837,
     "location_text": "Berkhamsted",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-08-31T16:49:09+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22816/": {
@@ -7326,7 +7326,7 @@
     "closing_date": "Friday, 4 September 2026",
     "first_seen": "2026-09-01T14:01:36+00:00",
     "description": "Dresser - The Devil Wears Prada\nJamie Wilson Productions\nClosing date:\nFri, 04 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nContract\nLondon\nFull time\n£30k-£40k\nTue, 01 Sep 2026\n\">\n    published -\nTue, 01 Sep 2026\nJob Description\nJamie Wilson Productions are looking for a Dresser to work on The Devil Wears Prada at the Dominion Theatre. Working closely with the Head of Wardrobe and Deputy Head of Wardrobe, the role will help to maintain the daily running of the show.\nStart date: 12th October 2026\nJob Requirements\nSkills in developing, supervising, and executing dressing schedules\nPositive attitude emphasising problem-solving skills.\nComfortable assuming leadership responsibilities and working independently.\nCalm under pressure and adaptable to challenges.\nProficient in collaborative teamwork within a dynamic environment\nAbility to work diligently and methodically.\nMeticulous attention to detail in costume preparation.\nProven proficiency in engaging with a varied team demographics.\nPunctual and reliable.\nJob Responsibilities\nAssisting actors with costume changes during the performance.\nSetting costume pieces around the theatre and completing checks pre-show.\nSewing, ironing and washing clothes.\nAttending rehearsals.\nRepairing and maintaining costumes.\nReporting repairs to the wardrobe team to ensure the standard of production is preserved.\nLaundry calls to be covered by the dressing team.\nKeep dressing areas tidy and orderly.\nJob Overview\nJob Title:\nDresser - The Devil Wears Prada\nSalary:\n£30k-£40k\nHours:\nFull time\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nContract\nClosing date:\nFri, 04 Sep 2026\nLocation:\nLondon\n|\nview on Google Maps\nJob: Dresser - The Devil Wears Prada\nJob: Dresser - The Devil Wears Prada\nOrganisation: Jamie Wilson Productions\nPostcode: W1T 7AQ\nHow to Apply\nWe welcome applicants from all backgrounds and have an equal opportunity approach across all personal characteristics. Please note, all applicants must have the r",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/84242": {
@@ -7566,7 +7566,7 @@
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-09-01T14:01:36+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/174734": {
@@ -7581,7 +7581,7 @@
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-09-01T14:01:36+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.nationalmuseums.org.uk/jobs/job/22820/": {
@@ -7671,7 +7671,7 @@
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Customer Experience Manager\nWoking Theatre & Cinema\nClosing date:\nSun, 13 Sep 2026\nRole:\nCustomer Service\nContract:\nPermanent\nSouth East\nFull time\n£40k-£50k\nApply now\nWed, 02 Sep 2026\n\">\n    published -\nWed, 02 Sep 2026\nJob Description\nCustomer Experience Manager\nReports to: Head of Operations\nWoking Theatres & Cinema is one of the most exciting hospitality and live entertainment venues in the South East. Sitting under the ATG Entertainment group, the venue operates three distinct brands under one roof: Woking Theatre, the intimate Rhoda McGaw Theatre, and Nova Cinema - each with its own audience, energy and commercial ambition.\nThis is not a role for someone who wants to maintain the status quo. We are in active pursuit of a step-change in how customers experience this venue - from the moment they walk through the door to the last drink poured. Admissions are growing, ambitions are higher still, and the commercial infrastructure to support that growth is being built right now.\nWe need a Customer Experience Manager who understands that exceptional experience and exceptional margin are not opposites - they are the same thing. Someone who will own the commercial performance of everything that surrounds the show / film. If you have ever wanted to put your genuine stamp on a hospitality business, this is that job.\nThis is a hands-on senior leadership role with full functional accountability for the customer-facing commercial operation, its strategy, people, financial performance and continuous development.\nThe right candidate will have a proven track record of growing hospitality margin and will be fluent in SPH, GP% and cost of sales- and crucially, will know how to move them. You will have operated in a high-volume, fast-paced environment such as theatre, cinema, stadium, hotel or attraction.\nPlease note, your role may involve working with children or vulnerable people.\nKey responsibilities\nLeadership & Operations\nAct as a core member of the Venue Senior Leadership Te",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84237": {
@@ -7686,7 +7686,7 @@
     "closing_date": "Tuesday, 22 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Director of Producing\nThe Royal Lyceum Edinburgh\nClosing date:\nTue, 22 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nScotland\nFull time\n£50k+\nApply now\nWed, 02 Sep 2026\n\">\n    published -\nWed, 02 Sep 2026\nJob Summary\nWe are seeking an ambitious, established and highly creative Director of Producing to ensure the work on our stage continues to be exciting, relevant, high quality, and timeless.\nJob Description\nThe strategic aims of this post are:\nWith the Artistic Director, plan and produce an annual season of work that aligns to our Artistic Vision and speaks to a range of audiences.\nTo ensure The Lyceum's core producing and production realisation processes are exemplary, developing the theatre's established role as a producing theatre, to ensure how we make theatre is fit for the future and that The Lyceum is regarded as a centre of excellence for theatre makers and a destination of choice for visiting companies.\nWith the Executive Director and Senior Leadership Team, drive the development and implementation of strategic planning and reflective learning to ensure excellence.\nTo contribute towards The Lyceum being an excellent place to work; ensuring we recruit, develop and retain the most talented producing and production team alongside a freelance pool of exceptional talent and skill.\nTo seek and develop investors, co-producers and other new partners for our Productions, both local and international, seeking to optimise potential future life of productions through co-productions, tours and transfers.\nTo work alongside the wider Senior Leadership Team to realise opportunities, make space for creative potential and respond to emerging opportunities and ideas with clear judgement and a keen understanding of what success looks like.\nFor the full Job Description please download the Recruitment pack from our website.\nJob Requirements\nEssential Experience\nProven track record of producing and delivering productions of scale from conception thro",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-22"
   },
   "https://www.artsjobs.org.uk/jobs/search/84232": {
@@ -7731,7 +7731,7 @@
     "closing_date": "Sunday, 4 October 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Audition Notice - Company Wayne McGregor\nStudio Wayne McGregor\nClosing date:\nSun, 04 Oct 2026\nArtform:\nDance\nRole:\nPerformer\nContract:\nContract\nInternational\nFull time\n£30k-£40k\nApply now\nWed, 02 Sep 2026\n\">\n    published -\nWed, 02 Sep 2026\nJob Description\nCOMPANY WAYNE MCGREGOR\nCalling fearless, versatile, and intellectually curious dance artists to join one of the world's leading contemporary touring dance companies. Company Wayne McGregor is on the lookout for performers with strong contemporary and classical techniques, robust partnering abilities, and an appetite for innovation, collaboration, and creative discovery. We are a company of unique artists and encourage applications from exceptional dancers of all backgrounds.\nTO APPLY\n1. Complete an Audition Application Form via our website.\n2. Send a Cover Letter, CV and Headshot to\n[email protected]\n.\n3. Complete an Equal Opportunities Form via our website.\nDEADLINE FOR APPLICATIONS\nApplications will close at midnight on Sunday the 4th of October 2026. Auditions will be by invitation only and will be held in London on the 7th and 8th of November 2026. Invitations will be sent on or by the 19th of October 2026.\nIf successful at the audition stage, applicants will be offered a freelance contract for 25-35 weeks of work from February 2027 through November 2027 with the expectation of continued work into 2028 and beyond.\nFor more information, please visit www.waynemcgregor.com/about/auditions-jobs/\nJob Overview\nJob Title:\nAudition Notice - Company Wayne McGregor\nSalary:\n£30k-£40k\nHours:\nFull time\nArtform:\nDance\nRole:\nPerformer\nContract:\nContract\nClosing date:\nSun, 04 Oct 2026\nLocation:\nInternational\nHow to Apply\nTO APPLY\n1. Complete an Audition Application Form via our website.\n2. Send a Cover Letter, CV and Headshot to\n[email protected]\n.\n3. Complete an Equal Opportunities Form via our website.\nContact email:\n[email protected]\nApply now\nAbout Studio Wayne McGregor\nStudio Wayne McGregor is the creative engine for cho",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-10-04"
   },
   "https://www.artsjobs.org.uk/jobs/search/84223": {
@@ -7761,7 +7761,7 @@
     "closing_date": "Wednesday, 30 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Produced Moon: Board  Trustee\nProduced Moon\nClosing date:\nWed, 30 Sep 2026\nArtform:\nTheatre\nRole:\nCreative\nContract:\nPermanent\nRemote\nFull time\nUnpaid\nApply now\nWed, 02 Sep 2026\n\">\n    published -\nWed, 02 Sep 2026\nJob Summary\nProduced Moon’s board is looking to grow later this year, as we add new voices to our Trustees.\nJob Description\nWe're Produced Moon. We're a creative XR theatre lab based in Glasgow. We create playful, unsettling and magical experiences with audiences at the centre. Our work ranges from escape rooms to game theatre, participatory digital storytelling to\n360 degree film and more. We're a registered Scottish Charitable Incorporated Organisation (SCIO) based between Glasgow and Edinburgh, but work all across the UK.\nWe are looking for new Trustees.\nJob Requirements\nIt is not essential to have sat on a board before, what we're looking for is people who connect with the work we do as a charity and our values of being caring, playful, challenging, experimental, pluralistic, anti-racist and climate just. You can read some more about what these values mean to us on our website: https://www.producedmoon.co.uk/whoweare\nWe'd love to hear from people who have experience running value-led organisations and from those who have never thought of being a trustee before. We are also interested in hearing from people with backgrounds in accounting and charity finance.\nFull details can be found in the Trustee Recruitment Pack (BSL, Large Font and Audio versions available): https://www.producedmoon.co.uk/workwithus\nJob Responsibilities\nThe main responsibility of a charity trustee is to 'act in the interests of the charity'.\nFor us this means:\nSupport Produced Moon in achieving its charitable objectives\nKeep asking how Produced Moon can fulfill their objectives better and exploring how this can be done\nBe an advocate for Produced Moon and our work\nSupport other trustees in fulfilling their duties and responsibilities\nKeep asking how the board can better support good",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/84217": {
@@ -7881,7 +7881,7 @@
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Deputy Head of Electrics\nCriterion Theatre Trust\nClosing date:\nSun, 20 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nLondon\nFull time\n£40k-£50k\nTue, 01 Sep 2026\n\">\n    published -\nTue, 01 Sep 2026\nJob Summary\nWe are seeking an experienced and motivated Deputy Head of Electrics to join our LX team. This is an outstanding opportunity to support and lead the electrics function in a busy West End theatre, ensuring smooth lighting and sound operations.\nJob Description\nResponsibilities\nGeneral\nAssist and deputise for the Head of Electrics, performing all duties in their absence\nEnsure safe working practices at all times\nOperate lighting and sound for performances as required\nProvide duty electrician cover during day and performance hours (rostered with HOD)\nDuty first aider\nSupport additional Trust activities, including Creative New Writing programmes and Technical Skills Workshops\nProduction\nLiaise with incoming design, production, technical staff, and suppliers to meet technical requirements\nIn HOD's absence, coordinate get-ins and get-outs, including staffing and budget approvals\nEnsure smooth running of performances with staff and visiting companies\nArrange additional technical support staff as needed\nBuilding & Maintenance\nEnsure Fire Risk Assessment and licensing compliance\nAssist HOD with maintenance of electrical installations and equipment, including inspections and certifications\nSupport plumbing and building maintenance, including regular inspections and actioning works\nLiaise with and supervise external contractors safely\nMaintain records, documentation, and stock for building maintenance\nManagement & Administration\nAssist HOD with expenditure approvals and paperwork\nEnsure health & safety requirements are met and records maintained\nIdentify and implement staff training needs\nSupervise and support Electrics staff in HOD's absence\nJob Requirements\nPerson Specification\nEssential\nProfessional theatre experience in lighting, sound, and",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/84191": {
@@ -7971,7 +7971,7 @@
     "closing_date": "Monday, 14 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Travel Trade Manager\nShakespeares Globe\nClosing date:\nMon, 14 Sep 2026\nArtform:\nTheatre\nRole:\nCustomer Service\nContract:\nPermanent\nLondon\nFull time\n£30k-£40k\nTue, 01 Sep 2026\n\">\n    published -\nTue, 01 Sep 2026\nJob Summary\nWe are looking for a commercially minded and relationship-focused Travel Trade Manager to help grow our reach across the travel trade, group visitor and tourism markets. This contract is on a permanent, full-time basis.\nJob Description\nThis is an exciting opportunity to play a key role in increasing awareness, attendance and revenue by building strong partnerships, developing compelling travel trade offers and ensuring Shakespeare's Globe is positioned prominently with tour operators, tourism organisations, group organisers and third-party partners.\nReporting to the Head of Ticketing and Sales, you'll be the main point of contact for our travel trade partners and will work closely with teams across the organisation to package, promote and sell the full range of experiences Shakespeare's Globe has to offer.\nFor full details on the role, including duties, responsibilities and the person criteria, please see the full JD linked on our main jobs page.\nUseful Links\nTo apply\nJob Overview\nJob Title:\nTravel Trade Manager\nSalary:\n£30k-£40k\nHours:\nFull time\nArtform:\nTheatre\nRole:\nCustomer Service\nContract:\nPermanent\nClosing date:\nMon, 14 Sep 2026\nLocation:\nLondon\n|\nview on Google Maps\nJob: Travel Trade Manager\nJob: Travel Trade Manager\nOrganisation: Shakespeares Globe\nPostcode: SE1 9DT\nHow to Apply\nTo apply:\nFor more information, please download the job description from this page.\nTo apply, please complete the online application form by 14 September 2026, 12pm(noon)\nIf you have any queries on the application process or online form, please email\n[email protected]\n.\nContact name:\nRebecca\nContact email:\n[email protected]\nAbout Shakespeares Globe\nWe celebrate Shakespeare’s transformative impact on the world by conducting a radical theatrical experiment. Inspired",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-14"
   },
   "https://www.artsjobs.org.uk/jobs/search/84213": {
@@ -7986,7 +7986,7 @@
     "closing_date": "Wednesday, 30 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Head of Electrics\nCapital Theatres\nClosing date:\nWed, 30 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nScotland\nFull time\n£50k+\nApply now\nTue, 01 Sep 2026\n\">\n    published -\nTue, 01 Sep 2026\nJob Summary\nThis is an exciting and pivotal time to join the Technical crew at Capital Theatres, with the King's Theatre reopening, transformed for the modern age, and sitting alongside the Festival Theatre and Studio Theatre. You could be the next leader of our incredible Electrics team.\nJob Description\nYou will be responsible for the day-to-day management of all aspects of electrical, audio/visual and other technical requirements to visiting productions, and for being part of the management team maintaining equipment and overseeing technical standards.\nThe Head of Electrics is part of the wider senior management team and reports to the Technical Director in the delivery of high-quality technical support for productions, presentations and events organised by Capital Theatres across all three venues or elsewhere as required.\nThe position requires extensive experience in theatre lighting and AV, it is multi-skilled, and you will work across a variety of productions, venues and disciplines throughout the year taking a pro-active, positive and flexible approach to making events happen.\nThe role requires experience in team management, collaboration across departments, knowledge of current Health and safety practices and the provision of practical, solutions-focused technical support. This role involves regular evening and weekend work. If this sounds like you, we'd love to hear from you.\nUseful Links\nJob listing here\nJob Overview\nJob Title:\nHead of Electrics\nSalary:\n£50k+\nHours:\nFull time\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nClosing date:\nWed, 30 Sep 2026\nLocation:\nScotland\n|\nview on Google Maps\nJob: Head of Electrics\nJob: Head of Electrics\nOrganisation: Capital Theatres\nPostcode: EH89FT\nHow to Apply\nPlease see further detail",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/84211": {
@@ -8001,7 +8001,7 @@
     "closing_date": "Thursday, 10 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Content Manager, NT at Home\nNational Theatre\nClosing date:\nThu, 10 Sep 2026\nArtform:\nTheatre\nRole:\nMarketing & Digital\nContract:\nPermanent\nLondon\nFull time\n£40k-£50k\nApply now\nTue, 01 Sep 2026\n\">\n    published -\nTue, 01 Sep 2026\nJob Summary\nWe are looking for a Content Manager (NT at Home) to join the National Theatre Digital Team.\nJob Description\nThe NT at Home Content Manager is responsible for the day-to-day operations of the National Theatre at Home platform, as well as some partner distribution platforms. This includes uploading and merchandising content, tracking and interpreting basic platform analytics, and handling day-to-day audience queries - ensuring the platform runs smoothly and content is presented in a way that drives discovery and viewing.\nThe successful candidate will have the following:\n- Some experience working with a streaming, VOD or other digital content platform, or similar digital content operations experience.\n- An understanding of what drives on-platform engagement and conversion - thumbnails, titles, descriptions, curation and placement.\n- Comfortable using analytics tools or dashboards to track and interpret basic performance metrics such as click-through rate, watch time and engagement.\n- Strong attention to detail and organisational skills, comfortable managing repetitive day-to-day operational tasks accurately and to deadline.\n- Good written communication skills, with experience handling customer or audience queries professionally.\nIf that sounds like you, this may be the role for you!\nTo apply, please follow: https://jobs.nationaltheatre.org.uk/job/content-manager-nt-at-home-6011823\nThe closing date for the receipt of a completed application is Thursday 10th September 2026 at 12 noon.\nJob Overview\nJob Title:\nContent Manager, NT at Home\nSalary:\n£40k-£50k\nHours:\nFull time\nArtform:\nTheatre\nRole:\nMarketing & Digital\nContract:\nPermanent\nClosing date:\nThu, 10 Sep 2026\nLocation:\nLondon\nHow to Apply\nTo apply, please follow:\nhttps://jobs.nati",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-10"
   },
   "https://www.artsjobs.org.uk/jobs/search/84208": {
@@ -8091,7 +8091,7 @@
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Head of  Trusts and Foundations\nYoung Vic\nClosing date:\nMon, 21 Sep 2026\nArtform:\nTheatre\nRole:\nFundraising\nContract:\nPermanent\nLondon\nFull time\n£40k-£50k\nApply now\nTue, 01 Sep 2026\n\">\n    published -\nTue, 01 Sep 2026\nJob Summary\nWe are looking for a strategic and creative thinker to become Head of Trusts and Foundations to elevate income and our fundraising endeavours in 2026 and beyond\nJob Description\nA new senior post in the Development Team, the Head of Trusts & Foundations will be responsible for cultivating and growing income from both private and statutory funding bodies, implementing and delivering a new strategy for this vital income stream for the theatre, maintaining and growing our income in exciting, innovative, and strategic ways through high-quality, persuasive applications, alongside stewarding existing relationships to ensure the highest level of care for those already supporting us.\nEach year the Development Department is responsible for raising c.25% (£1.4m in 26/27) of the Young Vic's income to enable great work on our stages and, vitally, in our communities. As Head of Trusts & Foundations, you will play a vital role in securing income towards these projects (currently over £300,000 is generated through Trust & Foundation revenue), driven by a strategic insight into this income stream and the opportunities our work presents. In this role, you will be central to ensuring revenue targets are met each year, elevating our income, in addition creating a pipeline of Capital prospects with a view to the theatre undertaking significant essential works over the next 3 years.\nLed by the Development Director, we aim to be a fast-paced team of six, with desire to majorly increase income over the next 3 years led by an ambitious programme of main house and studio shows, the 30th anniversary of our Taking Part programme and further growth across the organisation in our excellent and exciting artistic endeavours.\nIf you are a passionate and curious fundraiser,",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84195": {
@@ -8211,7 +8211,7 @@
     "closing_date": "Wednesday, 16 September 2026",
     "first_seen": "2026-09-02T13:20:30+00:00",
     "description": "Recruitment Partner\nENO\nClosing date:\nWed, 16 Sep 2026\nArtform:\nTheatre\nRole:\nHuman Resources\nContract:\nPermanent\nLondon\nFull time\n£40k-£50k\nApply now\nTue, 01 Sep 2026\n\">\n    published -\nTue, 01 Sep 2026\nJob Summary\nShape the future of talent at English National Opera, attracting diverse people and creating an outstanding candidate experience across every stage of recruitment.\nJob Description\nSalary: £42,500 per annum\nHours: 35 hours per week\nLocation: London Coliseum & other locations as required\nWe're looking for an experienced Recruitment specialist to manage the end-to-end talent acquisition process at ENO and help us attract exceptional talent to join our organisation.\nThis is a pivotal role with responsibility for the full recruitment lifecycle, partnering closely with hiring managers to deliver an outstanding candidate experience, build diverse talent pipelines and strengthen ENO's employer brand. From attracting experienced professionals to developing entry routes through apprenticeships and work experience opportunities, you'll play a key role in ensuring we have the right skills, in the right place, at the right time.\nWe're looking for someone who combines recruitment expertise with curiosity, courage and kindness, and who thrives in a collaborative, fast-paced environment where new ideas are welcomed. You'll be proactive, highly organised and confident building strong relationships across the organisation, continuously seeking opportunities to improve how we attract and engage talent.\nJob Requirements\nSignificant in-house recruitment experience\nExperience using Applicant Tracking Systems (ATS)\nExperience developing and delivering effective candidate attraction strategies\nAbility to build strong relationships and adapt to different ways of working\nExcellent communication and interpersonal skills, with experience of engaging with a variety of audiences\nHighly organised, with the ability to manage multiple projects effectively and efficiently\nExperience of w",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-16"
   },
   "https://www.artsjobs.org.uk/jobs/search/84183": {
@@ -8421,7 +8421,7 @@
     "closing_date": "Tuesday, 29 September 2026",
     "first_seen": "2026-09-03T13:21:51+00:00",
     "description": "Deputy Head of Production\nThe Citizens Theatre\nClosing date:\nTue, 29 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nScotland\nFull time\n£40k-£50k\nApply now\nThu, 03 Sep 2026\n\">\n    published -\nThu, 03 Sep 2026\nJob Summary\nThe Deputy Head of Production a senior operational role, supporting the Head of Production in the operation of our Production department.\nJob Description\nResponsible to: Head of Production\nResponsible for: Head of LX, Sound & AV; Deputy Head Stage\nKey Relationships: Production Head of Departments\nSalary: £40,000 per annum\nContract: Permanent, full time (1.0 FTE)\nThe Deputy Head of Production a senior operational role, supporting the Head of Production in the operation of our Production department.\nYou'll be responsible for coordinating the technical and stage requirements of the Citizens Theatre programme. This includes produced and visiting productions, as well as participation and hire activity.\nThe role has particular responsibility for the day-to-day operational coordination of the technical and stage activity, including:\nWorkforce planning\nFreelance engagement\nProduction systems and communication\nHealth and safety compliance\nEquipment and resource planning\nThe delivery of visiting company and external work\nUseful Links\nJob Page\nJob Overview\nJob Title:\nDeputy Head of Production\nSalary:\n£40k-£50k\nHours:\nFull time\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nClosing date:\nTue, 29 Sep 2026\nLocation:\nScotland\n|\nview on Google Maps\nJob: Deputy Head of Production\nJob: Deputy Head of Production\nOrganisation: The Citizens Theatre\nPostcode: G59DS\nHow to Apply\nTo apply, please send us a copy of your CV, and a cover letter of no more than two A4 pages and complete the online Equal Opportunities Monitoring Form.\nPlease send your CV and cover letter by email to:\n[email protected]\n.\nDeadline for applications: Tuesday 29 September 2026 12pm\nFirst interview: Thursday 08 October 2026 (may be subject to change, in p",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-29"
   },
   "https://www.artsjobs.org.uk/jobs/search/84311": {
@@ -8436,7 +8436,7 @@
     "closing_date": "Thursday, 1 October 2026",
     "first_seen": "2026-09-03T13:21:51+00:00",
     "description": "Head of Production\nThe Citizens Theatre\nClosing date:\nThu, 01 Oct 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nScotland\nFull time\n£40k-£50k\nApply now\nThu, 03 Sep 2026\n\">\n    published -\nThu, 03 Sep 2026\nJob Summary\nThe Head of Production is the senior lead for the Citizens Theatre’s Production department. You’ll be responsible for ensuring that our productions are delivered safely, effectively and to the required artistic, technical and financial standards.\nJob Description\nResponsible to: Director of Producing\nResponsible for: Deputy Head of Production, Company Manager, Head of Workshops,\nHead of Wardrobe\nKey Relationships: Artistic Director, Production teams\nSalary: £43,000 - £45,000 per annum\nContract: Permanent, full time (1.0 FTE)\nThe Head of Production is the senior lead for the Citizens Theatre's Production department. You'll be responsible for ensuring that our productions are delivered safely, effectively and to the required artistic, technical and financial standards.\nThe role oversees technical planning across the full programme activity. You will take the lead production management role on the majority of Citizens Theatre-produced work.\nThe role provides leadership, with the support of the Deputy Head of Production across day-to-day operations.\nWorking closely with the Artistic Director, Director of Producing, Participation Director, and colleagues across the organisation, you will ensure that artistic ambition is translated into safe, achievable and sustainable productions.\nUseful Links\nJob Page\nJob Overview\nJob Title:\nHead of Production\nSalary:\n£40k-£50k\nHours:\nFull time\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nClosing date:\nThu, 01 Oct 2026\nLocation:\nScotland\n|\nview on Google Maps\nJob: Head of Production\nJob: Head of Production\nOrganisation: The Citizens Theatre\nPostcode: G59ds\nHow to Apply\nTo apply, please send us a copy of your CV, and a cover letter of no more than two A4 pages and complete the onli",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-10-01"
   },
   "https://www.artsjobs.org.uk/jobs/search/84310": {
@@ -8691,7 +8691,7 @@
     "closing_date": "Saturday, 12 September 2026",
     "first_seen": "2026-09-03T13:21:51+00:00",
     "description": "Freelance Touring Stage Manager\nStuart Glover Creative\nClosing date:\nSat, 12 Sep 2026\nArtform:\nDance\nRole:\nTechnical & Production\nContract:\nTemporary\nUK-wide\nFull time\n£40k-£50k\nThu, 03 Sep 2026\n\">\n    published -\nThu, 03 Sep 2026\nJob Summary\nMust be available December 2026\nJob Description\nWe're looking for a fabulous Touring Manager to join a high-energy music & dance show for 12 exclusive UK dates this December.\nThis is a fast-paced one-nighter tour, so we're looking for someone who is highly organised, calm under pressure and brilliant with people, someone who can confidently lead a cast and crew and make sure every performance runs seamlessly.\nThe role will include:\nLeading cast & crew throughout the tour\nManaging tight get-in, rehearsal and performance timelines\nLiaising with venue teams in advance and on the day\nCoordinating day-to-day touring logistics\nActing as the key point of contact for the company\nEnsuring the show is delivered professionally and efficiently at every venue\nJob Requirements\nOversee and lead cast and crew for brand new touring dance show.\nHands on technical input\nShow Calling\nLiasing with venues\nJob Overview\nJob Title:\nFreelance Touring Stage Manager\nSalary:\n£40k-£50k\nHours:\nFull time\nArtform:\nDance\nRole:\nTechnical & Production\nContract:\nTemporary\nClosing date:\nSat, 12 Sep 2026\nLocation:\nUK-wide\nHow to Apply\nPlease send a CV to\n[email protected]\nby 12/9/26 11.59pm\nContact email:\n[email protected]\nAbout Stuart Glover Creative\nCreative Production Company\nFind out more",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-12"
   },
   "https://www.artsjobs.org.uk/jobs/search/84219": {
@@ -9126,7 +9126,7 @@
     "closing_date": "Thursday, 3 September 2026",
     "first_seen": "2026-09-03T13:21:51+00:00",
     "description": "The Standard of Living - Head of Automation\nShort Street Productions Ltd\nClosing date:\nThu, 03 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nContract\nLondon\nFull time\n£50k+\nWed, 02 Sep 2026\n\">\n    published -\nWed, 02 Sep 2026\nJob Summary\nA brand new world-premiere play from the Olivier Award-winning playwright, James Graham (Punch, Dear England, Labour of Love) explodes into the West End for a strictly limited 12-week season.\nJob Description\nThe Head of Automation is responsible for the operation and maintenance of all automation equipment and the smooth running of the Automation Department, including supervision of all Automation staff.\nTraining can be provided for those looking to step up into this position\nUseful Links\nJOB DESCRIPTION\nEQUAL OPPORTUNITIES MONITORING FORM\nJob Overview\nJob Title:\nThe Standard of Living - Head of Automation\nSalary:\n£50k+\nHours:\nFull time\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nContract\nClosing date:\nThu, 03 Sep 2026\nLocation:\nLondon\nHow to Apply\nTo apply, please send a CV and a short covering letter (no more than one page) outlining your suitability for the role, together with a completed Equal Opportunities Monitoring Form to\n[email protected]\nby Thursday 3 September, 5pm.\nSUBJECT LINE:\t [Show Name], [Role], [Your Name]\nCV: \t[Your Name] – CV\nContact name:\nRecruitment\nContact email:\n[email protected]\nAbout Short Street Productions Ltd\nTheatre Production, General Management & Production Accounting.\nFind out more",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-03"
   },
   "https://www.artsjobs.org.uk/jobs/search/84256": {
@@ -9696,7 +9696,7 @@
     "closing_date": "Friday, 11 September 2026",
     "first_seen": "2026-09-04T13:15:18+00:00",
     "description": "Events Manager (Maternity Cover)\nHereford Cathedral\nClosing date:\nFri, 11 Sep 2026\nArtform:\nEvents\nRole:\nFundraising\nContract:\nTemporary\nWest Midlands\nFull time\n£30k-£40k\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nAre you interested in bringing unforgettable events to life and create memorable experiences in one of Hereford’s most iconic settings? We are seeking a sociable, organised and professional Events Manager (Maternity Cover) to lead our busy Events Department and run a vibrant programme of venue hire\nJob Description\nFor full Job Description and further information and application form, please visit https://www.herefordcathedral.org/News/events-manager-maternity-cover-vacancy\nROLE DESCRIPTION\nThe Events Manager is a key role within the management structure of Hereford Cathedral, centred on leading the work of Hereford Cathedral's Events Department. The Events Department's core aim is to support the demand for income generating events and venue hires, such as light shows, silent discos, and multiple days of concerts, whilst also maintaining our programme of community, charity and missional engagement events and projects. These events help to anchor Hereford Cathedral's identity as a space for all and a centre of the community, city and county. The Events Manager will join the department at an exciting time as we plan ahead for Christmas events including the ever-popular Christmas Fair and two large scale projects in 2027. This is an exciting position in a busy department, ideal for a sociable and professional individual. The role is ideal for an individual with exceptional attention to detail, great leadership and excellent diplomacy and problem-solving skills.\nJob Requirements\nFor job requirements please see Job Pack\nJob Responsibilities\nFor role responsibilities please see Job Pack\nUseful Links\nLink to website and job pack\nJob Overview\nJob Title:\nEvents Manager (Maternity Cover)\nSalary:\n£30k-£40k\nHours:\nFull time\nArtform:\nEvents\nRole:\nF",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84393": {
@@ -9741,7 +9741,7 @@
     "closing_date": "Friday, 2 October 2026",
     "first_seen": "2026-09-04T13:15:18+00:00",
     "description": "Automation Supervisor\nGlyndebourne Productions Ltd\nClosing date:\nFri, 02 Oct 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nSouth East\nFull time\n£50k+\nApply now\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nWe are currently recruiting for an Automation Supervisor to join our Stage Department on a permanent contract.\nJob Description\nFollowing a major Capital investment, Glyndebourne is now a flagship venue for TAIT automation systems in the UK. Featuring up to 70 motorised fly bars, multiple point hoists, stage lifts and automated tracking, we are now able to respond to the technical and creative ambitions of productions in a flexible and exciting way.\nWe are currently recruiting for an Automation Supervisor to join us to lead on the planning, operation and maintenance of the Glyndebourne automation systems to support the productions of the Company. You will be responsible for programming and troubleshooting of the computer and electronics-based systems, the planning and oversight of all flown and non-flown automation elements and the integration of those effects into new Productions and Revivals.\nTo find out more information and to apply please visit our website.\nApplications will be reviewed as they arrive but are to be received no later than Friday 2 October 2026\nAs a Disability Confident Employer, we guarantee to interview all disabled applicants who meet the essential criteria for our vacancies. If relevant to you, please inform us of this in your covering letter. If you have any questions in relation to this or if you would like this advert sent to you in a larger or dyslexia friendly font then please contact a member of the HR team at\n[email protected]\n.\nJob Overview\nJob Title:\nAutomation Supervisor\nSalary:\n£50k+\nHours:\nFull time\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nClosing date:\nFri, 02 Oct 2026\nLocation:\nSouth East\n|\nview on Google Maps\nJob: Automation Supervisor\nJob: Automation Supervis",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-10-02"
   },
   "https://www.artsjobs.org.uk/jobs/search/84381": {
@@ -9786,7 +9786,7 @@
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-09-04T13:15:18+00:00",
     "description": "Sound 1 (Hadestown UK & Ireland Tour 2027)\nJAS Theatricals\nClosing date:\nMon, 21 Sep 2026\nRole:\nTechnical & Production\nContract:\nContract\nUK-wide\nFull time\n£40k-£50k\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Description\nThe Sound No. 1 will work collaboratively alongside other technical HODs, supporting the Creative team and company, to facilitate and manage the realisation of the Hadestown UK & Ireland Tour 2027. Together with the rest of the company, the Sound No. 1 will uphold a commitment to diversity and inclusion and will endeavour to create and maintain a working atmosphere, in rehearsal sessions and on tour, where all feel supported and empowered to deliver their best work.\nUseful Links\nPlease find the full job description & person specification here\nJob Overview\nJob Title:\nSound 1 (Hadestown UK & Ireland Tour 2027)\nSalary:\n£40k-£50k\nHours:\nFull time\nRole:\nTechnical & Production\nContract:\nContract\nClosing date:\nMon, 21 Sep 2026\nLocation:\nUK-wide\nAbout JAS Theatricals\nTheatre Production Company\nFind out more",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84376": {
@@ -9801,7 +9801,7 @@
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-09-04T13:15:18+00:00",
     "description": "LX 1 (Hadestown UK & Ireland Tour 2027)\nJAS Theatricals\nClosing date:\nMon, 21 Sep 2026\nRole:\nTechnical & Production\nContract:\nContract\nUK-wide\nFull time\n£40k-£50k\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Description\nThe LX No. 1 will manage the LX team and work collaboratively alongside other technical HODs, supporting the Creative team and company, to facilitate and manage the realisation of the Hadestown UK & Ireland Tour 2027. Together with the rest of the company, the LX No. 1 will uphold a commitment to diversity and inclusion and will endeavour to create and maintain a working atmosphere, in rehearsal sessions and on tour, where all feel supported and empowered to deliver their best work.\nUseful Links\nPlease find the full job description & person specification here\nJob Overview\nJob Title:\nLX 1 (Hadestown UK & Ireland Tour 2027)\nSalary:\n£40k-£50k\nHours:\nFull time\nRole:\nTechnical & Production\nContract:\nContract\nClosing date:\nMon, 21 Sep 2026\nContact name:\nEmail your CV and cover letter to\n[email protected]\nLocation:\nUK-wide\nContact Details\nContact name:\nEmail your CV and cover letter to\n[email protected]\nAbout JAS Theatricals\nTheatre Production Company\nFind out more",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84374": {
@@ -9816,7 +9816,7 @@
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-09-04T13:15:18+00:00",
     "description": "Resident Director (Hadestown UK & Ireland Tour 2027)\nJAS Theatricals\nClosing date:\nMon, 21 Sep 2026\nRole:\nTechnical & Production\nContract:\nContract\nUK-wide\nFull time\n£40k-£50k\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Description\nThe Resident Director will be responsible for maintaining the high artistic standard of Hadestown throughout the tour and support the wellbeing of the cast and crew. The Resident Director will work together with the Company Manager, Stage Manager, Production Manager and General Manager alongside other departments, cast members, and creatives, to facilitate the smooth running of the Hadestown UK Tour 2027.\nTogether with the rest of the company, the Resident Director will uphold a commitment to diversity and inclusion and will endeavour to create and maintain a working atmosphere, in rehearsal sessions and on tour, where all feel supported and empowered to deliver their best work.\nUseful Links\nPlease find the full job description & person specification here\nJob Overview\nJob Title:\nResident Director (Hadestown UK & Ireland Tour 2027)\nSalary:\n£40k-£50k\nHours:\nFull time\nRole:\nTechnical & Production\nContract:\nContract\nClosing date:\nMon, 21 Sep 2026\nLocation:\nUK-wide\nHow to Apply\nEmail your CV and cover letter to\n[email protected]\nAbout JAS Theatricals\nTheatre Production Company\nFind out more",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84371": {
@@ -9846,7 +9846,7 @@
     "closing_date": "Wednesday, 30 September 2026",
     "first_seen": "2026-09-04T13:15:18+00:00",
     "description": "Education Manager\nGuildford Shakespeare Company\nClosing date:\nWed, 30 Sep 2026\nArtform:\nTheatre\nRole:\nCreative\nContract:\nPermanent\nSouth East\nFull time\n£30k-£40k\nApply now\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nThe Education Manager is a pivotal role in our core team in Guildford. This dynamic role will work alongside the rest of the Creative Learning Department to plan, develop, teach, administrate and evaluate GSC’s in-house participation activity, championing our ethos that theatre is for everyone.\nJob Description\nThe Education Manager is a key position in our core team in Guildford, playing a pivotal part in ensuring we continue to inspire, engage and educate the widest possible community of participants, from young children to adults.\nThis dynamic role is both administrative and practical: combining teaching and directing with administration and management.\nYou will work alongside the rest of the Creative Learning Department to plan, execute and evaluate GSC's in-house participation activity, contributing to organisation-wide initiatives of promoting inclusion and diversity. You'll work with freelancers and partner organisations to ensure activity is well planned, inclusive and impactful.\nYou'll be part of a small, hard-working team, within an ever-growing and developing theatre company, meaning there is great potential for future growth.\nJob Requirements\nOur ideal candidate will already have experience of working in a creative learning environment, leading participation programmes and creating schemes of work.\nThey will have excellent organisation and administrative skills, alongside a dynamic teaching manner to ignite the imaginations of participants of all ages.\nThe Education Manager will be creative and inventive. They'll enjoy the busy nature of running multiple projects at the same time, whilst planning for the future.\nCalm and good-humoured under pressure, a quick worker and an initiative-taker willing to ask for advice.\nJob Res",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-30"
   },
   "https://www.artsjobs.org.uk/jobs/search/84367": {
@@ -9966,7 +9966,7 @@
     "closing_date": "Wednesday, 23 September 2026",
     "first_seen": "2026-09-04T13:15:18+00:00",
     "description": "International Partnerships and Projects Manager\nPhilharmonia\nClosing date:\nWed, 23 Sep 2026\nArtform:\nMusic\nRole:\nFundraising\nContract:\nTemporary\nLondon\nFull time\n£30k-£40k\nThu, 03 Sep 2026\n\">\n    published -\nThu, 03 Sep 2026\nJob Summary\nThis is a new and exciting role, created to manage the day-to-day relationships and lead on the Philharmonia's project and stewardship delivery for key international residency partners and funders.\nJob Description\nThe International Partnerships and Projects Manager is a new role, created to manage the day-to-day relationships and lead on the Philharmonia's project and stewardship delivery for key international residency partners and funders. Reporting to the Director of Development, with dotted lines into the Executive Office and into Concerts and Operations, the postholder works on the orchestra's existing international residencies and partnerships in Mauritius and the US, as well as supporting the development of new international residency projects in line with the orchestra's international growth strategy.\nThis role will suit someone bright, extremely well organised, and genuinely energised by solving problems in unfamiliar territory across time zones, currencies and cultures. You will be trusted with senior relationships early and given real ownership. Offered initially as a one-year fixed term contract, the role carries the option to extend subject to performance, and is intended as the foundation of a permanent international function within the Philharmonia.\nJob Requirements\nDemonstrable track record of holding and owning external relationships of a funding, partnership or client nature, with evidence of retention and growth (min 3-5 years)\nStrong project management experience, with a proven ability to deliver complex, multi-stranded projects to deadline across several departments or organisations\nExperience of planning and delivering international travel, logistics and schedules, ideally for senior executives, trustees or equi",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-23"
   },
   "https://www.artsjobs.org.uk/jobs/search/84340": {
@@ -10251,7 +10251,7 @@
     "closing_date": "Tuesday, 8 September 2026",
     "first_seen": "2026-09-04T13:15:18+00:00",
     "description": "Jesus Christ Superstar - LX 3\nCrossroads Live\nClosing date:\nTue, 08 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nContract\nInternational\nFull time\n£30k-£40k\nThu, 03 Sep 2026\n\">\n    published -\nThu, 03 Sep 2026\nJob Summary\nCrossroads Live are seeking a LX 3 for the NZ leg of the touring production of Jesus Christ Superstar. Touring from October 2026 to December 2026.\nJob Description\nJob Title Assistant Electrician (LX 3)\nResponsible To Chief Electrician\nPurpose of Job\nTo assist the Chief Electrician as directed with regard to the operation and maintenance of all lighting equipment.\nDuties and Responsibilities\n1. The Assistant Electrician will assist the Chief Electrician in operating the lighting and video equipment for each performance as instructed by the Lighting Designer and Video Designer including all moving and generic lights, projection and all effects.\n2. To attend all get-in, fit-up and get-outs as required.\n3. To operate follow-spots as required.\n4. To assist the Chief Electrician in preparing cue sheets and effects lists and provide this information to the Stage Manager.\n5. To assist the Chief Electrician in ensuring all equipment is unpacked and prepared at each venue of the tour.\n6. To assist the Chief Electrician in coordinating the get-out of lighting equipment at each venue, and in preparing equipment ready for loading at the end of the run and to assist other departments until the completion of the get-out at each venue.\n7. To assist the Chief Electrician in ensuring that all equipment is maintained and in safe working order.\n8. To assist the Chief Electrician with lamp and projector checks prior to each performance.\n9. Attend production meetings if requested and all rehearsals, calls and performances.\n10. Adhere to the Health and Safety guidelines of the Company.\n11. Any other duties as may be reasonably required in the course of your duties or as instructed by the Producers from time to time.\nUseful Links\nCROSSROADS LIVE LTD WEB",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-08"
   },
   "https://www.artsjobs.org.uk/jobs/search/84328": {
@@ -10386,7 +10386,7 @@
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Pride - Deputy Head of Sound\nPlayful Productions\nClosing date:\nFri, 18 Sep 2026\nRole:\nTechnical & Production\nContract:\nContract\nLondon\nFull time\n£40k-£50k\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nPride are seeking a Deputy Head of Sound to join the team from October 2026.\nJob Description\nJob title: Deputy Head of Sound\nResponsible for: Sound No. 3 and Sound No. 4\nReports to: Head of Sound\nSalary: above SOLT/BECTU minimum\nProbationary Period: 12 weeks\nContract: Initially fixed term, thereafter open-ended for the life of the production. Performances are 6 days per week, evening and weekend work will be required\nTerms and conditions: As per the SOLT/BECTU agreement\nStart date: October 2026\nLocation: Bridge Theatre, London\nPerformance schedule: Monday to Saturday evening performances (at 7:30pm) and 2:30pm matinees on Thursday and Saturday.\nJob Requirements\nPreferred experience: Significant professional experience in an equivalent role on a large-scale commercial musical.\nPersonal attributes: High level of self-awareness, empathy, integrity and confidentiality, detail orientated, strong communication and organisational skills, ability to work as part of a team as well as individually, a flexible approach to working unsociable hours, a positive attitude and a sense of humour.\nJob Responsibilities\nA non-exhaustive list of responsibilities can be found in the job description on the Playful Productions website.\nUseful Links\nPlayful Productions | Recruitment\nJob Overview\nJob Title:\nPride - Deputy Head of Sound\nSalary:\n£40k-£50k\nHours:\nFull time\nRole:\nTechnical & Production\nContract:\nContract\nClosing date:\nFri, 18 Sep 2026\nLocation:\nLondon\nHow to Apply\nTo apply, please send a CV and a short covering letter outlining your suitability for the role to\n[email protected]\nwith the name of show and role you are applying for, your name and where you saw the advert in the subject line.\nClosing date is 5pm on the 18th September but please note that applications ",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/84454": {
@@ -10431,7 +10431,7 @@
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Automation Assistant\nDisney Theatrical Group\nClosing date:\nFri, 18 Sep 2026\nRole:\nTechnical & Production\nContract:\nContract\nUK-wide\nFull time\n£40k-£50k\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nWe are seeking a passionate and motivated individual to join the Automation department for a musical on a fixed-term basis.\nJob Description\nWe are seeking a passionate and motivated individual to join the Automation department for a musical on a fixed-term basis.\nAs an Automation Assistant, you'll report to the Head and Deputy Head of Automation. Your focus will be on supporting the safe operation, maintenance, and smooth running of automated stage machinery and systems during rehearsals and performances.\nAssist the Head and Deputy Head of Automation, liaising between the Company Manager, Technical departments, Creative Team, Production, and General Management Teams to ensure the smooth running of all rehearsals and performances.\nAssist the Head and Deputy Head of Automation with any day-to-day changes that might impact the running of the Production.\nPerform daily setup, automation rig checks, and maintain clear communication within the Automation team.\nEnsure awareness of understudy and swing performances ahead of each show and make necessary adjustments.\nOperate the show automation for performances, replicating the show's design.\nAttend rehearsal, technical, dress, and understudy rehearsals as required.\nSupport the Head and Deputy Head of Automation in maintaining all automation equipment to ensure it is in working order for each performance. Maintain the quality of the show as directed by the artistic requirements and under the guidance of the Head of Automation, Production Manager, and Creative Team.\nReport and provide timely feedback on show and staff-related issues.\nWork in full compliance with Disney's Health and Safety Policy and maintain knowledge of relevant legislation and best practices\nJob Requirements\nExperience in a similar role within a ",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/84443": {
@@ -10446,7 +10446,7 @@
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Wardrobe Assistant\nDisney Theatrical Group\nClosing date:\nFri, 18 Sep 2026\nRole:\nTechnical & Production\nContract:\nContract\nUK-wide\nFull time\n£40k-£50k\nApply now\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nWe are seeking a passionate and motivated individual to join the Wardrobe department for a musical on a fixed-term basis.\nJob Description\nAs a Wardrobe Assistant, you'll report to the Head and Deputy Head of Wardrobe. Your focus will be on the preparation, maintenance, and continuity of costumes for the cast, ensuring a smooth and efficient backstage operation during rehearsals and performances.\nAssist the Head and Deputy Head of Wardrobe liaise between the Company Manager, Technical departments, Creative Team, Production and General Management Teams to ensure the smooth running of all rehearsals and performances\nAssist the Head and Deputy Head of Wardrobe on any day-to-day changes that might impact the running of the Production\nManage daily setup, oversee wardrobe pre-sets, and maintain clear communication within the wardrobe team\nEnsure awareness of understudy and swing performances ahead of each show and make necessary adjustments.\nMaintain and clean all costumes to keep them performance-ready for every show\nAssist with costume fittings when required\nAttend rehearsal, technical, dress and understudy rehearsals as required\nResponsible for repairing costumes as instructed and upholding the show's quality in accordance with artistic standards, under the direction of the Head and Deputy Head of Wardrobe, Production Manager, and Resident Creative Team\nReport and feedback show and staff-related issues in a timely manner\nAcquire familiarity with all plots/tracks within the Wardrobe department\nWork in full compliance with Disney's Health and Safety Policy and maintain knowledge of relevant legislation and best practices\nJob Requirements\nExperience in a similar role within a large-scale musical production, working alongside an international cast, is h",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/84440": {
@@ -10476,7 +10476,7 @@
     "closing_date": "Friday, 11 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Puppet Assistant (Maternity Cover) - Disney's The Lion King\nDisney Theatrical Group\nClosing date:\nFri, 11 Sep 2026\nRole:\nTechnical & Production\nContract:\nContract\nUK-wide\nFull time\n£50k+\nApply now\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nWe are seeking a passionate, motivated and highly organised individual to join the Masks and Puppets department for Disney’s The Lion King at London’s Lyceum Theatre, on a one-year fixed-term maternity cover.\nJob Description\nAs a Puppet Assistant, you will work closely with the Head and Deputy Head of Puppets to support the smooth running of rehearsals and performances. You will play an important role in ensuring the puppetry and props elements of the production are maintained to the highest standard, supporting backstage operations and helping to maintain consistency and production continuity across the show.\nAssist the Head and Deputy Head of Puppets, liaise between the Company Manager, Technical departments, Creative Team, Production and General Management Teams to ensure the smooth running of all rehearsals and performances.\nAssist the Head and Deputy Head of Puppets on any day-to-day changes that might impact the running of the Production.\nPerform daily setup, oversee Puppets pre-sets and provide communication within the team.\nEnsure awareness of understudy and swing performances ahead of each show and make necessary adjustments.\nAttend rehearsal, technical, dress and understudy rehearsals as required.\nResponsible for maintaining repairing Puppets as instructed and maintaining the quality of the show as dictated by the artistic requirements and under the direction of the Head and Deputy Head of Puppets, Production Manager and Resident Creative Team.\nReport and feedback show and staff-related issues in a timely manner.\nAcquire familiarity with all plots/tracks within the Puppets department.\nWork in accordance with the Health and Safety Policy and maintain an excellent working knowledge of all relevant hea",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-11"
   },
   "https://www.artsjobs.org.uk/jobs/search/84434": {
@@ -10626,7 +10626,7 @@
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Social Media & Campaigns Officer, SWE\nSadler's Wells\nClosing date:\nSun, 13 Sep 2026\nRole:\nMarketing & Digital\nContract:\nPermanent\nLondon\nFull time\n£30k-£40k\nApply now\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nSadler's Wells is a world-leading creative organisation dedicated to dance in all its forms. Our mission is to make and share dance that inspires us all. Can you get people into dance from every angle with creative social media content? We want to hear from you.\nJob Description\nWe are looking for a Social Media & Campaigns Officer to build online audiences and manage daily activity on our Sadler's Wells East theatre social media channels - to inspire, inform and engage existing and potential dance audiences, both live and digital with a particular focus on people living in the area local to the new venue.\nThis is a unique and exciting opportunity to drive Sadler's Wells newest social media channels for this prestigious venue in east London. Find out more at https://www.sadlerswells.com/about-us/our-theatres/sadlers-wells-east/.\nYou will have the following skills and experience:\nHighly organised and analytical\nStrategically creative with digital storytelling skills (including video)\nUnderstanding of how to build and engage online communities\nKnowledgeable about using social media platforms to make creative impact\nCollaborative with a drive to make things happen\nA great writer with a social edge\nWe're a supportive and hardworking team, working on a variety of projects across all of Sadler's Wells venues. We have a 'smarter working' approach and encourage both on-site and remote working.\nSadler's Wells benefits include:\nRight to request flexible working from day 1\nEmployee Assistance Programme\nComplimentary tickets and discounts\nEnhanced holiday and time off in lieu policy\nFor more information, please click apply.\nWe welcome all applications by 11:59pm GMT on Sunday 13 September 2026. Interviews will take place in the week commencing Monday ",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84451": {
@@ -10671,7 +10671,7 @@
     "closing_date": "Sunday, 27 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Dance Coordinator\nLeeds Conservatoire\nClosing date:\nSun, 27 Sep 2026\nArtform:\nDance\nRole:\nTeaching\nContract:\nPermanent\nYorkshire\nFull time\n£40k-£50k\nApply now\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nLeeds Conservatoire is looking to appoint a Dance Coordinator to lead, coordinate and deliver exceptional dance training within the School of Drama (BA Acting, BA Actor Musician, BA Musical Theatre, and our suite of Masters programmes).\nJob Description\nPlease click on the Apply now button, which will take you directly to our advert where you can view the full job description & person specification.\nJob Requirements\nExtensive knowledge and experience of dance training across a range of styles relevant to Musical Theatre and Actor training, alongside significant professional performance and choreographic experience.\nExtensive experience within the music industry and HE sector, with a strong understanding of music education and experience of managing HE courses and delivering higher education teaching.\nHighly collaborative approach, with the ability to work effectively with teaching artists and colleagues to deliver excellence in multidisciplinary performance training.\nExcellent people management, communication, digital, IT, time management and organisational skills, with the ability to solve problems effectively under pressure.\nCreative and innovative, with the ability to develop original ideas, support budget management and hold a relevant degree or equivalent qualification/experience.\nDegree in relevant subject or equivalent qualification/experience\nJob Responsibilities\nProvide operational leadership for the department's strategic priorities and contribute to curriculum development across current and future programmes.\nManage programme modules, including timetabling, assessments, material selection, schemes of work and associated resources.\nDeliver teaching across agreed curriculum areas, in line with relevant specialisms and departmental priorit",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-27"
   },
   "https://www.artsjobs.org.uk/jobs/search/84446": {
@@ -10731,7 +10731,7 @@
     "closing_date": "Sunday, 27 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Chargehand Electrician\nCriterion Theatre Trust\nClosing date:\nSun, 27 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nPermanent\nLondon\nFull time\n£30k-£40k\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nWe’re currently looking for a Chargehand Electrician to join our LX team. This is a fantastic opportunity to gain hands-on experience in a busy West End theatre and provide essential support to our Lighting and Theatre Operations teams.\nJob Description\nABOUT THE ROLE\nThe electrics department is responsible for the production's sound and lighting and the realisation of technical services for all performances and events within agreed schedules and budgets. They also take responsibility for the upkeep and maintenance of the building in liaison with the Stage Department, Technical and Building Manager and external contractors.\nIN DOING SO, YOU WILL:\nComply with Health & Safety regulations.\nComply with all licensing and building regulations.\nComply with all company policies and codes of practice.\nMinimise the Trust's environmental impact and promote sustainability.\nMAIN RESPONSIBILITIES\nTo operate the lighting console during performances and any rehearsals as required.\nTo learn and cover all show plots within the Electrics Department.\nTo carry out daily lighting rig checks and production lighting maintenance.\nTo work with the Head and Deputy Head of Electrics in ensuring all casual staff are adequately trained.\nTo assist the Head and Deputy Head of Electrics in ensuring the daily duties, general maintenance, servicing, and inspections of the building are kept up to date.\nTo assist in ensuring all health and safety and fire safety policies are adhered to.\nTo take part in Trust workshops and additional events run by the Trust.\nTo undertake other duties as may be reasonably required by the Line Manager.\nJob Requirements\nESSENTIAL\nA willingness to work flexible hours including evenings, weekends, and public holidays.\nA flexible approach, with ",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-27"
   },
   "https://www.artsjobs.org.uk/jobs/search/84438": {
@@ -10821,7 +10821,7 @@
     "closing_date": "Monday, 21 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Senior Manager, Trusts & Foundations\nThe National Youth Orchestra\nClosing date:\nMon, 21 Sep 2026\nArtform:\nMusic\nRole:\nFundraising\nContract:\nPermanent\nLondon\nFull time\n£40k-£50k\nApply now\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nJoin NYO’s ambitious Fundraising team, taking a leading role in a crucial area of income.\nJob Description\n£45-48k dependent on experience\nWe are looking for an entrepreneurial and collaborative trusts fundraiser to play a leading role in growing the investment that supports NYO's work with teenagers across the UK. Trusts & Foundations contribute more than £600,000 annually, and this new role will help deepen existing partnerships, develop new opportunities and secure significant support for NYO's future.\nAs an ambitious and growing organisation, we need to communicate new and evolving programmes with agility, articulating their potential clearly and building the support needed to make them possible. This is an opportunity to build from a position of strength, sustaining successful programmes while securing investment to create opportunities for many more teenagers.\nYou will manage a substantial portfolio of trust, foundation and statutory funders, leading relationships from cultivation and application through to stewardship, reporting and renewal. You will develop compelling, evidence-led proposals and reports, including significant and strategically important bids, and work closely with colleagues to bring together programme, financial and impact information.\nThis is an excellent opportunity for an experienced fundraiser who combines excellent writing and relationship-building skills with strategic judgement and careful delivery. You will take ownership of agreed income targets and play an active part in a collaborative Fundraising & Communications team working across Individual Giving, major donors and Trusts & Foundations to achieve shared goals.\nUseful Links\nNYO Website\nJob Overview\nJob Title:\nSenior Manager, Trust",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-21"
   },
   "https://www.artsjobs.org.uk/jobs/search/84421": {
@@ -10851,7 +10851,7 @@
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-05T12:28:09+00:00",
     "description": "Seasonal Production Electrician\nOpera North\nClosing date:\nSun, 20 Sep 2026\nRole:\nTechnical & Production\nContract:\nTemporary\nYorkshire\nFull time\n£25k-£30k\nApply now\nFri, 04 Sep 2026\n\">\n    published -\nFri, 04 Sep 2026\nJob Summary\nThe purpose of the job will be to help prepare, implement and operate performance related lighting, sound and AV equipment for Opera North productions both in Leeds and on tour.\nJob Description\nThe successful candidate will be expected to work effectively as part of the team, making sure that all activities are carried out to the highest standards of safety, efficiency and quality.\nEssential requirements for the job include, a proven track record of lighting sound and AV work, the ability to work as part of a team and a positive attitude towards Health and Safety.\nTerms & Conditions:\nContract type: Fixed Term, Full Time (2 months)\nSalary: £650 per week\nHours of work: An average of 44 hours per week, across the contracted period\nPlace of work: you will be based at Howard Opera Centre, Leeds (you'll be expected to travel to other venues as part of the role also).\nEquity, diversity and inclusion: We promote equity, diversity and inclusion in our workplace and make recruitment decisions by matching our needs with the skills and experience of the candidate. As we work to address underrepresentation in our workforce, we are particularly keen to hear from applicants from the global majority or those with other protected characteristics.\nThe successful candidate must have the right to work in the UK or be ready to obtain it.\nGeneral responsibilities of everyone who works for us:\n- Represent the company values and purpose to create extraordinary experiences everyday\n- Work collaboratively and co-operatively with all team members and take an active part in team meetings and discussions\n- Be an ambassador for Opera North and follow our policies and procedures\n- Play your part in ensuring that everyone who comes through our door is welcomed and treated ",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://www.artsjobs.org.uk/jobs/search/84419": {
@@ -11038,15 +11038,15 @@
     "institution": "National Trust",
     "title": "Welcome & Service Team Member",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/178836",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£13.25 per hour",
+    "salary_annual_est": 25837,
     "location_text": "Downpatrick",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-07T14:51:47+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/178971": {
@@ -11061,22 +11061,22 @@
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-07T14:51:47+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/178974": {
     "institution": "National Trust",
     "title": "Holiday Cottage Cleaner",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/178974",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£12.75 per hour",
+    "salary_annual_est": 24862,
     "location_text": "Bridgnorth",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-07T14:51:47+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179128": {
@@ -11151,7 +11151,7 @@
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-07T14:51:47+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179276": {
@@ -11166,52 +11166,52 @@
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-07T14:51:47+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179293": {
     "institution": "National Trust",
     "title": "Food & Beverage Team Member x 6",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179293",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£12.75 per hour",
+    "salary_annual_est": 24862,
     "location_text": "Cranbrook",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-07T14:51:47+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179339": {
     "institution": "National Trust",
     "title": "Welcome & Service Team Member",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179339",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£13.25 per hour",
+    "salary_annual_est": 25837,
     "location_text": "Nr. Bishop Stortford",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-07T14:51:47+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179447": {
     "institution": "National Trust",
     "title": "Food & Beverage Team Member",
     "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179447",
-    "salary_text": "Not listed",
-    "salary_annual_est": 0,
+    "salary_text": "£12.75 per hour",
+    "salary_annual_est": 24862,
     "location_text": "Southwell",
     "is_london": null,
     "employment_type": "unknown",
     "closing_date": "Sunday, 20 September 2026",
     "first_seen": "2026-09-07T14:51:47+00:00",
     "description": "",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-20"
   },
   "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179503": {
@@ -11361,7 +11361,7 @@
     "closing_date": "Monday, 28 September 2026",
     "first_seen": "2026-09-08T13:24:33+00:00",
     "description": "Box Office Manager\nPark Theatre\nClosing date:\nMon, 28 Sep 2026\nArtform:\nTheatre\nRole:\nCustomer Service\nContract:\nPermanent\nEast\nFull time\n£30k-£40k\nApply now\nTue, 08 Sep 2026\n\">\n    published -\nTue, 08 Sep 2026\nJob Summary\nWe are looking for a Box Office Manager who is excited by the opportunity to play a key role in the success of Park Theatre. Working closely with the Marketing team, you’ll help lead and develop our Box Office operation while delivering welcoming and accessible customer experiences.\nJob Description\nThis Opportunity\nYou'll have the opportunity to build your expertise across Spektrix, ticketing, sales and customer service, working with colleagues across Marketing, Development, Finance and Operations, as well as in-house and visiting companies and coproducers.\nThe role will help recruit, train and manage the casual Box Office supervisor team, coordinate staffing and rotas, oversee customer service and lead on group, schools, press, guest and access bookings. The postholder will ensure the team is confident and consistent in using Spektrix, while maintaining high standards of GDPR, PCI DSS and organisational policy compliance. This is a varied role where you'll have the chance to make a tangible contribution to how audiences experience Park Theatre.\nThis is an exciting opportunity for someone who is looking to develop their career in theatre box office and ticketing systems, and to take ownership across a broad range of customer focussed activity. You'll be supported by the wider team to grow your knowledge and confidence, with opportunities to take on greater responsibility and deputise when required. You'll join a warm, collaborative and dynamic working environment where ideas are welcomed and your contribution is valued. The successful candidate will be proactive, highly organised and collaborative, with excellent attention to detail and a strong commitment to customer service, accessibility, inclusion and Park Theatre's vision and mission.\nJob Req",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-28"
   },
   "https://www.artsjobs.org.uk/jobs/search/84519": {
@@ -11511,7 +11511,7 @@
     "closing_date": "Sunday, 13 September 2026",
     "first_seen": "2026-09-08T13:24:33+00:00",
     "description": "STAGE MANAGER - SINGIN' IN THE RAIN\nJonathan Church Theatre Productions\nClosing date:\nSun, 13 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nContract\nUK-wide\nFull time\n£50k+\nTue, 08 Sep 2026\n\">\n    published -\nTue, 08 Sep 2026\nJob Summary\nWe are seeking an experienced Stage Manager for the UK and Ireland tour of Singin’ in the Rain, the musical based on the classic Metro-Goldwyn-Mayer film.\nJob Description\nFeaturing Andrew Wright's high-energy choreography, with additional choreography by Jaye Elster, and Simon Higlett's spectacular set design - including more than 14,000 litres of water on stage every night - the production combines the charm, romance and wit of one of the world's best-loved films.\nSingin' in the Rain features the iconic MGM score, including Good Morning, Make 'Em Laugh, Moses Supposes and, of course, Singin' in the Rain. The production is directed by Jonathan Church.\nThis is a remount of the production which previously played in the West End and has subsequently toured internationally, including seasons in Canada, Dubai and China.\nThe production will rehearse in London before opening at the Sheffield Crucible, where it will run from 26 November 2026 to 16 January 2027. The Sheffield season will be managed by the theatre's in-house Stage Management team.\nThe touring Stage Manager will join the production for a handover week in Sheffield during the final week of the run, before taking responsibility for the production as it begins its UK and Ireland tour.\nThe production will then tour to 21 venues across the UK and Ireland from January to September 2027 and will be managed by Jonathan Church Theatre Productions. The touring company will be supported by a Company Manager. The Stage Management team will consist of Stage Manager (this role), Deputy Stage Manager, and Assistant Stage Managers. The touring company will also consist of full cast and musicians, technical and production team across all departments, including some team memb",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-13"
   },
   "https://www.artsjobs.org.uk/jobs/search/84388": {
@@ -11751,7 +11751,7 @@
     "closing_date": "Friday, 18 September 2026",
     "first_seen": "2026-09-08T13:24:33+00:00",
     "description": "Pride - Assistant Stage Manager\nPlayful Productions\nClosing date:\nFri, 18 Sep 2026\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nContract\nLondon\nFull time\n£40k-£50k\nTue, 08 Sep 2026\n\">\n    published -\nTue, 08 Sep 2026\nJob Summary\nPride are seeking Assistant Stage Managers to join the team from October 2026.\nJob Description\nJob title: Assistant Stage Manager\nReports to: Stage Manager\nSalary: above SOLT/Equity minimum\nProbationary Period: 12 weeks\nContract: Initially fixed term, thereafter open-ended for the life of the production. Performances are 6 days per week, evening and weekend work will be required\nTerms and conditions: As per the SOLT/Equity agreement\nStart date: October 2026\nLocation: Bridge Theatre, London\nPerformance schedule: Monday to Saturday evening performances (at 7:30pm) and 2:30pm matinees on Thursday and Saturday.\nJob Requirements\nPreferred experience: Significant professional experience in an equivalent role on a large-scale commercial musical.\nPersonal attributes: High level of self-awareness, empathy, integrity and confidentiality, detail orientated, strong communication and organisational skills, ability to work as part of a team as well as individually, a flexible approach to working unsociable hours, a positive attitude and a sense of humour.\nJob Responsibilities\nA non-exhaustive list of responsibilities can be found in the job description on the Playful Productions website.\nUseful Links\nPlayful Productions | Recruitment\nJob Overview\nJob Title:\nPride - Assistant Stage Manager\nSalary:\n£40k-£50k\nHours:\nFull time\nArtform:\nTheatre\nRole:\nTechnical & Production\nContract:\nContract\nClosing date:\nFri, 18 Sep 2026\nLocation:\nLondon\nHow to Apply\nTo apply, please send a CV and a short covering letter outlining your suitability for the role to\n[email protected]\nwith the name of show and role you are applying for, your name and where you saw the advert in the subject line.\nThe closing date is 5pm on Friday 18th September but please note that appl",
-    "matched": true,
+    "matched": false,
     "closing_date_iso": "2026-09-18"
   },
   "https://www.artsjobs.org.uk/jobs/search/84535": {
@@ -12083,5 +12083,200 @@
     "description": "Jobs - National Museum Directors' Council Website\nToggle navigation\nAbout us\nNews\nWhat we do\nOur members\nPublications\nJobs\nSearch term\nHome\nJobs\nDetails:\nLocation:\nLondon and Wiltshire\nCategory:\nCollections Care\nSalary:\n£32,674 per annum\nContract type:\nContract\nPermanent\nHours:\nFull time\nTelephone:\n020 7887 4987\nSenior Art Handling Technician\nWe are currently recruiting for two Senior Art Handling Technicians to support the delivery of Tate’s exciting programmes.\nThe post-holder will lead a team of Art Handling Technicians and undertake collection management and care operations for all types of artwork at Stores (Iver, Southwark and Wiltshire) including the installation/de-installation, safe handling and packing artworks for exhibitions, loans, digitization, acquisition and storage. The role sits within a management team of Senior Art Handling Technicians and reporting to the Lead Art Handling Technicians within the Collection Management department at Tate.\nTo be successful in this role you will have a high level of expertise in the handling, installation and care of a variety of complex artworks. You will have the ability to lead and motivate a team, and have excellent interpersonal and communication skills. In this role you will also be expected to work confidently and accurately under pressure.\nYou will have proven experience of providing technical solutions to installation problems and have demonstrable experience of advising management on risks and achievable schedules. You will be excellent at providing first-class advice on the specifications for equipment and be responsible for the care, maintenance and storage of art handling equipment and materials.\nMuseum Website:\nhttps://careers.tate.org.uk/members/modules/job/detail.php?record=877\nNational Museum Directors' Council, National Museums Liverpool, World Museum, William\nBrown Street, Liverpool, L3 8EN\n©2026 National Museum Directors’ Council\nPrivacy and Cookies\nContact us\nCookie Preferences",
     "matched": false,
     "closing_date_iso": null
+  },
+  "https://jobsearch.tate.org.uk/jobs/job/TG1423896-Corporate-Partnerships-Account-Manager/896": {
+    "institution": "Tate",
+    "title": "TG1423896 Corporate Partnerships Account Manager",
+    "url": "https://jobsearch.tate.org.uk/jobs/job/TG1423896-Corporate-Partnerships-Account-Manager/896",
+    "salary_text": "£39,790 per annum",
+    "salary_annual_est": 39790,
+    "location_text": "Tate Britain, United Kingdom",
+    "is_london": true,
+    "employment_type": "full_time",
+    "closing_date": "Tuesday, 22 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "Vacancies\nTG1423896 Corporate Partnerships Account Manager\nJob Introduction\nCreativity, innovation and forward thinking infuses every aspect of Tate and we approach corporate fundraising in the same way! As a result, Tate has a long history of generating ground-breaking partnerships and delivering significant return on investment for its Corporate Partners.\nDay-to-day, you’ll proactively account manage a portfolio of our sector-leading and globally renowned corporate partnerships, which support Tate’s mission of enabling access to art for all.\nYou will oversee the internal and external project management of each partnership. Through liaising regularly with relevant Tate departments, as well as working with and motivating the Corporate Partnerships Officers, you’ll help ensure we create and deliver interesting, cutting edge and competitive opportunities for our corporate partners. You will be responsible for cultivating new prospects and identifying partners with the capacity to be repeat funders. You’ll also work to devise and implement a strategic and innovative approach to securing future business.\nAs well as experience managing b2b relationships you should have an innate ability to build an inclusive, respectful and collaborative culture within a team. You should also have excellent organisational and project management skills as well as a flair for juggling a busy workload to meet deadlines. Applying judgement and discretion to complex situations comes naturally to you too.\nWhat’s more, you're proficient using a relationship or sales database and, above all, have what it takes to create a vision to bring about change and influence the behaviour of others.\nWe don’t accept CVs, so please complete all sections of the form, including your education and work history. Use this space to share specific examples of what you’ve done and how you work.\nTools like ChatGPT can be useful for exploring thoughts, but we ask that the words you share with us are your own. Response",
+    "matched": true,
+    "closing_date_iso": "2026-09-22"
+  },
+  "https://www.kcl.ac.uk/jobs/157265-data-architect": {
+    "institution": "King's College London",
+    "title": "Data Architect",
+    "url": "https://www.kcl.ac.uk/jobs/157265-data-architect",
+    "salary_text": "£53,947 - £63,350 per annum inclusive of London Weighting Allowance",
+    "salary_annual_est": 63350,
+    "location_text": "Waterloo Campus",
+    "is_london": true,
+    "employment_type": "full_time",
+    "closing_date": "Sunday, 4 October 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "Job id:\n157265\n.\nSalary:\n£53,947 - £63,350 per annum inclusive of London Weighting Allowance\n.\nPosted:\n03 September 2026\n.\nClosing date:\n04 October 2026\n.\nBusiness unit:\nIT\n.\nDepartment:\nArchitecture\n.\nContact details:\nDr. Omar Radwan\n.\nomar.radwan@kcl.ac.uk\nLocation:\nWaterloo Campus\n.\nCategory:\nProfessional & Support Services\n.\nBack to\njob search\nAbout us:\nKing’s College London is a leading university with a long-standing commitment to education, research and service to society. King’s Strategy 2030 is focused on serving society through academic excellence, with priorities including student success, research and education excellence, and building a sustainable future.\nEnterprise Data Architecture within IT supports these priorities by establishing a consistent approach to how data is structured, governed, shared and reused across the University. It aligns data capabilities, standards and architecture with wider University needs, supporting trusted data, digital services and emerging AI capabilities.\nAbout the role:\nWe are looking for a Data Architect to develop and apply Data Architecture at King’s, with a particular focus on Data Products and Data Governance Architecture, supporting trusted, governed and reusable data across the University.\nReporting to the Head of Information Architecture, you will translate enterprise architecture direction into domain Data Architecture, models, standards and reusable architecture patterns. You will apply Data as a Product and Data Mesh principles, connecting data domains, governance and technology to support interoperability and effective data reuse.\nA key focus of the role will be designing conceptual, logical, physical and semantic data models and architecture across modern data platforms, integration, storage, master and reference data, lakehouse and medallion patterns, microservices and reusable data services. You will apply Data Governance through ownership and stewardship, metadata, catalogue, lineage, data quality, class",
+    "matched": true,
+    "closing_date_iso": "2026-10-04"
+  },
+  "https://www.cam.ac.uk/jobs/administrative-assistant-part-time-fixed-term-rc50911": {
+    "institution": "University of Cambridge",
+    "title": "Administrative Assistant (Part Time, Fixed Term)",
+    "url": "https://www.cam.ac.uk/jobs/administrative-assistant-part-time-fixed-term-rc50911",
+    "salary_text": "£31,236-£35,608",
+    "salary_annual_est": 35608,
+    "location_text": "Department of Medicine",
+    "is_london": false,
+    "employment_type": "part_time",
+    "closing_date": "Thursday, 17 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "We are looking to recruit an enthusiastic and motivated Administrative Assistant to support Professor Virginia Newcombe's research group, working across two multi-centre studies focused improving how we diagnose and predict outcome after mild traumatic brain injury. The role will be based in Cambridge, within the Perioperative, Acute, Critical Care and Emergency Medicine (PACE) Section, Department of Medicine.\nThe appointee will provide essential administrative support to ensure the smooth running of these clinical studies, including financial administration, processing participant expense payments, preparing questionnaire packs, data entry and verification, and providing support for project meetings. The role also includes acting as personal assistant to Professor Newcombe and providing cross-cover support with the PACE Section's departmental administrator. The post holder will receive appropriate training as required.\nThe appointee will have relevant administrative experience, ideally within a research, university, or NHS setting. Strong organisational skills, attention to detail, and the ability to handle confidential information appropriately are essential. Experience of financial administration or working within a clinical research environment would be advantageous.\nThe position will be based in the Cambridge Biomedical Campus. Applicants will be expected to work collaboratively with colleagues and contribute to a positive and dynamic research environment.\nInformal enquiries are welcome and can be directed to Professor Virginia Newcombe (\nvfjn2@cam.ac.uk\n).\nFixed-term: The funds for this post are available until 31 December 2028 in the first instance.\nClick the 'Apply' button below to register an account with our recruitment system (if you have not already) and apply online.\nPlease ensure that you outline how you match the criteria for the post and why you are applying for this role on the online application form.\nPlease include details of your referees, includ",
+    "matched": false,
+    "closing_date_iso": "2026-09-17"
+  },
+  "https://www.cam.ac.uk/jobs/endpoint-specialist-vc50971": {
+    "institution": "University of Cambridge",
+    "title": "Endpoint Specialist",
+    "url": "https://www.cam.ac.uk/jobs/endpoint-specialist-vc50971",
+    "salary_text": "£35,608-£46,049",
+    "salary_annual_est": 46049,
+    "location_text": "University Information Services",
+    "is_london": false,
+    "employment_type": "unknown",
+    "closing_date": "Friday, 25 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "University Information Services (UIS) provides the digital infrastructure, business information and computing services at the heart of one of the world's top universities. The University of Cambridge has a bold ambition to use digitalisation to transform education and research, and UIS' team of developers, designers, testers, analysts and support staff is leading this exciting work.\nThe role\nThe Endpoint Specialist will join a team providing managed Windows & macOS devices as part of the University Managed Desktop to enable staff and students to work in a secure and productive manner in alignment with the University's digital aims.\nYou'll get the chance to collaborate and interact with some of the finest minds in the world, sharing data, insight and expertise to make a meaningful difference to the University's success while using best practice tooling and methodologies.\nWhat you will do\nAs a Endpoint Specialist you will:\nContribute to the University Managed Desktop service, packaging applications, deploying configurations and developing new features.\nImplement and maintain automated services at scale.\nDevelop and document procedures for supporting teams.\nWork with UMD customers within the University to ensure the University Managed Desktop aligns with a wide range of requirements.\nProvide platform specific technical advice to support other UIS services.\nWhat you will need\nExperience of managing Windows devices at scale, preferably using Microsoft cloud technologies.\nGood communication, organisational and problem-solving skills deploying.\nProven ability to work in a diverse environment with complex requirements.\nAbility to use PowerShell scripting for task automation and system management is desirable.\nExperience of integrating scripts with APIs, with Microsoft Graph API being highly advantageous.\nThe benefits\nYou can expect to receive:\nA competitive salary with service-related progression and annual cost-of-living increases.\nA generous annual leave allowance of 41 d",
+    "matched": true,
+    "closing_date_iso": "2026-09-25"
+  },
+  "https://www.cam.ac.uk/jobs/post-doctoral-research-associate-in-experimental-quantum-optics-and-quantum-light-spectroscopy-fixed-ma50961": {
+    "institution": "University of Cambridge",
+    "title": "Post-Doctoral Research Associate in Experimental Quantum Optics and Quantum-Light Spectroscopy (Fixed Term)",
+    "url": "https://www.cam.ac.uk/jobs/post-doctoral-research-associate-in-experimental-quantum-optics-and-quantum-light-spectroscopy-fixed-ma50961",
+    "salary_text": "£34,610-£35,608£37,694-£46,049",
+    "salary_annual_est": 46049,
+    "location_text": "Yusuf Hamied Department of Chemistry",
+    "is_london": false,
+    "employment_type": "unknown",
+    "closing_date": "Friday, 18 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "Fixed-term: The funds for this post are available for 24 months in the first instance.\nApplications are invited for 2 Post-Doctoral Research Associates to join the group of Dr Raj Pandya in the Department of Chemistry at the University of Cambridge. The positions are each funded for 24 months through funding from UKRI.\nThe successful candidates will undertake interdisciplinary research at the interface of physical chemistry, spectroscopy and materials science. Projects will broadly focus on developing and applying advanced ultrafast, nonlinear and quantum-enabled measurement approaches to understand complex physicochemical processes, including both light-driven and non-light-driven phenomena. Application areas may include batteries and other energy materials, electrocatalysis, functional molecular and condensed-phase systems, and the development of new experimental tools (including at free-electron lasers) for probing molecular dynamics, fluctuations, and charge or energy transport.\nCandidates should have (or be about to obtain) a PhD in a relevant specialist field.  Strong experimental skills in nonlinear optics and ultrafast spectroscopy are required, together with strong computational skills, including hardware control and programming, instrument automation, data acquisition and analysis. Experience in developing or integrating optical instrumentation would be advantageous.\nThe researchers will work within a collaborative and multidisciplinary environment spanning chemistry, physics and materials science, with opportunities to develop new experimental methodologies and contribute to a broad range of fundamental and applied research projects\nWe welcome applications from individuals who wish to be considered for part-time working or other flexible working arrangements.\nWe particularly welcome applications from women and /or candidates from a BME background for this vacancy as they are currently under-represented at this level in our University.\nClick the 'Apply' bu",
+    "matched": true,
+    "closing_date_iso": "2026-09-18"
+  },
+  "https://www.cam.ac.uk/jobs/research-assistantresearch-associate-ai-tutors-for-stem-education-fixed-term-nr50921": {
+    "institution": "University of Cambridge",
+    "title": "Research Assistant/Research Associate - AI Tutors for STEM Education (Fixed Term)",
+    "url": "https://www.cam.ac.uk/jobs/research-assistantresearch-associate-ai-tutors-for-stem-education-fixed-term-nr50921",
+    "salary_text": "£34,610  £35,608£37,694  £46,049",
+    "salary_annual_est": 46049,
+    "location_text": "Department of Computer Science and Technology",
+    "is_london": false,
+    "employment_type": "unknown",
+    "closing_date": "Wednesday, 16 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "Fixed-term: The funds for this post are available for 2 years.\nWe are seeking to appoint a full-time Post-Doctoral Research Associate (PDRA) to lead the design, evaluation and deployment of an AI-powered tutor within the Isaac Science and Ada Computer Science online learning platforms.\nThis is an exciting position within a well-established and successful online STEM education project and a chance to make an immediate real-world impact with your work in this fast-developing and exciting new area in the education sector.\nIsaac Science, developed by the University of Cambridge, and Ada Computer Science, developed in collaboration with the Raspberry Pi Foundation, use modern web technologies and evidence-based educational approaches to improve STEM education. The platform provides online learning resources to improve physics, mathematics, chemistry, biology and computer science teaching to students aged 11-18 and is used extensively by schools across the UK and internationally. The platform currently supports hundreds of thousands of students and teachers and receives millions of question attempts each month.\nThe successful candidate will lead a major new initiative to develop a Socratic AI tutor capable of providing high quality, pedagogically informed support to learners as they work through questions on the platform. The AI tutor will be designed to guide student thinking through hints, prompts and explanations while deliberately avoiding the disclosure of complete answers. The objective is to enhance learning, develop student understanding and strengthen problem solving approaches.\nThe work will include a review of existing AI tutoring and AI-assisted learning systems, including commercial products and research prototypes. The successful candidate will work alongside our dedicated software engineering team to design and implement a prototype AI tutor as well as collaborate with our content and education teams where they will undertake trials with partner schools, ev",
+    "matched": true,
+    "closing_date_iso": "2026-09-16"
+  },
+  "https://www.cam.ac.uk/jobs/research-associate-in-machine-learning-for-astronomical-imaging-fixed-term-le50980": {
+    "institution": "University of Cambridge",
+    "title": "Research Associate in Machine Learning for Astronomical Imaging (Fixed Term)",
+    "url": "https://www.cam.ac.uk/jobs/research-associate-in-machine-learning-for-astronomical-imaging-fixed-term-le50980",
+    "salary_text": "£37,694-£46,049",
+    "salary_annual_est": 46049,
+    "location_text": "Department of Applied Mathematics and Theoretical Physics",
+    "is_london": false,
+    "employment_type": "unknown",
+    "closing_date": "Monday, 21 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "The University of Cambridge seeks two Research Associates to join an ambitious research programme in machine learning for astronomical imaging, led by Dr. Miles Cranmer (DAMTP/IoA) and Professor Vasily Belokurov (IoA). The primary function of these posts is research and innovation: developing novel AI methods for the detection and characterisation of low surface brightness structure in wide-field astronomical imaging and advancing these methods to operate at the scale of forthcoming surveys.\nThe role holders will conduct original research into machine learning approaches to source detection, deblending, and low surface brightness feature recovery, including generative and simulation-based methods. Alongside this research, they will design and build the software stack that applies these methods to large survey datasets, spanning data pipelines, model training and evaluation infrastructure, and deployment on GPU and HPC systems. They will publish their results in peer-reviewed journals, present at international conferences, and release open-source research software associated with the programme.\nThe posts are funded by a philanthropic gift. The role holders will work closely with the research groups of Dr. Cranmer and Professor Belokurov and will have access to new wide-field imaging data through the programme's links to observational surveys.\nDuties include developing and conducting individual and collaborative research objectives, proposals and projects. The role holders will be expected to plan and manage their own research and administration, with guidance if required, and to assist in the preparation of proposals and applications to external bodies. You must be able to communicate material of a technical nature and be able to build internal and external contacts. You may be asked to assist in the supervision of student projects, the development of student research skills, provide instruction, or plan/deliver seminars relating to the research area.\nThe successful ",
+    "matched": true,
+    "closing_date_iso": "2026-09-21"
+  },
+  "https://www.cam.ac.uk/jobs/research-associate-marine-ecology-conservation-fixed-term-pf50942": {
+    "institution": "University of Cambridge",
+    "title": "Research Associate: Marine Ecology & Conservation (Fixed Term)",
+    "url": "https://www.cam.ac.uk/jobs/research-associate-marine-ecology-conservation-fixed-term-pf50942",
+    "salary_text": "£37,694-£46,049",
+    "salary_annual_est": 46049,
+    "location_text": "Department of Zoology",
+    "is_london": false,
+    "employment_type": "unknown",
+    "closing_date": "Wednesday, 30 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "A Research Associate post is available in the Marine Ecology and Conservation Group, led by Dr Catharine Horswill, in the Department of Zoology at the University of Cambridge. Catharine is a quantitative marine ecologist with expertise in population modelling, demography and the application of ecological evidence to conservation and management.\nReliable stock assessments are essential for the sustainable management of tropical tuna fisheries worldwide. In representing complex population and fishery dynamics, assessment models rely on simplifying assumptions about biological processes, spatial structure and fisheries data. Understanding how these assumptions affect model performance and management advice is critical for identifying key sources of uncertainty and determining where methodological advances or improvements in fisheries data could most effectively strengthen future assessments.\nThe project will develop and apply high-resolution, simulation-based approaches to evaluate how assumptions about population biology and fisheries data influence stock assessment performance and management advice. The project will initially focus on Indian Ocean yellowfin tuna, with subsequent application to bigeye and skipjack tuna where appropriate.\nInitial work will build on an existing high-resolution, spatially explicit simulation framework developed using the Spatial Population Model (SPM). SPM will be used to generate population and fishery scenarios that incorporate key sources of structural uncertainty, including spatial variation in growth and fishery selectivity, alternative population structures, and differences in the weighting of fisheries data. Assessment models, including Stock Synthesis (SS3) and next-generation platforms such as SPoRC (\nhttps://chengmatt.github.io/SPoRC/\n), will then be fitted to these simulated datasets to evaluate how different sources of uncertainty influence assessment performance and management-relevant outputs. This project will identify whe",
+    "matched": true,
+    "closing_date_iso": "2026-09-30"
+  },
+  "https://www.cam.ac.uk/jobs/senior-programme-manager-fixed-term-ps50917": {
+    "institution": "University of Cambridge",
+    "title": "Senior Programme Manager (Fixed Term)",
+    "url": "https://www.cam.ac.uk/jobs/senior-programme-manager-fixed-term-ps50917",
+    "salary_text": "£47,389-£73,708",
+    "salary_annual_est": 73708,
+    "location_text": "Cambridge Stem Cell Institute (SBS)",
+    "is_london": false,
+    "employment_type": "unknown",
+    "closing_date": "Thursday, 24 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "We are seeking an ambitious, proactive and highly organised Senior Programme Manager to play a pivotal role in the delivery and development of our prestigious national research programme.\nThe Senior Programme Manager will provide operational leadership for the UK Hub for Predictive and AI-Enabled Human Disease Models, a major UK Research and Innovation (UKRI) strategic investment (£25M) established to accelerate the development, validation and adoption of predictive human disease models for biomedical research, drug discovery and experimental medicine.\nThe Hub brings together internationally leading expertise across the University of Cambridge, the Wellcome Sanger Institute, the MRC Laboratory of Molecular Biology, NHS partners and a national network of academic, clinical and commercial collaborators to establish a nationally accessible capability for translational research.\nThe role requires a high degree of independent judgement and strategic decision-making to establish and maintain the governance, operational frameworks and collaborative partnerships necessary for delivery of an ambitious national research programme.\nKey Responsibilities\nSenior programme leadership and governance\nFinancial and resource management\nTeam leadership and operational delivery\nPartnership development and stakeholder engagement\nData, reporting and impact management\nCommunications, events, engagement and knowledge exchange\nResearch governance, ethics and compliance\nStrategic development and wider contribution\nThe successful candidate will hold a first degree in a relevant discipline, or equivalent professional experience or qualifications. They will have significant experience of successfully managing complex and large-scale programmes, strategic initiatives, or multi-partner projects within a university, research institute, healthcare, industry or comparable environment. They will be comfortable operating in a fast-paced academic environment and able to engage effectively with a wide ra",
+    "matched": true,
+    "closing_date_iso": "2026-09-24"
+  },
+  "https://www.cam.ac.uk/jobs/workstream-lead-financial-systems-subsidiaries-and-fccs-ag50916": {
+    "institution": "University of Cambridge",
+    "title": "Workstream Lead - Financial Systems (Subsidiaries and FCCS)",
+    "url": "https://www.cam.ac.uk/jobs/workstream-lead-financial-systems-subsidiaries-and-fccs-ag50916",
+    "salary_text": "£47,389-£59,966",
+    "salary_annual_est": 59966,
+    "location_text": "Finance Division",
+    "is_london": false,
+    "employment_type": "unknown",
+    "closing_date": "Sunday, 20 September 2026",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "The University is undertaking an ambitious Finance Transformation Programme, delivering major improvements to financial systems, reporting, planning, and data management across the institution. We are seeking an experienced senior specialist with strong knowledge in financial reporting and systems to play a key role in shaping the future of financial reporting and financial data governance within the University including how financial consolidation, reporting, and subsidiary operations are designed, implemented and embedded across a diverse and complex group structure.\nThe Role\nWorking with a high degree of autonomy, the role works closely with the Finance Transformation Programme Board, Central and Research Accounting (CRA), Financial Planning and Performance (FPP), subsidiaries, and wider University stakeholders, acting as the subject matter expert and interface between the teams and working to resolve complex issues to meet reporting requirements.\nThe Workstream Lead is a senior professional role responsible for leading two critical strands of the financial transformation programme: (1) deployment of the new financial system across subsidiary entities, and (2) implementation of Oracle Fusion Financial Consolidation and Close (FCCS). The role is responsible for ensuring the system design meets the business requirements and ensure a successful delivery of the reporting requirements post go live for FY 2027.\nYour Skills\nThe successful candidate will bring strong leadership skills and experience of financial reporting, financial reporting systems, financial data management, and enterprise performance management solutions such as Oracle EPM FCCS or similar platforms. You will be comfortable working in a complex transformation environment, managing stakeholders, leading teams, and driving successful delivery across multiple workstreams.\nThis is an excellent opportunity to join a forward-thinking institution at a pivotal stage of transformation, where your expertise wil",
+    "matched": true,
+    "closing_date_iso": "2026-09-20"
+  },
+  "https://www.nationalmuseums.org.uk/jobs/job/22838/": {
+    "institution": "National Museums",
+    "title": "Corporate Partnerships Account Manager",
+    "url": "https://www.nationalmuseums.org.uk/jobs/job/22838/",
+    "salary_text": "£39,790 per annum",
+    "salary_annual_est": 39790,
+    "location_text": "Tate Britain, Millbank",
+    "is_london": true,
+    "employment_type": "full_time",
+    "closing_date": "Not found",
+    "first_seen": "2026-09-08T14:46:35+00:00",
+    "description": "Jobs - National Museum Directors' Council Website\nToggle navigation\nAbout us\nNews\nWhat we do\nOur members\nPublications\nJobs\nSearch term\nHome\nJobs\nDetails:\nLocation:\nTate Britain, Millbank\nCategory:\nFundraising / development\nSalary:\n£39,790 per annum\nContract type:\nContract\nTemporary\nHours:\nFull time\nTelephone:\n020 7887 4987\nCorporate Partnerships Account Manager\nCreativity, innovation and forward thinking infuses every aspect of Tate and we approach corporate fundraising in the same way! As a result, Tate has a long history of generating ground-breaking partnerships and delivering significant return on investment for its Corporate Partners.\nDay-to-day, you’ll proactively account manage a portfolio of our sector-leading and globally renowned corporate partnerships, which support Tate’s mission of enabling access to art for all.\nYou will oversee the internal and external project management of each partnership. Through liaising regularly with relevant Tate departments, as well as working with and motivating the Corporate Partnerships Officers, you’ll help ensure we create and deliver interesting, cutting edge and competitive opportunities for our corporate partners. You will be responsible for cultivating new prospects and identifying partners with the capacity to be repeat funders. You’ll also work to devise and implement a strategic and innovative approach to securing future business.\nAs well as experience managing b2b relationships you should have an innate ability to build an inclusive, respectful and collaborative culture within a team. You should also have excellent organisational and project management skills as well as a flair for juggling a busy workload to meet deadlines. Applying judgement and discretion to complex situations comes naturally to you too.\nWhat’s more, you're proficient using a relationship or sales database and, above all, have what it takes to create a vision to bring about change and influence the behaviour of others.\nMuseum Website:\nhttps://",
+    "matched": true,
+    "closing_date_iso": null
+  },
+  "https://www.artsjobs.org.uk/jobs/search/84481": {
+    "institution": "ArtsJobs UK",
+    "title": "After School Club Tutor - Immediate start",
+    "url": "https://www.artsjobs.org.uk/jobs/search/84481",
+    "salary_text": "Under £10K",
+    "salary_annual_est": 10000,
+    "location_text": "Stoke Newington, N16",
+    "is_london": true,
+    "employment_type": "part_time",
+    "closing_date": "Saturday, 19 September 2026",
+    "first_seen": "2026-09-08T14:56:51+00:00",
+    "description": "After School Club Tutor - Immediate start\nPressPlay Art Club\nClosing date:\nSat, 19 Sep 2026\nArtform:\nVisual arts\nRole:\nTeaching\nContract:\nContract\nLondon\nPart time\nUnder £10K\nApply now\nTue, 08 Sep 2026\n\">\n    published -\nTue, 08 Sep 2026\nJob Summary\nPressPlay Art Clubs is looking for an enthusiastic Creative Tutor to deliver a weekly after-school art club in Stoke Newington, London.\nJob Description\nWE'RE HIRING: CREATIVE TUTOR FOR AFTER SCHOOL CLUB / START IMMEDIATELY\nAre you an experienced arts educator who loves working with children? Or are you a teaching assistant, childcare worker, or early years educator looking to change things up a bit?\nPressPlay Art Clubs is looking for an enthusiastic Creative Tutor\nto deliver a weekly after-school art club in Stoke Newington, London.\nAt PressPlay, we use art to nurture children's wellbeing. Our sessions encourage self-expression, confidence and emotional resilience through structured but playful creative experiences. We welcome practitioners who bring their own artistic interests, ideas and personality to their teaching.\nLocation: Stoke Newington, N16\nSchedule: 1x or 2x a week (tbc)\nTime: 3:45pm-4:45pm\nTerm period: 14 September - 10 December\nPay: £30-£35 per session\nJob Requirements\nESSENTIAL REQUIREMENTS:\n- Valid Enhanced DBS certificate with a Children's Barred List check issued within the last 3 years.\n- UTR and self-employed status.\n- Proof of Right to Work in the UK.\n- Two references relating specifically to your work with children.\nDESIRABLE:\n- Safeguarding training.\nJob Responsibilities\nWE'RE LOOKING FOR SOMEONE WHO HAS:\n- Strong creative skills and experience leading activities for groups of children.\n- Experience in an educational, childcare or community setting.\n- Excellent communication and classroom-management skills.\n- The confidence to follow a session plan while adapting when needed.\n- A good understanding of safeguarding and child wellbeing.\n- Strong organisational and time-management skills.\nWHAT YOU'LL D",
+    "matched": false,
+    "closing_date_iso": "2026-09-19"
+  },
+  "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179735": {
+    "institution": "National Trust",
+    "title": "Collections & House Manager",
+    "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-detail/179735",
+    "salary_text": "32,000 pa",
+    "salary_annual_est": 32000,
+    "location_text": "Not listed",
+    "is_london": null,
+    "employment_type": "unknown",
+    "closing_date": "Sunday, 20 September 2026",
+    "first_seen": "2026-09-08T14:56:51+00:00",
+    "description": "",
+    "matched": false,
+    "closing_date_iso": "2026-09-20"
   }
 }

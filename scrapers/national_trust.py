@@ -25,6 +25,26 @@ def fetch_jobs() -> list[Job]:
         page = context.new_page()
         page.goto(SEARCH_URL, wait_until="networkidle", timeout=45000)
         page.wait_for_timeout(3000)
+
+        # Results load via infinite scroll (~16 cards per "page", no pagination
+        # controls) — scroll repeatedly to pull in more of the ~80+ total postings
+        # instead of only ever seeing the first batch. A batch can take a moment
+        # to load, so require two consecutive no-growth scrolls (not just one)
+        # before concluding we've reached the end, to avoid stopping on a lag.
+        previous_count = 0
+        stall_count = 0
+        for _ in range(12):
+            page.mouse.wheel(0, 4000)
+            page.wait_for_timeout(2000)
+            current_count = len(page.query_selector_all(".item-grid"))
+            if current_count == previous_count:
+                stall_count += 1
+                if stall_count >= 2:
+                    break
+            else:
+                stall_count = 0
+            previous_count = current_count
+
         html = page.content()
         browser.close()
 
