@@ -26,6 +26,23 @@ def _strip_boilerplate(text: str) -> str:
     return WHAT_WE_OFFER_RE.sub('', text)
 
 
+def _extract_salary_text(salary_cell) -> str:
+    """Several postdoc-type postings genuinely list two salary tiers (e.g. one
+    for a Research Assistant grade, one for Research Associate), separated by
+    <br> tags in the cell — plain get_text(strip=True) has no separator between
+    text nodes at all, so these ran together unreadably (e.g.
+    "£34,610-£35,608£37,694-£46,049"). Turn each <br> into an explicit break
+    first, then join the distinct non-empty segments with a clear separator.
+    """
+    if not salary_cell:
+        return "Not listed"
+    for br in salary_cell.find_all("br"):
+        br.replace_with("\n")
+    segments = [s.strip() for s in salary_cell.get_text().split("\n")]
+    segments = [s for s in segments if s]
+    return " / ".join(segments) if segments else "Not listed"
+
+
 def _fetch_description(url: str) -> str:
     # Best-effort: the listing page already has everything matches_filters()
     # needs except description, so a detail-page failure shouldn't drop the job.
@@ -59,7 +76,7 @@ def fetch_jobs() -> list[Job]:
         location_text = location_text.get_text(strip=True) if location_text else "Not listed"
 
         salary_cell = row.select_one(".views-field-field-salary")
-        salary_text = salary_cell.get_text(strip=True) if salary_cell else "Not listed"
+        salary_text = _extract_salary_text(salary_cell)
 
         closing_cell = row.select_one(".views-field-field-closing-date")
         closing_date = closing_cell.get_text(strip=True) if closing_cell else "Not found"
