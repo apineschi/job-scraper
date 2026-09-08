@@ -127,7 +127,7 @@
       "emoji_tag": "mortar_board",
       "emoji": "🎓",
       "url": "https://www.kcl.ac.uk/jobs/search?term=",
-      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, or project managers"
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, project managers, collections, or collection"
     },
     "vam": {
       "institution": "Victoria and Albert Museum",
@@ -149,7 +149,7 @@
       "emoji_tag": "briefcase",
       "emoji": "💼",
       "url": "https://www.artsjobs.org.uk/jobs/search?art_form=Museums",
-      "filter_note": "Filtered to the Museums category only"
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, project managers, collections, or collection"
     },
     "southbank": {
       "institution": "Southbank Centre",
@@ -185,7 +185,7 @@
       "emoji_tag": "books",
       "emoji": "📚",
       "url": "https://www.cam.ac.uk/jobs/search?search_api_views_fulltext=",
-      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, or project managers"
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, project managers, collections, or collection"
     },
     "waltham_forest": {
       "institution": "London Borough of Waltham Forest",
@@ -193,14 +193,15 @@
       "emoji_tag": "office",
       "emoji": "🏢",
       "url": "https://fa-evng-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/LBWF/",
-      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, or project managers"
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, project managers, collections, or collection"
     },
     "national_trust": {
       "institution": "National Trust",
       "color": "#d8f0e6",
       "emoji_tag": "deciduous_tree",
       "emoji": "🌳",
-      "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancies"
+      "url": "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancies",
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, project managers, collections, or collection"
     },
     "william_morris_gallery": {
       "institution": "William Morris Gallery",
@@ -214,7 +215,8 @@
       "color": "#e8e0f5",
       "emoji_tag": "clipboard",
       "emoji": "📋",
-      "url": "https://www.nationalmuseums.org.uk/jobs/"
+      "url": "https://www.nationalmuseums.org.uk/jobs/",
+      "filter_note": "Filtered to jobs mentioning library, libraries, gallery, galleries, art, arts, cultural, culture, exhibitions, exhibition, museum, museums, project manager, project managers, collections, or collection"
     }
   },
   "default": {

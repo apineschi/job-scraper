@@ -59,12 +59,15 @@ Same tool: `tools/filters-editor.html`.
 These global filters apply to every active institution.
 
 **Keyword filter for general job boards**: some sources (currently Waltham
-Forest, University of Cambridge, King's College London) are general job
-boards, not culture-sector specific — most of what they post is irrelevant.
-These get an *extra* filter on top of the global one: a posting only
-surfaces if its title or location mentions one of a shared list of keywords
-(by default: library, gallery, art, cultural, exhibitions, museum, and their
-plurals). To change this:
+Forest, University of Cambridge, King's College London, National Trust,
+National Museums, and ArtsJobs UK) are general job boards, not culture-sector
+specific — most of what they post is irrelevant. These get an *extra* filter
+on top of the global one (and on top of any filter the source already applies
+at the scraper level, like ArtsJobs' own category filter — see below): a
+posting only surfaces if its title, location, or description mentions one of
+a shared list of keywords. Check `config.yaml`'s `keyword_filter.keywords`
+for the current live list — it's grown over time and is easiest to just read
+there rather than duplicate here. To change it:
 
 1. In the same tool, under **Institutions**, tick/untick **"Keyword-filtered"**
    next to whichever institutions you want this applied to.

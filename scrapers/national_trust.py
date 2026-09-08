@@ -10,6 +10,12 @@ DETAIL_URL_TEMPLATE = "https://careers.nationaltrust.org.uk/OA_HTML/a/#/vacancy-
 INSTITUTION = "National Trust"
 
 VACANCY_LINK_RE = re.compile(r'#/vacancy-detail/(\d+)')
+ANNUAL_SALARY_RE = re.compile(r'[\d,]+\s*pa\b')
+# Casual/part-time roles show a rate ("13.25 per hour") instead of a "pa" figure —
+# parse_salary() already knows how to convert this to an annual estimate (same
+# 37.5hrs/week assumption used for every other hourly-rate source, e.g. Tate),
+# it just needs to actually be handed the rate instead of falling through blank.
+HOURLY_RATE_RE = re.compile(r'\d+(?:\.\d+)?\s*per\s*hour', re.IGNORECASE)
 
 
 def fetch_jobs() -> list[Job]:
@@ -43,8 +49,14 @@ def fetch_jobs() -> list[Job]:
         lines = [l for l in card_text.split("\n") if l.strip()]
         title = lines[0] if lines else "Untitled"
 
-        salary_match = re.search(r'[\d,]+\s*pa\b', card_text)
-        salary_text = salary_match.group(0).strip() if salary_match else "Not listed"
+        annual_match = ANNUAL_SALARY_RE.search(card_text)
+        hourly_match = HOURLY_RATE_RE.search(card_text)
+        if annual_match:
+            salary_text = annual_match.group(0).strip()
+        elif hourly_match:
+            salary_text = f"£{hourly_match.group(0).strip()}"
+        else:
+            salary_text = "Not listed"
 
         location_match = re.search(r'\n([A-Za-z][^\n]*)\n[\d.]+\s*mi from', card_text)
         location_text = location_match.group(1).strip() if location_match else "Not listed"
