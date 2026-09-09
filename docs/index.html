@@ -231,6 +231,21 @@
     cursor: pointer;
   }
   .run-scan-btn:hover { border-color: var(--muted); }
+  .undo-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .undo-btn:hover { border-color: var(--muted); }
+  .undo-btn[hidden] { display: none; }
 </style>
 </head>
 <body>
@@ -249,6 +264,7 @@
   <div class="jobs-header">
     <h2>Recent matches</h2>
     <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+      <button class="undo-btn" type="button" id="undoArchiveBtn" hidden>↩ Undo archive</button>
       <div class="filter-wrap">
         <button class="filter-btn" type="button" id="syncBtn">Sync archive ▾</button>
         <div class="filter-panel sync-panel" id="syncPanel">
@@ -316,6 +332,37 @@
     } catch (e) {
       // localStorage unavailable (private browsing, storage blocked, etc.) —
       // the card still gets removed from view for this page load either way.
+    }
+  }
+
+  // Single-level undo (the *last* archive action, not a full history) — stores
+  // the whole job object, not just its URL, so it can survive a page reload and
+  // be spliced straight back into the list without needing to re-fetch it (it
+  // may no longer even be in jobs.json by the time someone hits undo).
+  const LAST_ARCHIVED_KEY = 'lastArchivedJob';
+
+  function getLastArchived() {
+    try {
+      const raw = localStorage.getItem(LAST_ARCHIVED_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveLastArchived(job) {
+    try {
+      localStorage.setItem(LAST_ARCHIVED_KEY, JSON.stringify(job));
+    } catch (e) {
+      // localStorage unavailable — undo just won't be offered this session.
+    }
+  }
+
+  function clearLastArchived() {
+    try {
+      localStorage.removeItem(LAST_ARCHIVED_KEY);
+    } catch (e) {
+      // nothing to do
     }
   }
 
@@ -400,6 +447,34 @@
       const archived = getArchivedUrls();
       const allJobs = await loadJSON('jobs.json');
       const jobs = allJobs.filter(j => !archived.has(j.url));
+
+      const undoBtn = document.getElementById('undoArchiveBtn');
+      function refreshUndoButton() {
+        const last = getLastArchived();
+        if (last) {
+          undoBtn.hidden = false;
+          undoBtn.textContent = `↩ Undo: ${last.title}`;
+          undoBtn.title = `Bring back "${last.title}" (${last.institution})`;
+        } else {
+          undoBtn.hidden = true;
+        }
+      }
+      refreshUndoButton();
+      undoBtn.addEventListener('click', () => {
+        const last = getLastArchived();
+        if (!last) return;
+        archived.delete(last.url);
+        try {
+          localStorage.setItem(ARCHIVE_KEY, JSON.stringify([...archived]));
+        } catch (e) {
+          // localStorage unavailable — the card still comes back for this page load.
+        }
+        if (!jobs.some(j => j.url === last.url)) jobs.push(last);
+        clearLastArchived();
+        refreshUndoButton();
+        currentPage = 1;
+        renderJobList();
+      });
       const list = document.getElementById('jobs-list');
 
       const allInstitutions = [...new Set(jobs.map(j => j.institution))].sort();
@@ -561,6 +636,8 @@
         `;
         el.querySelector('.archive-btn').addEventListener('click', () => {
           archiveUrl(j.url);
+          saveLastArchived(j);
+          refreshUndoButton();
           const idx = jobs.indexOf(j);
           if (idx !== -1) jobs.splice(idx, 1);
           renderJobList();
